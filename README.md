@@ -10,7 +10,22 @@ while (node != null)
     node = stack.pop()
 ```
 
-Stack the right element if any, and pop in case there is no left
+Process current node, stack the right element if any, and go left. pop in case there is no more left
+
+### binary tree inOrder iterative traverse
+
+```java
+while (node != null || !stack.isEmpty())
+    while (node != null)
+        stack.push(node)
+        node = node.left
+    node = stack.pop()
+    result.add(node)
+    node = node.right
+```
+
+Go all the way left while stacking current. when there is no more left pop, process value. and go right
+repeat until no more in stack and no more right to go.
 
 ### A cute trick about overflow
 
