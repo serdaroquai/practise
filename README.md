@@ -43,6 +43,26 @@ while (node != null || !stack.isEmpty())
 Go all the way left while stacking current. when there is no more left pop, process value. and go right
 repeat until no more in stack and no more right to go.
 
+### binary tree postOrder iterative traverse
+
+pre order = [1,2,3]
+
+post order = [2 3 1]
+
+inverse of post order = [1,3,2] = pre order with left stacked instead of right 
+
+so the trick is to pre order traverse, but with right node first so that the result array in reverse equals post traverse
+
+```java
+result is linkedList
+while (node != null)
+    result.addFirst(node)
+    if (node.left != null) stack.push(node.left)
+    node = node.right
+    if (node == null && !stack.isEmpty())
+    node = stack.pop()
+```
+
 ### A cute trick about overflow
 
 ```java
