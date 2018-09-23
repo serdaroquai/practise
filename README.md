@@ -1,4 +1,17 @@
 
+### binary tree preOrder iterative traverse
+
+```java
+while (node != null)
+    result.add(node)
+    if (node.right != null) stack.push(node.right)
+    node = node.left
+    if (node == null && !stack.isEmpty())
+    node = stack.pop()
+```
+
+Stack the right element if any, and pop in case there is no left
+
 ### A cute trick about overflow
 
 ```java
