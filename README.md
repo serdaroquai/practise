@@ -1,4 +1,20 @@
 
+### about pre-order,in-order,post-order
+```
+  1
+ / \
+2   3
+```
+
+- pre,in,post declares where the root (1) will be
+- About children: left always comes before right. 
+
+pre-order = (**1**,2,3)
+
+in-order = (2,**1**,3)
+
+post-order = (2,3,**1**)
+
 ### binary tree preOrder iterative traverse
 
 ```java
