@@ -63,6 +63,10 @@ while (node != null)
     node = stack.pop()
 ```
 
+### Binary Search Tree
+
+In order traversing a BST will give you all the nodes in ascending order.
+
 ### A cute trick about overflow
 
 ```java
