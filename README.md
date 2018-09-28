@@ -71,14 +71,14 @@ in other words, next successor of a given BST node is leftmost element of its ri
 
 To delete an element from a BST,
 
-find the element to be deleted
+find the element to be deleted. In order to keep memory usage constant, iterate with previous and current pointers instead of using a stack.
 
 * element has no children: just remove it
 * element has one child, swap the child into elements place
 * element has two children: 
   1. swap the next successor in elements place.
   2. since successor has no left branch, set successor.left = element.left
-  3. if sucessor is not immediate right branch of element, let elements parent.left = element.right (in a BST a child node.right is never greater than node.val so its always safe to do this trick)
+  3. if sucessor is not immediate right branch of element, let successors parent.left = successor.right (in a BST a child node.right is never greater than node.val so its always safe to do this trick). Finally set successor.right = elements.right
 
 ### A cute trick about overflow
 
