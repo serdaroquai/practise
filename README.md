@@ -63,9 +63,22 @@ while (node != null)
     node = stack.pop()
 ```
 
-### Binary Search Tree
+### Binary Search Tree (BST)
 
 In order traversing a BST will give you all the nodes in ascending order.
+
+in other words, next successor of a given BST node is leftmost element of its right subtree (which is the next node after root in IOT)
+
+To delete an element from a BST,
+
+find the element to be deleted
+
+* element has no children: just remove it
+* element has one child, swap the child into elements place
+* element has two children: 
+  1. swap the next successor in elements place.
+  2. since successor has no left branch, set successor.left = element.left
+  3. if sucessor is not immediate right branch of element, let elements parent.left = element.right (in a BST a child node.right is never greater than node.val so its always safe to do this trick)
 
 ### A cute trick about overflow
 
