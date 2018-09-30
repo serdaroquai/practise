@@ -1,3 +1,12 @@
+### Balanced Binary Search Trees
+
+Generally speaking a recursive call back is called to set a parent node to point to a new node after rotation. Something like:
+
+```java
+node.left = delete(childNode); // Internally delete does a rotation and returns new root node,
+// in other words delete does not concern itself with keeping a reference to its parent.
+```
+
 
 ### about pre-order,in-order,post-order
 ```
