@@ -1,3 +1,31 @@
+### String and char tips
+charAt() is an easy way to
+
+### Get digits of a number
+~~~java
+
+while (num > 0) {
+  int digit = num % 10;
+  // stack it (since its going to be in reverse order)
+  num = num / 10;
+}
+~~~
+
+Here is a fast hacky way to encode decode multiple int parameters into a single int if you know their ranges
+~~~java
+// encode (assume every digit can be [0-15])
+int code = 16*16*i + 16*j + k;
+
+// decode
+int k = code % 16;
+code = code / 16;
+int j = code % 16;
+code = code / 16;
+int i = code % 16;
+~~~
+
+
+
 ### Balanced Binary Search Trees
 
 Generally speaking a recursive call back is called to set a parent node to point to a new node after rotation. Something like:
