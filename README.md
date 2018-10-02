@@ -1,3 +1,36 @@
+### Shortest Path
+Trick is to do a BFS. Some points to keep in mind
+  * mark nodes 'visited' not when you are getting them from queue, but when you are adding them to queue. This is important in order to not add same node to queue many times over
+  * In order to keep queueing next level neighbors while processing current level nodes, trick is to have an inner loop. In other words you should count how many nodes (of same level) are in the queue and iterate by their count. This way when the next round begins you will have processed all current level nodes and queue will be filled with next level nodes.
+  
+~~~java
+int BFS(Node root, Node target) {
+    Queue<Node> queue;  // store all nodes which are waiting to be processed
+    Set<Node> used;     // store all the used nodes
+    int step = 0;       // number of steps neeeded from root to current node
+    // initialize
+    add root to queue;
+    add root to used;
+    // BFS
+    while (queue is not empty) {
+        step = step + 1;
+        int size = queue.size(); // looping queue by size for only processing nodes of same level while queueing next level
+        for (int i = 0; i < size; ++i) {
+            Node cur = the first node in queue;
+            return step if cur is target;
+            for (Node next : the neighbors of cur) {
+                if (next is not in used) {
+                    add next to queue;
+                    add next to used; // this is important so same node is not added to queue by a neigbor again
+                }
+            }
+            remove the first node from queue;
+        }
+    }
+    return -1; // there is no path from root to target
+}
+~~~
+
 ### String and char tips
 charAt() is an easy way to
 
