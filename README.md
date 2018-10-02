@@ -24,6 +24,7 @@ So when you are converting an Integer to its negative, you should handle the edg
 
 ### String and char tips
 *.charAt(int index)* is an easy way to get a single char from string.
+
 *.toCharArray()* to make a string mutable
 
 ### Get digits of a number
