@@ -3,6 +3,9 @@
 | subject | details |
 | ------- | ------- |
 | binary search | Study edge cases |
+| type conversions | long, int, float, double etc |
+| type representations | float |
+| bit manipulation | arithmethic/logical bit manipulation |
 
 
 ### Overflow
