@@ -205,3 +205,30 @@ int BFS(Node root, Node target) {
 
 Bidirectional BFS or DFS search is better when(since) with each step the possible nodes grow exponentially. So imagine there are *b* valid options per node and the distance from start to target is *2d*.  Classic solution then becomes **O(b^2d)** where as if you start traversing from both the start and the end it is **O(b^d + b^d) = O(b^d)** which is far less than **O(b^2d)**. (for b=2 compare 2 * 2^10 vs 2^20. 2^20 has **512 times** more operations)
 
+### Dynamic Programming
+
+01 Matrix Problem (find minimum distance to 0 for each cell) can be solved in O(mn) with only 2 sweeps.
+* First sweep, sweep from top-left to bottom-right, compare cells distance to 0's that are above or left of the cell, this will miss 0's that are right or bottom of cell.
+* Therefore second sweep, sweep from bottom-right to top left and compare cells that are below or right of the cell. By keeping the minimum of values.
+
+~~~
+// initial
+0 1 1 1
+1 1 1 1
+1 1 1 1
+1 1 1 0
+
+// after first sweep (top-left to bottom right)
+0 1 2 3
+1 2 3 4
+2 3 4 5
+3 4 5 0
+
+// after second sweep (opoosite direction)
+0 1 2 3
+1 2 3 2
+2 3 2 1
+3 2 1 0
+~~~
+
+
