@@ -6,6 +6,8 @@
 | type conversions | long, int, float, double etc |
 | type representations | float |
 | bit manipulation | arithmethic/logical bit manipulation |
+| priority queues | |
+| heap | |
 
 
 ### Overflow
@@ -29,6 +31,8 @@ So when you are converting an Integer to its negative, you should handle the edg
 *.charAt(int index)* is an easy way to get a single char from string.
 
 *.toCharArray()* to make a string mutable
+
+*Character.isDigit(char c)* is char [0..9]
 
 ### Get digits of a number
 ~~~java
