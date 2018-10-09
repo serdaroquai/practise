@@ -94,6 +94,12 @@ in-order = (2,**1**,3)
 
 post-order = (2,3,**1**)
 
+### recursive traversal types
+
+**Top-down** means that in each recursion level, visit the node first to come up with some values, and pass these values to its children when calling the function recursively.
+
+**Bottom-up** means that in each recursion level, first call the functions recursively for all the children nodes and then come up with the answer according to the return values and the value of the root node itself.
+
 ### binary tree preOrder iterative traverse
 
 ```java
