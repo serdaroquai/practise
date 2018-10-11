@@ -29,6 +29,11 @@ So when you are converting an Integer to its negative, you should handle the edg
 
 ### String and char tips
 *.charAt(int index)* is an easy way to get a single char from string.
+  - It returns 'char' which is a primitive type therefore below code will not compile
+  ~~~java
+  s = "ab";
+  if (s.charAt(0) == null)
+  ~~~
 
 *.toCharArray()* to make a string mutable
 
