@@ -10,6 +10,21 @@
 | heap | |
 |sorting algorithms| |
 
+### Arrays
+
+Two sum. Basic technique O(n)
+
+~~~java
+Arrays.sort(nums);
+int i=0; int j=nums.length-1;
+while (i<j) {
+  int sum = nums[i]+nums[j];
+  if (sum == target)  { addResult([i,j]); i++; j--; }
+  else if (sum > target) j--;
+  else i++;
+}
+~~~
+
 ### Knuth-Fisher-Yates shuffle
 Each position is replaced once (can also replace with itself). Details : https://blog.codinghorror.com/the-danger-of-naivete/
 ~~~java
