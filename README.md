@@ -8,7 +8,17 @@
 | bit manipulation | arithmethic/logical bit manipulation |
 | priority queues | |
 | heap | |
+|sorting algorithms| |
 
+### Knuth-Fisher-Yates shuffle
+Each position is replaced once (can also replace with itself). Details : https://blog.codinghorror.com/the-danger-of-naivete/
+~~~java
+Random r = new Random();
+for (int i=cards.length -1; i > 0; i--) {
+  int n = r.nextInt(i+1);
+  swap (cards[i], cards[n]);
+}
+~~~
 
 ### Overflow
 ```java
