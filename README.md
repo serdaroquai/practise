@@ -25,6 +25,17 @@ while (i<j) {
 }
 ~~~
 
+Arrays helper methods
+~~~java
+// Copy an increase capacity of array
+Arrays.copyOf(int[] source, int lengthNew)
+
+// from index must be valid, to index can be >= source.length, 
+Arrays.copyOfRange(int[] source, int from, int to);
+~~~
+
+
+
 ### Knuth-Fisher-Yates shuffle
 Each position is replaced once (can also replace with itself). Details : https://blog.codinghorror.com/the-danger-of-naivete/
 ~~~java
