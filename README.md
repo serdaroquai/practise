@@ -10,6 +10,28 @@
 | heap | |
 |sorting algorithms| |
 
+
+### Backtracking
+
+basically choose an option, explore, unchoose that option. Complexity is *O(n!)* the least.
+
+~~~java
+void permute(result, partial, available) {
+  if (available.isEmpty()) {
+    result.add(new ArrayList<>(partial));
+    return;
+  }
+
+  // choose / explore / unchoose
+  for (unit : available) {
+    partial.add(unit);
+    markUnavailable(unit);
+    permute(result, partial, available);
+    markAvailable(unit);
+    partial.remove(unit);
+  }
+~~~
+
 ### Arrays
 
 Two sum. Basic technique O(n)
