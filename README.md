@@ -15,7 +15,7 @@
 
 https://leetcode.com/problems/permutations/discuss/18239/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partioning)
 
-* Permutations (distinct)
+* **Permutations (distinct)**
 It is basically choose an option, explore, unchoose that option. Complexity is a minimum of *O(n!)*
 
 ~~~java
@@ -36,7 +36,7 @@ void permute(result, partial, available) {
 }
 ~~~
 
-* Permutations (non-distinct)
+* **Permutations (non-distinct)**
 Key is to explore **distinct** choices. Instead of all avalable.
 ~~~java
 // permuatations of [a,b,a,b,a]
@@ -61,7 +61,31 @@ void permute(result, partial, solutionLength, available) {
 }
 ~~~
 
-* Combinations (distinct)
+Here is an alternative approach:
+
+`if (used[i] || (i > 0 && nums[i] == nums[i-1] && !used[i-1]) continue;` 
+* `used[i]` standard check. number is already used
+* `i > 0 && nums[i] == nums[i-1]` it is a duplicate number
+* `!used[i-1]` tricky one: assume permutating `[1,2,2,3]`. Talking about `2` at index 2, we could have been here as part of: 
+  * `[1->2->2]` in which case previous `2` at index 1 would be a parent as `used[i-1] = true`
+  * `[1---->2]` in which case previous `2` at index 1 is not a parent therefore `used[i-1] = false`. Skipped 
+
+~~~java
+Arrays.sort(nums); // so that duplicates are consecutive for nums[i] == nums[i-1] check to work
+
+void backtrack(int[] nums, List<Integer> path, List<List<Integer>> result, boolean[] used) {
+  for (int i: nums) {
+    if (used[i] || (i > 0 && nums[i] == nums[i-1] && !used[i-1]) continue; // skip used ones and duplicates
+    path.add(i);
+    used[i]=true;
+    backtrack(nums,path,result,used);
+    used[i]=false;
+    path.remove(path.size()-1);
+  }
+}
+~~~
+
+* **Combinations (distinct)**
 
 Trick of combinations is that in a single step, in a for loop of choices, is to make your remaining choices smaller and smaller.
 
@@ -78,6 +102,25 @@ void combinationsOf(int[] nums, int index, path, result) {
     combinationsOf(nums, i+1, path, result); // i+1 is the heart of the algorithm
     path.remove(i);
   }
+~~~
+
+* **Combinations (non-distinct)**
+
+Pretty much like Permutations (non-distinct), less checks to worry about.
+
+~~~java
+Arrays.sort(nums); // duplicates are now consecutive
+
+void backtrack(int[] nums, int start, path, result) {
+  result.add(new ArrayList<>(path)); // make a copy
+  
+  for (int i=start, i<nums.length; i++) {
+    if (i>start && nums[i] == nums[i-1]) continue; // just skip duplicates
+    path.add(i);
+    backtrack(nums, i+1, path, result);
+    path.remove(path.size() -1);
+  }
+}
 ~~~
 
 
