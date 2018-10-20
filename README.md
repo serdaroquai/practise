@@ -13,12 +13,14 @@
 
 ### Backtracking
 
-basically choose an option, explore, unchoose that option. Complexity is *O(n!)* the least.
+It is basically choose an option, explore, unchoose that option. Complexity is a minimum of *O(n!)*
+
+Don't forget to check if the elements are distinct.
 
 ~~~java
 void permute(result, partial, available) {
   if (available.isEmpty()) {
-    result.add(new ArrayList<>(partial));
+    result.add(new ArrayList<>(partial)); // mutable object, clone it
     return;
   }
 
