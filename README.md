@@ -63,7 +63,7 @@ void permute(result, partial, solutionLength, available) {
 
 Trick of combinations is that in a single step, in a for loop of choices, is to make your remaining choices smaller and smaller.
 
-For ex: combinations of `[1,2,3]`. Initial step , your for loop should have 3 options as follows: `1' with choices `[2,3]`, `2` with choice `[3]`, and `3` with no further choice `[]`; This is achieved by passing in an index and let your iteration counter `i` starting from it. Also don't forget to set the index parameter for the next recursion based on iteration counter `i`.
+For ex: combinations of `[1,2,3]`. Initial step , your for loop should have 3 options as follows: `1` with choices `[2,3]`, `2` with choice `[3]`, and `3` with no further choice `[]`; This is achieved by passing in an index and let your iteration counter `i` starting from it. Also don't forget to set the index parameter for the next recursion based on iteration counter `i`.
 
 Another trick is to add to result at each step of recursion.
 
