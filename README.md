@@ -13,9 +13,8 @@
 
 ### Backtracking
 
+* Permutations (distinct)
 It is basically choose an option, explore, unchoose that option. Complexity is a minimum of *O(n!)*
-
-Don't forget to check if the elements are distinct.
 
 ~~~java
 void permute(result, partial, available) {
@@ -32,6 +31,32 @@ void permute(result, partial, available) {
     markAvailable(unit);
     partial.remove(unit);
   }
+}
+~~~
+
+* Permutations (non-distinct)
+Key is to explore **distinct** choices. Instead of all avalable.
+~~~java
+// permuatations of [a,b,a,b,a]
+// available is a map that contains letters as keys, occurance frequency as value. a:3 b:2
+// trick is available.keySet() returns either a or b as a valid choice. (Instead of 3 a's and 2 b's)
+
+void permute(result, partial, solutionLength, available) {
+  if (partial.size == solutionLength) {
+    result.add(new ArrayList<>(partial)); // mutable object, clone it
+    return;
+  }
+
+  // choose / explore / unchoose
+  for (key : available.keySet()) {
+    if (available.get(key) > 0) {
+      decreaseCountOfKey();
+      partial.add(key);
+      permute(result, partial, solutionLength, available);
+      partial.remove(partial.size() -1);
+      increaseCountOfKey();
+  }
+}
 ~~~
 
 ### Arrays
