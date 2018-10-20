@@ -75,6 +75,14 @@ So when you are converting an Integer to its negative, you should handle the edg
 
 *Character.isDigit(char c)* is char [0..9]
 
+*Character.isLetter(char c)* is char [a..z]&[A..Z] ((white space is not a letter)
+
+*Character.isLetterOrDigit(char c)* is self explanatory.. 
+
+*Character.toLowerCase(char c)*
+
+*string.equalsIgnoreCase(string other)"
+
 ### Get digits of a number
 ~~~java
 
