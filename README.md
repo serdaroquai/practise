@@ -25,6 +25,39 @@ Space Complexity of `O(1)`
 Time Complexity of `O(nlogn)`
 Space complexity of `O(n)`. Because when single threaded and cleanup, max memory consumed is 2n. will create an array of `n + n/2 + n/4..`
 
+# Quicksort
+
+Time Complexity is `O(n^2)` worst case but `O(nlogn)` average. P(worstCase) is very low with certain pivot selection strategies
+Space Complexity is `O(1)` (in place)
+
+* Divide and Conquer
+* Most programming languages use quick sort for library functions.
+* Partition the array by selecting a pivot and swapping elements <= pivot to the left, and > pivot to the right. Return the partitionIndex
+
+~~~java
+private int partition(int[] arr, int start, int end) {
+  int pivot = arr[end]; // select pivot as last element
+  int pIndex = start;
+  for (int i=0; i < end; i++) {
+    if (arr[i] <= pivot) {
+      swap(arr,i,pIndex);
+      pIndex++;
+    }
+  }
+  swap(arr,pIndex,end) // finally swap pivot to its right place
+  return pIndex
+}
+~~~
+
+* Call quick sort on two partitions recursively
+
+~~~java
+public quickSort(int[] arr, int start, int end) {
+  if (start >= end) return; // base case: don't sort single elements and gracefully exit invalid cases
+  int pIndex = partition(arr,start,end);
+  quickSort(arr,start,pIndex-1);
+  quickSort(arr,pIndex+1,end);
+~~~
 
 ### Backtracking
 
