@@ -10,6 +10,21 @@
 | heap | |
 |sorting algorithms| |
 
+### Sorting
+
+# Insertion, Selection, Bubble
+Time Complexity of `O(n^2)`
+Space Complexity of `O(1)`
+
+# Merge Sort
+
+* Divide and Conquer
+* Merge array into halves recursively until 1 element (array of size 1 is always sorted)
+* Merge them back with a 2 pointer technique
+
+Time Complexity of `O(nlogn)`
+Space complexity of `O(n)`. Because when single threaded and cleanup, max memory consumed is 2n. will create an array of `n + n/2 + n/4..`
+
 
 ### Backtracking
 
