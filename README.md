@@ -6,8 +6,9 @@
 | type conversions | long, int, float, double etc |
 | type representations | float |
 | bit manipulation | arithmethic/logical bit manipulation |
-| priority queues | heap|
-|sorting algorithms| |
+|~~priority queues~~|~~heap~~|
+|~~sorting algorithms~~| |
+| dequeue | |
 
 ## Misc
 
