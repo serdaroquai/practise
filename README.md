@@ -27,11 +27,12 @@ Space complexity of `O(n)`. Because when single threaded and cleanup, max memory
 
 ### Quicksort
 
-Time Complexity is `O(n^2)` worst case but `O(nlogn)` average. P(worstCase) is very low with certain pivot selection strategies
+Time Complexity is `O(n^2)` worst case but `O(nlogn)` average. P(worstCase) is very low with random pivot selection strategy.
 Space Complexity is `O(n)` worst case (depth of recursion tree) and `O(lgn)` average case (almost in place.. but with recursion tree)
 
 * Divide and Conquer
 * Most programming languages use quick sort for library functions.
+* Is not a stable sort when pivot selection is random.
 * Partition the array by selecting a pivot and swapping elements <= pivot to the left, and > pivot to the right. Return the partitionIndex
 
 ~~~java
@@ -58,6 +59,14 @@ public quickSort(int[] arr, int start, int end) {
   quickSort(arr,start,pIndex-1);
   quickSort(arr,pIndex+1,end);
 ~~~
+
+# Heapsort
+
+Time complexity is `O(nlogn)` for worst and average cases.
+Space complexity is `O(1)` for worst case. It is an in place sorting algorithm.
+
+* Heaps can be built on dynamic arrays. So heap sort accepts an unsorted input array and builds a max heap over it.
+* When the max heap is built, the biggest element will be at arr[0], so we swap it with the last element and remove the biggest element from the heap and repeat same process.
 
 ### Backtracking
 
