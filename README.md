@@ -12,7 +12,8 @@
 
 ## Misc
 
-`Arrays.sort(A[], Comparator<? extends A>)` is a thing
+`Arrays.sort(A[], Comparator<? extends A>)` is a thing.
+
 `PriorityQueue<T> = new PriorityQueue<T>(int capacity, new Comparator<T>(){..})` implementation provides `O(log(n))` time for the enqueing and dequeing methods (offer, poll, remove and add); `O(n)` linear time for the remove(Object) and contains(Object) methods; and `O(1)` constant time for the retrieval methods (peek, element, and size).
 
 ### Binary Search
