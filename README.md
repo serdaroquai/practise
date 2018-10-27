@@ -27,6 +27,13 @@ while (left <= right) {                       // left <= right
                                               // ends at right + 1 == left
                                               // no more candidates
 ~~~
+~~~java
+[1,3,4,6,7,9]   target=7
+     v
+[1,3,4,6,7,9]   left = 0; right = 5; mid = 2; 4 < 7
+         v
+[1,3,4,6,7,9]   left = 3; right = 5; mid = 4; 7 == 7
+~~~
 
 * Variation 2
 ~~~java
@@ -39,6 +46,7 @@ while (left < right) {                        // left < right
 }
                                               // ends at left == right
                                               // element at left ( or right) is not checked yet
+                                              // search space must be at least 2 in size
 ~~~
 
 * Variation 3
@@ -52,6 +60,7 @@ while (left + 1 < right) {                    // left + 1 < right
 }
                                               // ends at left + 1 == right
                                               // elements at left and right are not checked yet
+                                              // search space must be at least 3 in size
 ~~~
 
 
