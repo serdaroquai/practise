@@ -28,7 +28,7 @@ Space complexity of `O(n)`. Because when single threaded and cleanup, max memory
 ### Quicksort
 
 Time Complexity is `O(n^2)` worst case but `O(nlogn)` average. P(worstCase) is very low with certain pivot selection strategies
-Space Complexity is `O(1)` (in place)
+Space Complexity is `O(n)` worst case (depth of recursion tree) and `O(lgn)` average case (almost in place.. but with recursion tree)
 
 * Divide and Conquer
 * Most programming languages use quick sort for library functions.
