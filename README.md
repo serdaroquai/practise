@@ -9,6 +9,9 @@
 | priority queues | heap|
 |sorting algorithms| |
 
+## Misc
+
+`Arrays.sort(A[], Comparator<? extends A>)` is a thing
 
 ### Binary Search
 
