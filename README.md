@@ -10,13 +10,13 @@
 | heap | |
 |sorting algorithms| |
 
-### Sorting
+## Sorting
 
-# Insertion, Selection, Bubble
+### Insertion, Selection, Bubble Sort
 Time Complexity of `O(n^2)`
 Space Complexity of `O(1)`
 
-# Merge Sort
+### Merge Sort
 
 * Divide and Conquer
 * Merge array into halves recursively until 1 element (array of size 1 is always sorted)
@@ -25,7 +25,7 @@ Space Complexity of `O(1)`
 Time Complexity of `O(nlogn)`
 Space complexity of `O(n)`. Because when single threaded and cleanup, max memory consumed is 2n. will create an array of `n + n/2 + n/4..`
 
-# Quicksort
+### Quicksort
 
 Time Complexity is `O(n^2)` worst case but `O(nlogn)` average. P(worstCase) is very low with certain pivot selection strategies
 Space Complexity is `O(1)` (in place)
