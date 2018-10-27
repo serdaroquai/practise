@@ -6,9 +6,55 @@
 | type conversions | long, int, float, double etc |
 | type representations | float |
 | bit manipulation | arithmethic/logical bit manipulation |
-| priority queues | |
-| heap | |
+| priority queues | heap|
 |sorting algorithms| |
+
+
+### Binary Search
+
+Basicaly three variations:
+
+* Variation 1:
+~~~java
+int left = 0;
+int right = length -1;                        // right points to last element
+while (left <= right) {                       // left <= right
+  int mid = left + (right -left) / 2;
+  if (arr[mid] == target) return mid;         // return immediately
+  else if (arr[mid] < target)  left = mid +1; // don't include mid in next cycle
+  else                        right = mid -1; // don't include mid in next cycle
+}
+                                              // ends at right + 1 == left
+                                              // no more candidates
+~~~
+
+* Variation 2
+~~~java
+int left = 0;
+int right = length;                           // right points to last element + 1;
+while (left < right) {                        // left < right
+  int mid = left + (right -left) / 2;
+  if (arr[mid] < target) left = mid + 1;      // don't include mid in next cycle
+  else                  right = mid;          // include mid in next cycle
+}
+                                              // ends at left == right
+                                              // element at left ( or right) is not checked yet
+~~~
+
+* Variation 3
+~~~java
+int left = 0;
+int right = length -1;                        // right points to last element
+while (left + 1 < right) {                    // left + 1 < right
+  int mid = left + (right -left) / 2;
+  if (arr[mid] < target) left = mid;          // include mid in next cycle
+  else                  right = mid;          // include mid in next cycle
+}
+                                              // ends at left + 1 == right
+                                              // elements at left and right are not checked yet
+~~~
+
+
 
 ## Sorting
 
