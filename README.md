@@ -285,7 +285,8 @@ Arrays helper methods
 // Copy an increase capacity of array
 Arrays.copyOf(int[] source, int lengthNew)
 
-// from index must be valid, to index can be >= source.length, 
+// from index must be valid, to index can be >= source.length,
+// to index is exclusive
 Arrays.copyOfRange(int[] source, int from, int to);
 ~~~
 
