@@ -12,10 +12,10 @@
 
 ## Misc
 
-`List<int[]> l = new ArrayList<>()` actually works. Since Java generics support all reference types.
-`Arrays.sort(A[], Comparator<? extends A>)` is a thing.
-
-`PriorityQueue<T> p = new PriorityQueue<T>(int capacity, new Comparator<T>(){..})` implementation provides `O(log(n))` time for the enqueing and dequeing methods (offer, poll, remove and add); `O(n)` linear time for the remove(Object) and contains(Object) methods; and `O(1)` constant time for the retrieval methods (peek, element, and size).
+* `List<int[]> l = new ArrayList<>()` actually works. Since Java generics support all reference types.
+* `List<Integer> list = new ArrayList<>(); int a = list.get(0)` actually works, unless element is null in that case a NPE is thrown.
+* `Arrays.sort(A[], Comparator<? extends A>)` is a thing.
+* `PriorityQueue<T> p = new PriorityQueue<>(int capacity, new Comparator<T>(){..})` implementation provides `O(log(n))` time for the enqueing and dequeing methods (offer, poll, remove and add); `O(n)` linear time for the remove(Object) and contains(Object) methods; and `O(1)` constant time for the retrieval methods (peek, element, and size).
 
 ### Binary Search
 
