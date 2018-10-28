@@ -14,7 +14,7 @@
 
 `Arrays.sort(A[], Comparator<? extends A>)` is a thing.
 
-`PriorityQueue<T> = new PriorityQueue<T>(int capacity, new Comparator<T>(){..})` implementation provides `O(log(n))` time for the enqueing and dequeing methods (offer, poll, remove and add); `O(n)` linear time for the remove(Object) and contains(Object) methods; and `O(1)` constant time for the retrieval methods (peek, element, and size).
+`PriorityQueue<T> p = new PriorityQueue<T>(int capacity, new Comparator<T>(){..})` implementation provides `O(log(n))` time for the enqueing and dequeing methods (offer, poll, remove and add); `O(n)` linear time for the remove(Object) and contains(Object) methods; and `O(1)` constant time for the retrieval methods (peek, element, and size).
 
 ### Binary Search
 
@@ -476,6 +476,18 @@ Generally speaking a recursive call back is called to set a parent node to point
 node.left = delete(childNode); // Internally delete does a rotation and returns new root node,
 // in other words delete does not concern itself with keeping a reference to its parent.
 ```
+
+`TreeSet<T> t = new TreeSet<T>(Comparator<? extends T>)` is BST of java (self balanced red black tree). Implementation provides guaranteed `O(logn)` time cost for the basic operations (add, remove and contains). TreeSet does not allow storing duplicates
+
+* `t.higher(E e)` returns the least element in this set strictly > than the given element, or null if no such element.
+* `t.ceiling(E e)` returns the least element in this set >= to the given element, or null if no such element.
+* `t.lower(E e)`returns the greatest element in this set strictly < the given element, or null if there is no such element.
+* `t.floor(E e)` returns the greatest element in this set <= to the given element, or null if no such element.
+* `t.tailSet(E fromElement, boolean inclusive)` returns a view of the portion of this set whose elements are greater than (or equal to, if inclusive is true) fromElement.
+* `headSet(E toElement, boolean inclusive)` returns a view of the portion of this set whose elements are less than (or equal to, if inclusive is true) toElement.
+* `t.subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive)` returns a view of the portion of this set whose elements range from fromElement to toElement.
+
+* `t.first()`, `t.last()`, `t.pollFirst()`, `t.pollLast()` pollFirst and pollLast also remove the elements.
 
 ### Shortest Path
 Trick is to do a BFS. Some points to keep in mind
