@@ -156,8 +156,8 @@ Space complexity is `O(1)` for worst case. It is an in place sorting algorithm.
 
 https://leetcode.com/problems/permutations/discuss/18239/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partioning)
 
-* **Permutations (distinct)**
-It is basically choose an option, explore, unchoose that option. Complexity is a minimum of *O(n!)*
+* **Permutations (no distinct check)**
+It is basically choose an option, explore, unchoose that option. Complexity is *O(n!)*. If the input have duplicates you end up having duplicates. For input `[a,a,b]` => `[a,a,b], [a,b,a], [a,a,b], [a,b,a], [b,a,a], [b,a,a]`. That is because you have 3 choices at first step (even though only 2 distinct choices) and so on..
 
 ~~~java
 void permute(result, partial, available) {
@@ -177,8 +177,9 @@ void permute(result, partial, available) {
 }
 ~~~
 
-* **Permutations (non-distinct)**
-Key is to explore **distinct** choices. Instead of all avalable.
+* **Permutations (distinct from an input that contains duplicates)**
+Key is to explore **distinct** choices given an input that contains duplicates. For ex: `[a,b,a]` there should only be 2 distinct choices at first step `a` and `b`. So keep count and get rid of duplicate choices.
+
 ~~~java
 // permuatations of [a,b,a,b,a]
 // available is a map that contains letters as keys, occurance frequency as value. a:3 b:2
@@ -202,7 +203,7 @@ void permute(result, partial, solutionLength, available) {
 }
 ~~~
 
-Here is an alternative approach:
+Here is a tricky alternative approach to get rid of duplicates with a countless used[] array. **Requires sorting** the available choices so that duplciates become consecutive.
 
 `if (used[i] || (i > 0 && nums[i] == nums[i-1] && !used[i-1]) continue;` 
 * `used[i]` standard check. number is already used
@@ -226,7 +227,7 @@ void backtrack(int[] nums, List<Integer> path, List<List<Integer>> result, boole
 }
 ~~~
 
-* **Combinations (distinct)**
+* **Combinations (no distinct check)**
 
 Trick of combinations is that in a single step, in a for loop of choices, is to make your remaining choices smaller and smaller.
 
@@ -245,9 +246,9 @@ void combinationsOf(int[] nums, int index, path, result) {
   }
 ~~~
 
-* **Combinations (non-distinct)**
+* **Combinations (distinct combinations from input with duplicates)**
 
-Pretty much like Permutations (non-distinct), less checks to worry about.
+Pretty much like distinct Permutations alternative approach, less checks to worry about. **Requires sorting** for duplicates to become consecutive.
 
 ~~~java
 Arrays.sort(nums); // duplicates are now consecutive
