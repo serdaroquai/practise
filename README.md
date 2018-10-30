@@ -554,6 +554,8 @@ Bidirectional BFS or DFS search is better when(since) with each step the possibl
 3 2 1 0
 ~~~
 
-# Greedy Approach
+### Greedy Approach
 
-"Suppose we could come up with the answer in one pass through the input, by simply updating the *'best answer so far'* as we went. What additional values would we need to keep updated as we looked at each item in our input, in order to be able to update the 'best answer so far' in constant time?"
+"Suppose we could come up with the answer in one pass through the input, by simply updating the *'best answer so far'* as we went. What *additional values* would we need to keep updated as we looked at each item in our input, in order to be able to update the 'best answer so far' in constant time?" 
+* Max profit in 1 trade: "Best answer so far" is the max difference we can get by the prices we've seen so far, 
+* The "additional value" is the minimum price we've seen so far. If we keep that updated, we can use it to calculate the new max profit so far in constant time. The max profit is the larger of previous max profit and current price minus the minimum price seen so far.
