@@ -289,6 +289,12 @@ Arrays.copyOf(int[] source, int lengthNew)
 // from index must be valid, to index can be >= source.length,
 // to index is exclusive
 Arrays.copyOfRange(int[] source, int from, int to);
+
+// equals for arrays
+Arrays.equals(int[] arr1, int[] arr2);
+
+//hashCode for arrays returns int (consistent with Arrays.equals())
+Arrays.hashCode(int[] arr)
 ~~~
 
 
