@@ -320,8 +320,8 @@ left * right < target = left < target / right
 Left ones are prone to overflow for big left and right values, right ones are safe
 
 ```java
-Integer.MAX_VALUE = -2^31 = 2147483647
-Integer.MIN_VALUE = 2^31 - 1 = -2147483648
+Integer.MAX_VALUE = 2^31 - 1 = 2147483647
+Integer.MIN_VALUE = -2^31 = -2147483648
 ```
 
 So when you are converting an Integer to its negative, you should handle the edge case of Integer.MIN_VALUE separately
