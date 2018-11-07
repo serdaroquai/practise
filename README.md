@@ -17,6 +17,9 @@
 * `Arrays.sort(A[], Comparator<? extends A>)` is a thing.
 * `PriorityQueue<T> p = new PriorityQueue<>(int capacity, new Comparator<T>(){..})` implementation provides `O(log(n))` time for the enqueing and dequeing methods (offer, poll, remove and add); `O(n)` linear time for the remove(Object) and contains(Object) methods; and `O(1)` constant time for the retrieval methods (peek, element, and size).
 
+* Memoization Big(O) calculation equals to memory consumption of cache.
+* substring -> two pointers + map
+
 ### Binary Search
 
 Basicaly three variations:
