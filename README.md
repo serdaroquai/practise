@@ -20,6 +20,43 @@
 * Memoization Big(O) calculation equals to memory consumption of cache.
 * substring -> two pointers + map
 
+### Substring problems
+
+* Trick is to use two pointers. Make a map of your target letters. and **keep decrementing count even if it is 0**
+  * Keep count of letters, resultStart , resultLength
+  * iterate tail pointer until you deplete count ( find all letters)
+  * mark the solution
+  * then start iterating head pointer until solution is not valid again. (count > 0)
+
+Code for *minimum window substring*
+```java
+int[] map = new int[128];                 // all visible ascii chars (7 LSB of a byte)
+for (char c: str.toCharArray()) map[c]++;   // construct map (how many of which letter we need for valid solution)
+
+int count = target.length(), resultLength = Integer.MAX_VALUE, resultStart = 0;
+int head=0,tail=0;
+
+while(tail < str.length()) {
+  if (map[str.charAt(tail)] > 0) { count--; }     // found a letter we are looking for
+  map[str.charAt(tail)]--;                        // decrement even if not a letter we are looking for
+  tail++;
+  
+  while (count==0) {                              // found one, now start incrementing head
+    if (tail - head < resultLength) {             // but first update result (we are looking for minimum)
+      resultLength = tail-head;
+      resultHead = head;                          
+    }
+    
+    if (map[str.charAt(head)] == 0) { count++; }  // we now miss a letter from target back to incrementing tail
+    map[str.charAt(head)]++;
+    head++;
+  }
+  
+  return resultLength == Integer.MAX_VALUE ? "" : str.substring(resultHead, resultHead + resultLength);
+  
+  
+```
+
 ### Binary Search
 
 Basicaly three variations:
