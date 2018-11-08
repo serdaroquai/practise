@@ -9,7 +9,6 @@
 |~~priority queues~~|~~heap~~|
 |~~sorting algorithms~~| |
 | dequeue | |
-| min window subsequence | |
 
 ## Misc
 
