@@ -53,10 +53,20 @@ while(tail < str.length()) {
     head++;
   }
   
-  return resultLength == Integer.MAX_VALUE ? "" : str.substring(resultHead, resultHead + resultLength);
-  
-  
+  return resultLength == Integer.MAX_VALUE ? "" : str.substring(resultHead, resultHead + resultLength); 
 ```
+
+* Imagine a string `S=[abcdebdde]` and target `T=[bde]`. Looking for minimum *subsequence* of S that contains T:
+  - Greedy tip. for each starting position in S. The first subsequence you find by a greedy approach will always be the shortest for that starting position.
+  - For ex: Possible subsequences of S are `[1,4,5], [1,4,9], [1,7,9], [1,8,9], [5,6,8], [5,7,8]` (by indices)
+  - Shortest ones are **[1,4,5]** for starting index 1 and **[5,6,8]** for starting index 5. All other solutions for 1 and 5 must be longer or equal to first solution.
+  - Notice how they are also the first ones to find by a naive greedy two pointer scan
+
+* Careful reading questions as there are many different ways of implying rules. Some things to consider:
+  - Length? Order? 
+    * Find a min length substring of S that contains all characters in T  (Order does not matter, no length restriction)
+    * Find a min length substring of S that T is a subsequence of S. (Order matters, no length restriction)
+    * Find a substring of S that is a permutation of T. (Order does not matter, length must be same as T)
 
 ### Binary Search
 
