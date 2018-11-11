@@ -6,7 +6,7 @@
 | type conversions | long, int, float, double etc |
 | type representations | float |
 | bit manipulation | arithmethic/logical bit manipulation |
-| topological sort | |
+| topological sort | Alien Dictionary|
 |~~priority queues~~|~~heap~~|
 |~~sorting algorithms~~| |
 | dequeue | |
