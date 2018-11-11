@@ -173,7 +173,7 @@ Space Complexity is `O(n)` worst case (depth of recursion tree) and `O(lgn)` ave
 private int partition(int[] arr, int start, int end) {
   int pivot = arr[end]; // select pivot as last element
   int pIndex = start;
-  for (int i=0; i < end; i++) {
+  for (int i=start; i < end; i++) {
     if (arr[i] <= pivot) {
       swap(arr,i,pIndex);
       pIndex++;
