@@ -2,10 +2,11 @@
 
 | subject | details |
 | ------- | ------- |
-| binary search | Study edge cases |
+| ~~binary search~~ |~~Study edge cases~~ |
 | type conversions | long, int, float, double etc |
 | type representations | float |
 | bit manipulation | arithmethic/logical bit manipulation |
+| topological sort | |
 |~~priority queues~~|~~heap~~|
 |~~sorting algorithms~~| |
 | dequeue | |
