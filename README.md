@@ -7,6 +7,7 @@
 | type representations | float |
 | bit manipulation | arithmethic/logical bit manipulation |
 | topological sort | Alien Dictionary|
+| Knuth-Morris-Pratt | string search in linear time |
 |~~priority queues~~|~~heap~~|
 |~~sorting algorithms~~| |
 | dequeue | |
@@ -67,6 +68,7 @@ while(tail < str.length()) {
     * Find a min length substring of S that contains all characters in T  (Order does not matter, no length restriction)
     * Find a min length substring of S that T is a subsequence of S. (Order matters, no length restriction)
     * Find a substring of S that is a permutation of T. (Order does not matter, length must be same as T)
+
 
 ### Binary Search
 
@@ -617,3 +619,33 @@ Bidirectional BFS or DFS search is better when(since) with each step the possibl
 "Suppose we could come up with the answer in one pass through the input, by simply updating the *'best answer so far'* as we went. What *additional values* would we need to keep updated as we looked at each item in our input, in order to be able to update the 'best answer so far' in constant time?" 
 * Max profit in 1 trade: "Best answer so far" is the max difference we can get by the prices we've seen so far, 
 * The "additional value" is the minimum price we've seen so far. If we keep that updated, we can use it to calculate the new max profit so far in constant time. The max profit is the larger of previous max profit and current price minus the minimum price seen so far.
+
+
+### Knuth-Morris-Pratt
+
+Checks is there a prefix that matches the suffix. When string matching fails, we don't have to recheck prefix.
+
+```java
+// dp[0] = 0 always
+
+          j i
+pattern = a b a b c b c a
+dp[len] =[0               ]
+
+// if charAt(i) != charAt(j) then j = dp[j-1] and repeat until j == 0, if j == 0 then and chars still don't match then i++ move on;
+
+          j   i
+pattern = a b a b c b c a
+dp[len] =[0 0             ]
+
+// if charAt(i) == charAt(j) then dp[i] = j + 1 and i++; j++;
+
+            j   i
+pattern = a b a b c b c a
+dp[len] =[0 0 1           ]
+
+            j           i
+pattern = a b a b c b c a
+dp[len] =[0 0 1 2 0 0 0 1 ]
+
+```
