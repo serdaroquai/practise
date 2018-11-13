@@ -632,7 +632,8 @@ Checks is there a prefix that matches the suffix. When string matching fails, we
 pattern = a b a b c b c a
 dp[len] =[0               ]
 
-// if charAt(i) != charAt(j) then j = dp[j-1] and repeat until j == 0, if j == 0 then and chars still don't match then i++ move on;
+// if charAt(i) != charAt(j) then j = dp[j-1] and repeat until j == 0, if j == 0 and chars still don't match
+// then i++ move on;
 
           j   i
 pattern = a b a b c b c a
