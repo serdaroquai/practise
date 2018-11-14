@@ -321,7 +321,8 @@ void backtrack(int[] nums, int start, path, result) {
 
 ### Arrays
 
-Two sum. Basic technique O(n)
+Two sum. Basic technique O(n). 
+* In order for two sum to work there should only be one answer for a given `i,j`. For example `arr = [0,0,0,0] sum=0` will fail.
 
 ~~~java
 Arrays.sort(nums);
