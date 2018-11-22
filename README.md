@@ -12,6 +12,12 @@
 |~~sorting algorithms~~| |
 | dequeue | |
 
+## Problem specific tricks and take-aways
+### Next Greater element
+https://leetcode.com/problems/next-greater-element-i/
+
+Key observation is given a lsit of decreasing numbers followed by a greater number. Greater number is the next greater element of all previous numbers. `[6,5,3,2,1,4] ==> 4 is NGE of 3,2,1` so use a stack for decreasing numbers and pop them when a greater number arrives. Every number gets stacked at most once so `O(n)` 
+
 ## Misc
 
 * `List<int[]> l = new ArrayList<>()` actually works. Since Java generics support all reference types.
