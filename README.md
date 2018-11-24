@@ -13,6 +13,11 @@
 | dequeue | |
 
 ## Problem specific tricks and take-aways
+### Word Break II
+https://leetcode.com/problems/word-break-ii/
+
+// TODO
+
 ### Next Greater element
 https://leetcode.com/problems/next-greater-element-i/
 
@@ -21,6 +26,51 @@ Key observation is given a lsit of decreasing numbers followed by a greater numb
 https://leetcode.com/problems/next-greater-element-ii/
 
 Use indexes while dealing with an array that contains duplicates. When you store the values you lose their position information. When you store indices, you can access the value by `nums[pos]` anyway and you get to keep position. 
+
+### Maximal Rectangle
+https://leetcode.com/problems/maximal-rectangle/
+
+```java
+// [0,0,1,0]
+// [1,0,1,1]
+// [1,0,1,1]
+```
+for each row, calculate 3 arrays (height, left and right). At each row check prevous row's values(height[c], left[c], right[c]) to calculate new left right boundaries that satisfy accumulated height.
+
+height is simple: `height[c] = matrix[r][c] == 1 ? height[c] + 1 : 0;`
+
+Trick of finding left is taking the maximum of current rows left boundary and previos rows left edge.
+
+```java
+if (matrix[r][c] == 1) left[c] = Math.max(left[c], curLeft) 
+else {left[c] = 0 ; curLeft = c+1};
+```
+Same goes for right edge by iterating from right to left. Since right is naturally greater you need to be taking `Math.min(right[c], curRight)`
+
+At each row calculate the area by `maxArea = Math.max(maxArea, (right-left)*height)` 
+
+``` java
+row=0 :
+ height = [ 0, 0, 1, 0]
+ left   = [ 0, 0, 2, 2]
+ right  = [ 4, 4, 3, 4]
+ maxArea = 1 // col 2
+ 
+row=1 :
+ height = [ 1, 0, 2, 1]
+ left   = [ 0, 0, 2, 2]
+ right  = [ 1, 4, 3, 4]
+ maxArea = 2 // col 2 or 3
+
+row=2 :
+ height = [ 2, 0, 3, 2]
+ left   = [ 0, 0, 2, 2]
+ right  = [ 1, 4, 3, 4]
+ maxArea = 4 // col 4
+```
+
+
+
 
 ## Misc
 
