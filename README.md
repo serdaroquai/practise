@@ -16,7 +16,11 @@
 ### Next Greater element
 https://leetcode.com/problems/next-greater-element-i/
 
-Key observation is given a lsit of decreasing numbers followed by a greater number. Greater number is the next greater element of all previous numbers. `[6,5,3,2,1,4] ==> 4 is NGE of 3,2,1` so use a stack for decreasing numbers and pop them when a greater number arrives. Every number gets stacked at most once so `O(n)` 
+Key observation is given a lsit of decreasing numbers followed by a greater number. Greater number is the next greater element of all previous numbers. `[6,5,3,2,1,4] ==> 4 is NGE of 3,2,1` so use a stack for decreasing numbers and pop them when a greater number arrives. Every number gets stacked at most once so `O(n)`
+
+https://leetcode.com/problems/next-greater-element-ii/
+
+Use indexes while dealing with an array that contains duplicates. When you store the values you lose their position information. When you store indices, you can access the value by `nums[pos]` anyway and you get to keep position. 
 
 ## Misc
 
