@@ -83,7 +83,7 @@ row=2 :
 * substring -> two pointers + map
 
 ### Topological Sort
-Topological sort is about finding cyclic dependencies and one way to do that is to use multi value `visited[Node]`. 0 is unvisited, 1 is currently visiting, 2 is visited and it has no cyclic dependency. Another objective is to return nodes in a valid topological order. The key here is to stack the node only after traversing all its children. 
+Topological sort is about finding cyclic dependencies and one way to do that is to use multi value `visited[Node]`. 0 is unvisited, 1 is currently visiting, 2 is visited and it has no cyclic dependency. Another objective is to return nodes in a valid topological order. The key here is to stack the node only **after** traversing all its children. 
 
 ```java
 private boolean topoSort(Node node, int[] visited, Map<Node,Set<Node>> graph, Stack<Node> stack) {
