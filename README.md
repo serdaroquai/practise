@@ -13,6 +13,27 @@
 | dequeue | |
 
 ## Problem specific tricks and take-aways
+
+### Course Schedule III
+https://leetcode.com/problems/course-schedule-iii/
+
+Trick was to see the greedy approach. `[2,2],[1,3],[1,3],[1,3]`
+* Order by tightest deadline comes first
+* try fitting them in this order and when it does not fit, use a priority queue to remove the past course with longest duration to make more space.
+* All the courses you have added after the long one will still fit (since you managed to add them when you were closer to the deadline)
+
+```java
+ int time=0;
+ for (int[] course: courses) {
+     time += course[0];
+     maxTime.offer(course[0]);
+     if (time > course[1]) { // exceeds deadline?
+         time -= maxTime.poll(); // removes course with longest duration so far
+     }
+ }
+ return maxTime.size();
+```
+
 ### Word Break II
 https://leetcode.com/problems/word-break-ii/
 
