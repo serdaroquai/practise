@@ -24,7 +24,8 @@ https://leetcode.com/problems/the-skyline-problem/submissions/
 ## Alien Dictionary
 https://leetcode.com/submissions/detail/191855035/
 
-* Basically a topological sort problem, 
+* Basically a topological sort problem,
+* Extract dependency information (which letter comes before the other) by comparing a word to the next word in the dictionary. Check if it has cycles and if not sort them in topological order
 * an edge case is to make sure you go through all existing characters in the dictionary and not just the ones that give you dependency information. One easy way of doing that is adding `Arrays.fill(visited,-1)` for all characters and just loop through unvisited `0` ones.
 
 ### Course Schedule III
