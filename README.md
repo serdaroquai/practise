@@ -14,6 +14,19 @@
 
 ## Problem specific tricks and take-aways
 
+## Skyline problem
+https://leetcode.com/problems/the-skyline-problem/submissions/
+
+* Action only happens when a building starts or ends. Trick is to keep the height of all 'active' buldings in a max priority queue, so at each building start or end we can query the max height in constant time, and if new max height is different then current height we can add the point to the result. 
+* Keep in mind there can be same height buildings, but its no problem since a priority queue works with duplicates. 
+* Normally `priorityQueue.remove(Object)` takes `O(n)` time which is a time complexity bottle neck for this problem. In order to overcome this, we can lazy remove an object by keeping its occurance frequency in a `toBeRemoved` map and remove during `peek()`
+
+## Alien Dictionary
+https://leetcode.com/submissions/detail/191855035/
+
+* Basically a topological sort problem, 
+* an edge case is to make sure you go through all existing characters in the dictionary and not just the ones that give you dependency information. One easy way of doing that is adding `Arrays.fill(visited,-1)` for all characters and just loop through unvisited `0` ones.
+
 ### Course Schedule III
 https://leetcode.com/problems/course-schedule-iii/
 
@@ -42,11 +55,11 @@ https://leetcode.com/problems/word-break-ii/
 ### Next Greater element
 https://leetcode.com/problems/next-greater-element-i/
 
-Key observation is given a lsit of decreasing numbers followed by a greater number. Greater number is the next greater element of all previous numbers. `[6,5,3,2,1,4] ==> 4 is NGE of 3,2,1` so use a stack for decreasing numbers and pop them when a greater number arrives. Every number gets stacked at most once so `O(n)`
+* Key observation is given a lsit of decreasing numbers followed by a greater number. Greater number is the next greater element of all previous numbers. `[6,5,3,2,1,4] ==> 4 is NGE of 3,2,1` so use a stack for decreasing numbers and pop them when a greater number arrives. Every number gets stacked at most once so `O(n)`
 
 https://leetcode.com/problems/next-greater-element-ii/
 
-Use indexes while dealing with an array that contains duplicates. When you store the values you lose their position information. When you store indices, you can access the value by `nums[pos]` anyway and you get to keep position. 
+* Use indexes while dealing with an array that contains duplicates. When you store the values you lose their position information. When you store indices, you can access the value by `nums[pos]` anyway and you get to keep position. 
 
 ### Maximal Rectangle
 https://leetcode.com/problems/maximal-rectangle/
@@ -60,7 +73,7 @@ for each row, calculate 3 arrays (height, left and right). At each row check pre
 
 height is simple: `height[c] = matrix[r][c] == 1 ? height[c] + 1 : 0;`
 
-Trick of finding left is taking the maximum of current rows left boundary and previos rows left edge.
+Trick of finding left is taking the maximum of current rows left boundary and previous rows left boundry
 
 ```java
 if (matrix[r][c] == 1) left[c] = Math.max(left[c], curLeft) 
@@ -91,15 +104,14 @@ row=2 :
 ```
 
 
-
-
 ## Misc
 
 * `List<int[]> l = new ArrayList<>()` actually works. Since Java generics support all reference types.
 * `List<Integer> list = new ArrayList<>(); int a = list.get(0)` actually works, unless element is null in that case a NPE is thrown.
 * `Arrays.sort(A[], Comparator<? extends A>)` is a thing.
 * `PriorityQueue<T> p = new PriorityQueue<>(int capacity, new Comparator<T>(){..})` implementation provides `O(log(n))` time for the enqueing and dequeing methods (offer, poll, remove and add); `O(n)` linear time for the remove(Object) and contains(Object) methods; and `O(1)` constant time for the retrieval methods (peek, element, and size).
-
+* A constant time alternative to linear time `remove(Object)` from a `PriorityQueue` is to lazy remove. That is to keep a map of items to be removed instead of removing them and actually `remove()` them when they are retrieved by `poll()` or `peek()`
+* `PriorityQueue<T>` does work with duplicates, but a `TreeMap<T,K>` or a `TreeSet<T>` does not. (Map's or Set's  dont have duplicate or null keys)
 * Memoization Big(O) calculation equals to memory consumption of cache.
 * substring -> two pointers + map
 
