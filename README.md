@@ -113,6 +113,7 @@ row=2 :
 * `PriorityQueue<T> p = new PriorityQueue<>(int capacity, new Comparator<T>(){..})` implementation provides `O(log(n))` time for the enqueing and dequeing methods (offer, poll, remove and add); `O(n)` linear time for the remove(Object) and contains(Object) methods; and `O(1)` constant time for the retrieval methods (peek, element, and size).
 * A constant time alternative to linear time `remove(Object)` from a `PriorityQueue` is to lazy remove. That is to keep a map of items to be removed instead of removing them and actually `remove()` them when they are retrieved by `poll()` or `peek()`
 * `PriorityQueue<T>` does work with duplicates, but a `TreeMap<T,K>` or a `TreeSet<T>` does not. (Map's or Set's  dont have duplicate or null keys)
+* A `TreeMap<K,V> map` is a `SortedMap` and `map.entrySet()` will give the entries in the order of their keys. (Given no specific comparator that is the natural ordering of the keys)
 * Memoization Big(O) calculation equals to memory consumption of cache.
 * substring -> two pointers + map
 
