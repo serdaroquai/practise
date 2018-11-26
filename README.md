@@ -14,14 +14,14 @@
 
 ## Problem specific tricks and take-aways
 
-## Skyline problem
+### Skyline problem
 https://leetcode.com/problems/the-skyline-problem/submissions/
 
 * Action only happens when a building starts or ends. Trick is to keep the height of all 'active' buldings in a max priority queue, so at each building start or end we can query the max height in constant time, and if new max height is different then current height we can add the point to the result. 
 * Keep in mind there can be same height buildings, but its no problem since a priority queue works with duplicates. 
 * Normally `priorityQueue.remove(Object)` takes `O(n)` time which is a time complexity bottle neck for this problem. In order to overcome this, we can lazy remove an object by keeping its occurance frequency in a `toBeRemoved` map and remove during `peek()`
 
-## Alien Dictionary
+### Alien Dictionary
 https://leetcode.com/submissions/detail/191855035/
 
 * Basically a topological sort problem,
