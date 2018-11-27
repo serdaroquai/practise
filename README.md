@@ -14,6 +14,27 @@
 
 ## Problem specific tricks and take-aways
 
+### Wildcard Matching
+https://leetcode.com/problems/wildcard-matching/
+
+* `O(n^2)` with dynamic programming. Idea is to make a `dp = new boolean[plen+1][slen+1]` where `dp[i][j]` shows if `p.substring(i) matches with s.substring(j)`
+* `dp[0][0]` is always `1` since two empty strings always match. 
+* `dp[0][j]` is always `0` since empty pattern only can match empty string
+* `dp[i][0]` is `dp[i-1][0] && p.charAt(i-1) == '*'`
+* When pattern has a `*` it can either act as an empty set, or any character therefore `dp[i][j] = dp[i-1][j] || dp[i][j-1]`
+* If pattern is not `*` then `dp[i][j] = dp[i-1][j-1] && (p.charAt(i-1) == '?' || p.charAt(i-1) == s.charAt(j-1))` (it must match until now and characters are same
+
+```
+          z a c a b z
+//      0 1 2 3 4 5 6 
+//    0 1 0 0 0 0 0 0
+// *  1 1 1 1 1 1 1 1
+// a  2 0 0 1 0 1 0 0
+// ?  3 0 0 0 1 0 1 0
+// b  4 0 0 0 0 0 0 0
+// *  5 0 0 0 0 0 0 0
+```
+
 ### Find the Closest Palindrome
 https://leetcode.com/submissions/detail/192059344/
 
