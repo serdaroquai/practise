@@ -24,7 +24,7 @@ https://leetcode.com/problems/wildcard-matching/
 * When pattern has a `*` it can either act as an empty set, or any character therefore `dp[i][j] = dp[i-1][j] || dp[i][j-1]`
 * If pattern is not `*` then `dp[i][j] = dp[i-1][j-1] && (p.charAt(i-1) == '?' || p.charAt(i-1) == s.charAt(j-1))` (it must match until now and characters are same
 
-```
+```java
           z a c a b z
 //      0 1 2 3 4 5 6 
 //    0 1 0 0 0 0 0 0
