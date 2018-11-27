@@ -14,6 +14,13 @@
 
 ## Problem specific tricks and take-aways
 
+### Find the Closest Palindrome
+https://leetcode.com/submissions/detail/192059344/
+
+* Edge cases full of 999, 1000 and 1001's. 
+* Beyond that the heart of problem is to find the root of palindrome. For a `n` like `12345` that is `123`. The closest palindrome should be a palindrome built of either `root`, `root+1` or `root-1`. If `n` was already a palindrome then skip `root` because it will produce the duplicate of `n`. 
+* Don't forget to remove last element of root when building palindromes of odd length `n`'s. Forex: `n="12345", root="123", palindrome="12321` (last element `3` is removed since odd length)
+
 ### Skyline problem
 https://leetcode.com/problems/the-skyline-problem/submissions/
 
