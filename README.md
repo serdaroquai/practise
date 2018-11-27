@@ -25,14 +25,14 @@ https://leetcode.com/problems/wildcard-matching/
 * If pattern is not `*` then `dp[i][j] = dp[i-1][j-1] && (p.charAt(i-1) == '?' || p.charAt(i-1) == s.charAt(j-1))` (it must match until now and characters are same
 
 ```java
-          z a c a b z
-//      0 1 2 3 4 5 6 
-//    0 1 0 0 0 0 0 0
-// *  1 1 1 1 1 1 1 1
-// a  2 0 0 1 0 1 0 0
-// ?  3 0 0 0 1 0 1 0
-// b  4 0 0 0 0 0 0 0
-// *  5 0 0 0 0 0 0 0
+        z a c a b z
+      0 1 2 3 4 5 6 
+    0 1 0 0 0 0 0 0
+ *  1 1 1 1 1 1 1 1
+ a  2 0 0 1 0 1 0 0
+ ?  3 0 0 0 1 0 1 0
+ b  4 0 0 0 0 0 0 0
+ *  5 0 0 0 0 0 0 0
 ```
 
 ### Find the Closest Palindrome
