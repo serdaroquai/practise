@@ -707,8 +707,11 @@ node.left = delete(childNode); // Internally delete does a rotation and returns 
 * `t.tailSet(E fromElement, boolean inclusive)` returns a view of the portion of this set whose elements are greater than (or equal to, if inclusive is true) fromElement.
 * `headSet(E toElement, boolean inclusive)` returns a view of the portion of this set whose elements are less than (or equal to, if inclusive is true) toElement.
 * `t.subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive)` returns a view of the portion of this set whose elements range from fromElement to toElement.
-
 * `t.first()`, `t.last()`, `t.pollFirst()`, `t.pollLast()` pollFirst and pollLast also remove the elements.
+
+`TreeMap<T> t = new TreeMap<>()` is a map where keys are BST. It also implements the Map interface.
+
+* same methods with TreeSet just concat `Key` or `Entry` as suffix. For ex: `t.lastKey()` or `t.lastEntry()` etc.
 
 ### Shortest Path
 Trick is to do a BFS. Some points to keep in mind
