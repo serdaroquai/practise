@@ -14,6 +14,13 @@
 
 ## Problem specific tricks and take-aways
 
+### Longest substring with at most two distinct characters
+https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/
+
+* `O(n)` greedy two pointers and a frequency map.
+* increment j until there are more then 2 distinct chars
+* increment i until there are 2 distinct chars again.
+
 ### Wildcard Matching
 https://leetcode.com/problems/wildcard-matching/
 
