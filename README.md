@@ -20,6 +20,15 @@ https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-charac
 * `O(n)` greedy two pointers and a frequency map.
 * increment j until there are more then 2 distinct chars
 * increment i until there are 2 distinct chars again.
+* a good trick is to use an array and keep count of letters
+```java
+int[] freq = new int[256];
+freq[s.charAt(j)]++;
+if (freq[s.charAt(j)] == 1) count++;
+...
+freq[s.charAt(i)]--;
+if (freq[s.charAt(j)] == 0) count--;
+```
 
 ### Wildcard Matching
 https://leetcode.com/problems/wildcard-matching/
