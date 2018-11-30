@@ -14,6 +14,15 @@
 
 ## Problem specific tricks and take-aways
 
+### Sliding Window Maximum
+https://leetcode.com/problems/sliding-window-maximum/
+
+* Can be solved in `O(nlogk)` using a `TreeMap`. but **better** solutions in `O(n)`exist.
+* Linear time solution feels similar to Next Greater Element, with a slight modification that is we use `deque` instead of a `stack` since there is a sliding window and we remove elements from the head which would not be possible with a stack. Since every element is queued only once it is amortized `O(n)`
+
+// TODO (There is a dp solution that gets the job done with 2 passes (still `O(n)`)
+
+
 ### Longest substring with at most two distinct characters
 https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/
 
@@ -159,6 +168,7 @@ row=2 :
 * A constant time alternative to linear time `remove(Object)` from a `PriorityQueue` is to lazy remove. That is to keep a map of items to be removed instead of removing them and actually `remove()` them when they are retrieved by `poll()` or `peek()`
 * `PriorityQueue<T>` does work with duplicates, but a `TreeMap<T,K>` or a `TreeSet<T>` does not. (Map's or Set's  dont have duplicate or null keys)
 * A `TreeMap<K,V> map` is a `SortedMap` and `map.entrySet()` will give the entries in the order of their keys. (Given no specific comparator that is the natural ordering of the keys)
+* A `Deque<T> t = new LinkedList<>()` is a queue, that can be modified from both head and tail in `O(1)` time. Methods are `offerFirst(), pollFirst(), peekFirst()` and `offerLast(), pollLast(), peekLast()`
 * Memoization Big(O) calculation equals to memory consumption of cache.
 * substring -> two pointers + map
 
