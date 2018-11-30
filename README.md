@@ -169,6 +169,7 @@ row=2 :
 * `PriorityQueue<T>` does work with duplicates, but a `TreeMap<T,K>` or a `TreeSet<T>` does not. (Map's or Set's  dont have duplicate or null keys)
 * A `TreeMap<K,V> map` is a `SortedMap` and `map.entrySet()` will give the entries in the order of their keys. (Given no specific comparator that is the natural ordering of the keys)
 * A `Deque<T> t = new LinkedList<>()` is a queue, that can be modified from both head and tail in `O(1)` time. Methods are `offerFirst(), pollFirst(), peekFirst()` and `offerLast(), pollLast(), peekLast()`
+* Can also use `ArrayDeque<T>`, dynamically sized Array instead of a linked list. more performance, but does not allow null values. Also can use as a more performant `stack`
 * Memoization Big(O) calculation equals to memory consumption of cache.
 * substring -> two pointers + map
 
