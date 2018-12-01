@@ -14,6 +14,26 @@
 
 ## Problem specific tricks and take-aways
 
+### Paint House II
+https://leetcode.com/problems/paint-house-ii/
+
+* Assume `dp[i][j]` where i denotes **total cost** since house 0 to i'th house. and j denotes what color we choose. Then the solution would be `O(nk^2)` where n is number of houses and k number of colors.
+* Since color is determined by only last house, we don't need a whole array of past values but we just need to keep `bestChoice` for last house, `bestChoice2` for the case our cur house best color selection is the same as prev one, and ofcourse to determine if that is the case keep `colorChoice` of last house so a total of 3 variables. `O(1)` memory complexity. `O(nk)` time complexity
+
+```java
+best = 0, best2 = 0, lastColor = -1;
+for each house h {
+  localBest = Integer.MAX, localBest2 = Integer.MAX, curColor = -1;
+  for each color c {
+    int totalCost = costs[h][c] + ((c != lastColor) ? best : best2);
+    // cost < localBest < localBest2 or, localBest < cost < localBest2
+    updateLocalBestsAndColor(totalCost, localBest,localBest2);  
+  }
+  best = localBest; best2 = localBest2; lastColor = curColor;
+}
+return best;
+```
+
 ### Sliding Window Maximum
 https://leetcode.com/problems/sliding-window-maximum/
 
