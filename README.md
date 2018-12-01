@@ -124,7 +124,7 @@ https://leetcode.com/problems/maximal-rectangle/
 // [1,0,1,1]
 // [1,0,1,1]
 ```
-for each row, calculate 3 arrays (height, left and right). At each row check prevous row's values(height[c], left[c], right[c]) to calculate new left right boundaries that satisfy accumulated height.
+for each row, calculate 3 arrays (height, left and right). At each row check prevous row's values(height[c], left[c], right[c]) to calculate new left right boundaries that satisfy accumulated height. 
 
 height is simple: `height[c] = matrix[r][c] == 1 ? height[c] + 1 : 0;`
 
@@ -786,6 +786,8 @@ Bidirectional BFS or DFS search is better when(since) with each step the possibl
 2 3 2 1
 3 2 1 0
 ~~~
+
+* When doing dp if current row only relies on last row for getting values, you usually don't need the whole array but just an `O(1)` space structure is enough.
 
 ### Greedy Approach
 
