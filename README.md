@@ -14,6 +14,26 @@
 
 ## Problem specific tricks and take-aways
 
+### Largest component size by a common factor
+https://leetcode.com/problems/largest-component-size-by-common-factor/
+
+* A lot of knowledge about factorization and primes.
+* Every integer consists of a combination of prime factors.
+* We start by finding primes upto max allowed number (100000). Runtime? `n + n/2 + n/3 + .. 1`
+* we link each number to its prime factors. When finding prime factors, key speed up is `if (primes.contains(a)) i=a`. No need to waste iterations when a becomes a prime itself. Oherwise TLE
+
+```java
+for (int i=2; i<=a; i++) {
+    if (i > a) break;
+    if (primes.contains(a)) i = a; // don't waste time if 'a' is (or becomes) a prime
+    if (a % i == 0) {
+        // .. do stuff
+    }
+    while (a % i == 0) a /= i;
+}
+```
+* then run a DFS to sink islands and return size of biggest island
+
 ### Paint House II
 https://leetcode.com/problems/paint-house-ii/
 
