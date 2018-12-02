@@ -181,6 +181,7 @@ row=2 :
 
 ## Misc
 
+* `"abc".compareTo("abd")` for string comparison. -1,0,1
 * `List<int[]> l = new ArrayList<>()` actually works. Since Java generics support all reference types.
 * `List<Integer> list = new ArrayList<>(); int a = list.get(0)` actually works, unless element is null in that case a NPE is thrown.
 * `Arrays.sort(A[], Comparator<? extends A>)` is a thing.
