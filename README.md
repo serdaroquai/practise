@@ -14,6 +14,14 @@
 
 ## Problem specific tricks and take-aways
 
+### First missing positive
+https://leetcode.com/problems/first-missing-positive
+
+* swap the integer `i`'s that are > 0 and < nums.length in their correct place in nums to index `i-1`.
+* go over the array and find the first missing number.
+* if no missing number return `nums.length+1`
+* in the retrospective everything seems so easy.
+
 ### Largest component size by a common factor
 https://leetcode.com/problems/largest-component-size-by-common-factor/
 
