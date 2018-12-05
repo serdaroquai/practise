@@ -14,6 +14,16 @@
 
 ## Problem specific tricks and take-aways
 
+### Min cost to hire k workers
+https://leetcode.com/problems/minimum-cost-to-hire-k-workers
+
+* Sort by wage/quality
+* Iterate workers from starting from lowest wage/quality,
+* add each workers quality to a maxHeap, and keep a sum of current quality
+* if total of more than k workers in heap, remove the highest quality worker both from heap and sum
+* if k workers in heap, calculate update `ans = Math.min(ans, sum * currentWorker.quality)`
+* time complexity `O(nlogn)`
+
 ### First missing positive
 https://leetcode.com/problems/first-missing-positive
 
