@@ -2,15 +2,11 @@
 
 | subject | details |
 | ------- | ------- |
-| ~~binary search~~ |~~Study edge cases~~ |
-| type conversions | long, int, float, double etc |
+| ~~type conversions | long, int, float, double etc ~~|
 | type representations | float |
 | bit manipulation | arithmethic/logical bit manipulation |
-| ~~topological sort~~ | Alien Dictionary|
 | Knuth-Morris-Pratt | string search in linear time |
-|~~priority queues~~|~~heap~~|
-|~~sorting algorithms~~| |
-| dequeue | |
+| Union find | |
 
 ## Problem specific tricks and take-aways
 
