@@ -246,6 +246,27 @@ private boolean topoSort(Node node, int[] visited, Map<Node,Set<Node>> graph, St
  return true;
 }
 ```
+### Bipartitioning
+
+* **Bi**partitioning  means "There are two groups". Some elements can not be in the same group with the others. Make a graph of elements who can't be with one another. Make it bidirectional. For ex: if `1` can't be with `2` then `2` can't be with `1` as well. That is the key
+
+* Start from one color and dfs your way down painting each neighbor the opposite color. If there is a contradiction return false (you can't partition)
+
+* There could be more then one possibilities. For ex: if `[1,2],[3,4]` can't be together then both `1,4 and 2,3` and `1,3 and 2,4` are valid. That means you can put `3` and `4` to any group you want as long as they are not in the same group. That is why we can get away with starting with color 1 for each unvisited element in the for loop.
+
+~~~java
+for (int i=0; i<=N; i++) {
+    if (color[i] == 0 && !dfs(graph, color, i, 1)) return false;
+}
+...
+private boolean dfs(Set<Integer>[] graph, int[] color, int n, int c) {
+    color[n] = c;   // 0 unvisited, 1 red, -1 blue
+    for (int nei : graph[n]) {
+        if (color[nei] == c || (color[nei] == 0 && !dfs(graph, color, nei, -c))) return false;
+    }
+    return true;
+}
+~~~
 
 ### Substring problems
 
