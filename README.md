@@ -258,6 +258,7 @@ private boolean topoSort(Node node, int[] visited, Map<Node,Set<Node>> graph, St
 for (int i=0; i<=N; i++) {
     if (color[i] == 0 && !dfs(graph, color, i, 1)) return false;
 }
+return true;
 ...
 private boolean dfs(Set<Integer>[] graph, int[] color, int n, int c) {
     color[n] = c;   // 0 unvisited, 1 red, -1 blue
