@@ -10,6 +10,47 @@
 
 ## Problem specific tricks and take-aways
 
+### Minimum swaps to make sequences increasing
+https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing/
+
+* Mighty Dynamic Programming. It is a good example of *we only need the previous step in order to asses next* so `O(1)` memory will do, i.e no need a whole array of states we only need state[i-1]
+* One thing should be kept in mind is, the array A and B would always be valid after you do the swap manipulation or not for each element.
+* `swap` means for the ith element in A and B, the minimum swaps if we swap A[i] and B[i]
+* `noSwap` means for the ith element in A and B, the minimum swaps if we DO NOT swap A[i] and B[i]
+* Three cases are as follows, remember we are trying to keep the array valid.
+
+~~~java
+        int swap = 1, noSwap = 0;
+        for (int i=1; i<A.length; i++) {
+            if (A[i-1] >= B[i] || B[i-1] >= A[i]) {
+                // 3 5 
+                // 2 3 
+                // we can only swap A[i], B[i]; if we also swap A[i-1] B[i-1], so swap builds up on prev swap
+                // we can only NOT swap A[i], B[i]; if we also NOT swap A[i-1] B[i-1], so noSwap builds up on prev noSwap
+                swap = swap + 1;
+                // noSwap = noSwap;
+                
+            } else if (A[i-1] >= A[i] || B[i-1] >= B[i]) {
+                // 5 4
+                // 3 7
+                // we can only swap A[i], B[i]; if we NOT swap A[i-1] B[i-1], so swap builds on prev noSwap
+                // we can only NOT swap A[i], B[i]; if we swap A[i-1] B[i-1], so noSwap builds on prev Swap
+                int tmp = swap;
+                swap = noSwap + 1;
+                noSwap = tmp;
+            } else {
+                // 1 2
+                // 1 3
+                // either swap or don't swap, the result will still be valid, so aim for minimum
+                int min = Math.min(swap,noSwap);
+                swap = min + 1;
+                noSwap = min;
+            }
+        }
+        
+        return Math.min(swap, noSwap);
+~~~
+
 ### Shortest subarray with sum at least K
 https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/
 
