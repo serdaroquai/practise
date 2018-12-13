@@ -684,7 +684,15 @@ Integer.MAX_VALUE = 2^31 - 1 = 2147483647
 Integer.MIN_VALUE = -2^31 = -2147483648
 ```
 
-So when you are converting an Integer to its negative, you should handle the edge case of Integer.MIN_VALUE separately
+So when you are converting an Integer to its negative, you should handle the edge case of Integer.MIN_VALUE separately. 
+```java
+String num = "2147483648"
+Integer.valueOf("2147483648") // throws Exception
+int sum = 0;
+for (char c : num.toCharArray()) sum = 10*sum + c - '0'; // sum = -2147483648
+sum = -sum; // intersting tip. sum = -2147483648 (basic calculator III)
+```
+
 
 ### String and char tips
 *.charAt(int index)* is an easy way to get a single char from string.
