@@ -17,7 +17,7 @@ https://leetcode.com/problems/basic-calculator-iii/submissions/
 * Problem 2. `0 - 2147483648` You can't parse `Integer.valueOf(2147483648)`. It is bigger then `Integer.MAX_VALUE` therefore build sum with `int sum = 10 * sum + c-'0'`. You will still overflow because Integer.MAX_VALUE is 2147483647. But the sweet thing is `Inteer.MAX_VALUE + 1 = Integer.MIN_VALUE`. and `-Integer.MIN_VALUE = Integer.MIN_VALUE` which is still negative
 * Problem 3. `2-1+2`. If you stack numbers (2,1,2) and operators (-,+) then start evaluating, then result is `-1` where as it should have been `3`. The reason is when you stack you evaluate it with wrong precedence `(2-(1+2))`. So what we do instead is keep `sign='+'` and `num=0` initially and build `num` as you read digits. When you encounter a sign, evaluate existing sign & number, and update `sign = last` & `num=0`. Key trick is that + and - operations are stacked as positive and negative numbers but * and / are evaluated immediately with `stack.pop()`
 * Problem 4. When you encounter a `(` recur. When you encounter a `)`, break out and return whatever num is in the stack
-* Problem 5. offer an extra `queue.offer('+')` initially so that the last `num` and `sign` are also evaluated.
+* Problem 5. offer an extra `queue.offer('+')` initially so that the last `num` and `sign` are also evaluated and the result is stacked. When the last result is stacked, stack should contain a bunch of positive and negative numbers. build the sume and return it.
 
 ### Minimum swaps to make sequences increasing
 https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing/
