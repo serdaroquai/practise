@@ -9,6 +9,12 @@
 | Union find | |
 
 ## Problem specific tricks and take-aways
+### Delete Columns to Make Sorted III
+https://leetcode.com/problems/delete-columns-to-make-sorted-iii/
+
+* this is a *longest increasing subsequence* problem.
+* Instead of finding the LIS for a single word, we do it simulatenously for all words in the array
+* Time `O(m*n^2)` m : length of word array, n length of word.
 
 ### Basic Calculator III
 https://leetcode.com/problems/basic-calculator-iii/submissions/
