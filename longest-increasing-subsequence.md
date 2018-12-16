@@ -1,4 +1,4 @@
-## Longest Continuous Increasing Subsequence
+## Longest Continuous Increasing Subsequence (Easy)
 https://leetcode.com/problems/longest-continuous-increasing-subsequence/
 
 > Given an unsorted array of integers, find the length of longest continuous increasing subsequence (subarray).
@@ -26,15 +26,19 @@ public int findLengthOfLCIS(int[] nums) {
   int max = 1, len = 1;
 
   for (int i=1; i< nums.length; i++) {
-    if (nums[i] > nums[i-1]) max = Math.max(max, ++len);
-    else len = 1;
+    if (nums[i] > nums[i-1]) { 
+      len++;
+      max = Math.max(max, len);
+    } else {
+      len = 1;
+    }
   }
 
   return max;
 }
 ```
 
-## Longest Increasing Subsequence
+## Longest Increasing Subsequence (Medium)
 https://leetcode.com/problems/longest-increasing-subsequence/
 
 > Given an unsorted array of integers, find the length of longest increasing subsequence.
@@ -55,23 +59,82 @@ https://leetcode.com/problems/longest-increasing-subsequence/
 * Idea: if `nums[i] > nums[j]` then `dp[i]` is either `dp[j]+1` (length of longest incr subsequence ending at j plus one) or `dp[i]` whichever is longer. Time-complexity `O(n^2)`, Space-complexity `O(n)`
 
 ```java
-public int findLengthOfLCIS(int[] nums) {
-  if (nums == null || nums.length == 0) return 0;
+public int lengthOfLIS(int[] nums) {
 
-  int max = 1, len = 1;
+    int max = 1, len= nums.length;
+    int[] dp = new int[len];
+    Arrays.fill(dp, 1); // initially every element is a subsequence of length 1 by itself.
 
-  for (int i=1; i< nums.length; i++) {
-    if (nums[i] > nums[i-1]) { 
-      len++;
-      max = Math.max(max, len);
-    } else {
-      len = 1;
+    for (int i=1; i<len; i++) {
+        for (int j=0; j<i; j++) {
+            if (nums[i] > nums[j]) dp[i] = Math.max(dp[i], dp[j]+1);
+        }
+        max = Math.max(max, dp[i]);
     }
-  }
 
-  return max;
+    return max;
 }
 ```
 
 **TODO `O(nlogn)`** Patience algorithm
 
+## Number of Longest Increasing Subsequence (Medium)
+https://leetcode.com/problems/number-of-longest-increasing-subsequence/
+
+> Given an unsorted array of integers, find the number of longest increasing subsequence.  
+> 
+> Example 1:  
+> Input: [1,3,5,4,7]  
+> Output: 2  
+> Explanation: The two longest increasing subsequence are [1, 3, 4, 7] and [1, 3, 5, 7].  
+> 
+> Example 2:  
+> Input: [2,2,2,2,2]  
+> Output: 5  
+> Explanation: The length of longest continuous increasing subsequence is 1, and there are 5 subsequences' length is 1, so output 5.  
+> 
+> Note: Length of the given array will be not exceed 2000 and the answer is guaranteed to be fit in 32-bit signed int.  
+---
+* This extends Length of LIS, by keeping the `count[i]` that represents count of LIS ending at index `i`.
+* If `nums[i] > nums[j] && dp[j]+1 > dp[i]` that means we have a new best solution for index `i`.
+  * In that case `count[i] = count[j]`
+* If `nums[i] > nums[j] && dp[j]+1 == dp[i]` that means we have an alternative best solution for index `i`.
+  * In that case `count[i] += count[j]`
+* At each iteration of `i` update the result.
+* Time `O(n^2)`, Space `O(n)`
+
+```java
+public int findNumberOfLIS(int[] nums) {
+    if (nums == null || nums.length == 0) return 0;
+
+    int max = 1, result = 1, len = nums.length;
+    int[] dp = new int[len];
+    int[] count = new int[len];
+    Arrays.fill(dp,1);
+    Arrays.fill(count,1);
+
+    for (int i=1; i<len; i++) {
+        for (int j=0; j<i; j++) {
+            if (nums[i] > nums[j]) { // nums[i] can extend nums[j] to make a longer increasing subsequence
+                if (dp[j]+1 == dp[i]) { // we have an alternative solution to our best solution
+                    count[i] += count[j]; // add to total counts
+                } else if (dp[j] + 1 > dp[i]) { // we have a new best solution
+                    dp[i] = dp[j] + 1; // update best solution length
+                    count[i] = count[j]; // reset counts to best solution
+                }
+            }
+        }
+
+        if (dp[i] == max) { // local solution as good as global best
+            result += count[i]; // add to total global best solution count
+        } else if (dp[i] > max) { // local solution better than global best
+            max = dp[i]; // update global best
+            result = count[i]; // set new count as global best
+        };
+    }
+
+    return result;
+}
+```
+
+**TODO `O(nlogn)`** Segment trees
