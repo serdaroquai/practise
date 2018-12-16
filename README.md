@@ -7,6 +7,7 @@
 | bit manipulation | arithmethic/logical bit manipulation |
 | Knuth-Morris-Pratt | string search in linear time |
 | Union find | |
+| Patience Sorting | https://leetcode.com/problems/longest-increasing-subsequence/discuss/74824/JavaPython-Binary-search-O(nlogn)-time-with-explanation |
 
 ## Problem specific tricks and take-aways
 ### Delete Columns to Make Sorted III
