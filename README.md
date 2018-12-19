@@ -10,6 +10,20 @@
 | Patience Sorting | https://leetcode.com/problems/longest-increasing-subsequence/discuss/74824/JavaPython-Binary-search-O(nlogn)-time-with-explanation |
 
 ## Problem specific tricks and take-aways
+### Remove Invalid Parentheses
+https://leetcode.com/problems/remove-invalid-parentheses/
+
+* Naive solution BFS
+  - check if string is valid, if yes add to result then found = true (so we stop adding new string to queue)
+  - for each '(' or ')' in string en-queue a substring removing it.
+  - we need a visited set to get rid of duplicates for ex since removing 1 or 2 from `())` would result in same sequence.
+* Optimizations
+  - (**))** ---> () so only remove the first one of )). (consecutive removals of same type yield same result)
+  - **(**()**(**() ---> ()() remove 0 then 3, or 3 then 0 yields same result. So keep last removal index and only remove > last.
+  
+
+
+
 ### Delete Columns to Make Sorted III
 https://leetcode.com/problems/delete-columns-to-make-sorted-iii/
 
