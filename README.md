@@ -17,10 +17,49 @@ https://leetcode.com/problems/remove-invalid-parentheses/
   - check if string is valid, if yes add to result then found = true (so we stop adding new string to queue)
   - for each '(' or ')' in string en-queue a substring removing it.
   - we need a visited set to get rid of duplicates for ex since removing 1 or 2 from `())` would result in same sequence.
-* Optimizations
+* We can get faster if we get rid of duplicates in the first place
   - (**))** ---> () so only remove the first one of )). (consecutive removals of same type yield same result)
   - **(**()**(**() ---> ()() remove 0 then 3, or 3 then 0 yields same result. So keep last removal index and only remove > last.
+* At this point we don't need a visited set, we can get even faster by some optimizations
+  - So not remove a pair of valid parentheses. If we remove a '(', there is no point removing a ')' next. Best case we would still be valid eventually but we would waste 2 operations and miss optimal solution anyway.
   
+```java
+class Tuple {
+    String string;
+    int start;
+    char removed;
+}
+public List<String> removeInvalidParentheses(String s) {
+
+    List<String> result = new ArrayList<>();
+
+    Queue<Tuple> q = new LinkedList<>();
+    q.offer(new Tuple(s,0,')'));
+
+    while (!q.isEmpty()) {
+        int size = q.size();
+        for (int i=0; i<size; i++) {
+
+            Tuple t = q.poll();
+            if (isValid(t.string)) result.add(t.string);
+            if (!result.isEmpty()) continue;
+
+            for (int j=t.start; j<t.string.length(); j++) { //start from last position (bullet 2)
+
+                char ch = t.string.charAt(j);
+
+                if (ch != '(' && ch != ')') continue; // skip other letters
+                if (j != t.start && ch == t.string.charAt(j-1)) continue; // skip same consecutive removals (bullet 1)
+                if (t.removed == '(' && ch == ')') continue; // don't remove valid parentheses (bullet 3)
+
+                q.offer(new Tuple(t.string.substring(0,j) + t.string.substring(j+1), j, ch));
+
+            }    
+        }
+    }
+    return result;
+}
+```
 
 
 
