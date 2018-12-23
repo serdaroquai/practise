@@ -138,6 +138,14 @@ for (int i=0; i<l+1; i++) {
     d.addLast(i);
 }
 ```
+### Maximum Width Ramp
+https://leetcode.com/problems/maximum-width-ramp/
+
+* Two tricks:
+  - First Trick: Assume first few elements are 2,3 . When evaluating the next element (assume it is 4), since we are looking for the maximum width of indexes j - i, if next element(4) is greater then 3, it will automatically be greater then 2. And since 2 has a smaller index that only makes sense to:
+  - iterate elements from 0 to A.length and stack the decreasing sequence. (skip the ones that are increasing) #next_greater_element
+  - Second Trick: Now when we are actually finding the max width indexes, it makes sense to iterate right to left starting from A.length-1 to 0 so that we can pop elements from stack making sure this is the longest possible answer.
+  - take [3,2,1,2,2] for example. Evaluating right most 2, stack should be [3,2,1] and we can pop 1 and 2 forever to get the result (j-i = 4 - 1 = 3, since element 2 at index 3 would only yield 3 - 1 = 2 (which is always shorter).
 
 ### Min cost to hire k workers
 https://leetcode.com/problems/minimum-cost-to-hire-k-workers
