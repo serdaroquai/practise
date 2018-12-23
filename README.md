@@ -10,6 +10,118 @@
 | Patience Sorting | https://leetcode.com/problems/longest-increasing-subsequence/discuss/74824/JavaPython-Binary-search-O(nlogn)-time-with-explanation |
 
 ## Problem specific tricks and take-aways
+
+### Serailize and Deserialize Binary Tree (follow up: BST)
+https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+
+* Serailize: Iterative pre-order(actually any order) with "X" as line breakers.
+* Deserialize: 
+  - Use the same order, 
+  - check null case and handle root node separately (keep reference since you will return it)
+  - for each node in queue, add left and right nodes if not marked null (and queue them)
+
+```java
+    public String serialize(TreeNode root) {
+        StringBuilder sb = new StringBuilder();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        
+        while (!queue.isEmpty()) {
+            TreeNode cur = queue.poll();
+            if (cur == null) sb.append("X");
+            else {
+                sb.append(cur.val);
+                queue.offer(cur.left);
+                queue.offer(cur.right);
+            }
+            sb.append(",");
+        }
+        sb.setLength(sb.length()-1); // remove last splitter
+        return sb.toString();
+    }
+
+    public TreeNode deserialize(String data) {
+        String[] tokens = data.split(",");
+        if (tokens[0].equals("X")) return null;
+        
+        TreeNode head = new TreeNode(Integer.valueOf(tokens[0]));
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(head);
+        
+        int i = 0;                  
+        while (i<tokens.length-1) {
+            TreeNode parent = queue.poll();
+            
+            if (!tokens[++i].equals("X")) {
+                parent.left = new TreeNode(Integer.valueOf(tokens[i]));
+                queue.offer(parent.left);
+            }
+            if (!tokens[++i].equals("X")) {
+                parent.right = new TreeNode(Integer.valueOf(tokens[i]));
+                queue.offer(parent.right);
+            }
+        }
+        
+        return head;
+    }
+```
+
+
+**Follow up:**
+https://leetcode.com/problems/serialize-and-deserialize-bst/
+
+What if the tree was BST? Can we make the encoded string more compact? The whole point of this question is to use the BST property to at get rid of nulls in your serialized string. Anything less is a suboptimal solution.
+
+  - To Serialize just do an iterative pre-order traversal. (in real world, recursive can stack overflow if BST is unbalanced)
+  - To Deserialize:
+	  - if next node is smaller then parent just (left) add to parent.
+	  - if next node is larger then parent pop the stack until you find the largest parent you can (right) add to.
+	  - finally stack the next node as a candidate parent.
+
+Each node gets in and out of stack only once, so time complexity `O(n)`, and the serialized string has no nulls, or markers only the nodes.
+
+```java
+    public String serialize(TreeNode n) {
+        if (n == null) return "";
+        StringBuilder sb = new StringBuilder();
+        
+        Stack<TreeNode> stack = new Stack<>();
+        while (n!=null) {
+            sb.append(n.val).append(",");
+            if (n.right != null) stack.push(n.right);
+            n = (n.left == null && !stack.isEmpty()) ? stack.pop() : n.left;
+        }
+        sb.setLength(sb.length()-1);
+        return sb.toString();
+    }
+
+    public TreeNode deserialize(String s) {
+        if ("".equals(s)) return null;
+        String[] tokens = s.split(",");
+        
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode head = new TreeNode(Integer.valueOf(tokens[0]));
+        stack.push(head);
+        
+        for (int i=1;i<tokens.length;i++) {
+            
+            TreeNode parent = stack.peek();
+            TreeNode next = new TreeNode(Integer.valueOf(tokens[i]));
+            
+            if (next.val < parent.val) parent.left = next;
+            else {
+                parent = stack.pop();
+                while (!stack.isEmpty() && next.val > stack.peek().val) parent = stack.pop();
+                parent.right = next;
+            }
+            stack.push(next);
+        }
+        return head;
+    }
+```
+
+
+
 ### Remove Invalid Parentheses
 https://leetcode.com/problems/remove-invalid-parentheses/
 
