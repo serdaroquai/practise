@@ -42,10 +42,15 @@ Assuming ~1GB/sec SSD
   * Hard to evict affected queries when a table column changes.
 * Redis
   * TODO performance benchmark (hundreds of thousands of reads?)
+  
+* Write through (write to cache, store in db, return result)
+* Write behind (write to cache, add event to queue, return result, asynchronously select and execute event)
 
 ### CAP
   * Single RDBMS, no network therefore no partition. You get both C,A
   * Any distributed system with network involved, P is there so either C or A.
+
+
 
 ### Replication
 * Active replication - Push
