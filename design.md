@@ -37,6 +37,8 @@ Assuming ~1GB/sec SSD
   
 
 ### Caching
+* Fast since it is on memory
 * Cache the queries by hashing, 
   * Hard to evict affected queries when a table column changes.
- *
+* Redis
+  * TODO performance benchmark (hundreds of thousands of reads?)
