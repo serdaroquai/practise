@@ -19,7 +19,7 @@ Assuming ~1GB/sec SSD
 ### Load Balancing
 * DNS level load balancing
   * hard to evict stale entries
-####L4LB
+#### L4LB
   * Have access to IP stack,
   * Can hash by source/dest x ip/port and protocol 5-tuple to (or any combination) consistently send same requests to same backend
   * They do not break the incoming client TCP connection
@@ -29,7 +29,7 @@ Assuming ~1GB/sec SSD
     * State is used to drain a specific backend fast (unlike DNS drain, wait TTL until all dns lookups expire)
     * Can configure effortlessly (No modification to kernel, no restart)
     
-####L7LB
+#### L7LB
   * Kills the incoming connection
   * has access to application stack (http, cookies,etc) can leverage it to access same backends (sticky sessions)
   * Used as an SSL termination point
