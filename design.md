@@ -46,3 +46,9 @@ Assuming ~1GB/sec SSD
 ### CAP
   * Single RDBMS, no network therefore no partition. You get both C,A
   * Any distributed system with network involved, P is there so either C or A.
+
+### Replication
+* Active replication - Push
+* Passive replication - Pull
+  * Data not available, read from peer then store it locally
+  * Works well with timeout based caches
