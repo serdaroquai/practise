@@ -11,6 +11,51 @@
 
 ## Problem specific tricks and take-aways
 
+### LRU cache
+https://leetcode.com/problems/lru-cache
+
+* `ListNode` => key, value, next, prev
+* `Map<Integer, ListNode> map` and a `DoublyLinkedList list` implementation.
+* Doubly Linked list only needs two methods. `ListNode removeFirst()` for eviction and `addLast(ListNode n)` for most recently used update.
+* A good trick is to use dummy nodes for start and end to get rid of most null edge cases.
+
+```java
+class DoublyLinkedList{
+        
+	ListNode start, end;
+
+	public DoublyLinkedList() {
+	    start = new ListNode(-1,-1);
+	    end = new ListNode(-1,-1);
+	    start.next = end;
+	    end.prev = start;
+	}
+
+	void addLast(ListNode n) {
+	    //pluck n if it is an existing node
+	    if (n.prev != null) n.prev.next = n.next;
+	    if (n.next != null) n.next.prev = n.prev;
+
+	    // bind to prev node
+	    n.prev = end.prev;
+	    end.prev.next = n;
+
+	    // bind to end node
+	    n.next = end;
+	    end.prev = n;
+	}
+
+	ListNode removeFirst() {
+	    ListNode result = start.next;
+	    
+	    result.prev.next = result.next;
+	    result.next.prev = result.prev;
+	    
+	    return result;
+	}
+}
+```
+
 ### Serailize and Deserialize Binary Tree (follow up: BST)
 https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
 
