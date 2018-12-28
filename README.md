@@ -11,6 +11,18 @@
 
 ## Problem specific tricks and take-aways
 
+### Add and Search words
+https://leetcode.com/problems/add-and-search-word-data-structure-design/
+
+* Typical Trie problem.
+* Trie have `TrieNode[] children` and `boolean isWord`
+* for searching `.` (can replace any char) there is no trick, just do an exhaustive search. 
+* It is a good reminder to think about how not to get stuck trying to find a better solution that does not exist.
+* Time complexity
+  * addWord() is `O(n)` n = length of the new word
+  * search(s) is `O(c)` number of chars in whole trie. (Worst case is we have all the words `aaa, aab, aac... zzz` and we are searching `....` so we will go through all combinations. also equals 26^n n being length
+* Space complexity `O(c)` c = number of chars in whole trie.
+
 ### LRU cache
 https://leetcode.com/problems/lru-cache
 
