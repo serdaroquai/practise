@@ -81,8 +81,9 @@ https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
 > Then buy on day 7 (price = 1) and sell on day 8 (price = 4), profit = 4-1 = 3.  
 ---
 * Mighty dynamic programming
-* The point is to buy low and sell high.
-* The idea is to link every sell with previous buy and every buy with previous sell.
+* The point is to buy low and sell high but we need to somehow link two transactions together.
+* Stat by building the best result from bottom up, (start with only one price and add until prices list is depleted)
+* The idea is to link every sell with previous buy and every buy with previous sell. In this case we have only two
   * The higher you sell the stock, the more money you have to buy next stock
   * The lower you buy the next stock, the higher you sell it.
 * Runtime O(n), space O(1)
@@ -107,3 +108,57 @@ public int maxProfit(int[] prices) {
 }
 ```
 
+# Best Time to Buy and Sell Stock IV (Hard)
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/
+
+> Say you have an array for which the ith element is the price of a given stock on day i.  
+> 
+> Design an algorithm to find the maximum profit. You may complete at most k transactions.  
+> 
+> Note:  
+> You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).  
+> 
+> Example 1:  
+> 
+> Input: [2,4,1], k = 2  
+> Output: 2  
+> Explanation: Buy on day 1 (price = 2) and sell on day 2 (price = 4), profit = 4-2 = 2.  
+>
+> Example 2:  
+>
+> Input: [3,2,6,5,0,3], k = 2  
+> Output: 7  
+> Explanation: Buy on day 2 (price = 2) and sell on day 3 (price = 6), profit = 6-2 = 4.  
+> Then buy on day 5 (price = 0) and sell on day 6 (price = 3), profit = 3-0 = 3.  
+---
+
+* This is a generalization of previous problem.
+* Higher you sell previous stock, cheaper overall buy for current stock. `buy[k] = Math.min(buy[k], p - sell[k-1])` where k is the k'th transaction. (buy[k] is linked with sell[k-1])
+* Lower you buy the current stock, more profit you make by selling. `sell[k] = Math.max(sell[k], p - buy[k])`. (sell[k] is lnked with buy[k])
+* Edge case for performance (and to prevent memory overflow for k = 10000000): 
+  * Since for every 2 price in prices we only need one tx, a point to keep in mind is if `K > prices.length / 2` then we have unlimited transactions. So problem degrades to maxProfit (Buy and sell stock II) problem which is an easy problem with unlimited tx.
+* Runtime O(kn) where k is number of tx, Space O(k)
+
+```java
+public int maxProfit(int K, int[] prices) {
+    if (prices.length < 2) return 0;
+
+    // K = Math.min(K, prices.length / 2); // useless to have 100 tx for say 5 prices. 
+    if (K > prices.length / 2) return maxProfit(prices); // problem becomes maxProfit (unlimited Transactions)
+    
+    int[] buy = new int[K+1];
+    int[] sell = new int[K+1];
+
+    Arrays.fill(buy, prices[0]);    // when there is only one price you can buy
+    // Arrays.fill(sell, 0);        // can't profit by buying and selling all at same price
+
+    for (int p: prices) {
+        for (int k=1; k<K+1; k++) {
+            buy[k] = Math.min(buy[k], p - sell[k-1]);   // best buy with k'th tx (selling k-1'th tx high helps lowering cost)
+            sell[k] = Math.max(sell[k], p - buy[k]);    // best sell with k'th tx (buying k'th tx low helps maxing profit)
+        }
+    }
+
+    return sell[K];
+}
+```
