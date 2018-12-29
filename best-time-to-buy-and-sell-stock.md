@@ -52,6 +52,7 @@ https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
 ---
 * If you have unlimited transactions, problem is reduced to finding the sum of all increasing prices.
 * But we can not buy and sell at the same day. Actually we can since, buying and selling at the same day = keeping!
+* Runtime O(n), Space O(1)
 
 ```java
 public int maxProfit(int[] prices) {
@@ -62,3 +63,47 @@ public int maxProfit(int[] prices) {
     return sum;
 }
 ```
+
+# Best Time to Buy and Sell Stock III (Hard)
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
+
+> Say you have an array for which the ith element is the price of a given stock on day i.  
+>
+> Design an algorithm to find the maximum profit. You may complete at most two transactions.  
+>
+> Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).  
+>
+> Example 1:  
+>
+> Input: [3,3,5,0,0,3,1,4]  
+> Output: 6  
+> Explanation: Buy on day 4 (price = 0) and sell on day 6 (price = 3), profit = 3-0 = 3.  
+> Then buy on day 7 (price = 1) and sell on day 8 (price = 4), profit = 4-1 = 3.  
+---
+* Mighty dynamic programming
+* The point is to buy low and sell high.
+* The idea is to link every sell with previous buy and every buy with previous sell.
+  * The higher you sell the stock, the more money you have to buy next stock
+  * The lower you buy the next stock, the higher you sell it.
+* Runtime O(n), space O(1)
+
+```java
+public int maxProfit(int[] prices) {
+    if (prices == null || prices.length < 1) return 0;
+
+    int buyOne=Integer.MAX_VALUE;
+    int sellOne=0;
+    int buyTwo=Integer.MAX_VALUE;
+    int sellTwo=0;
+
+    for (int p : prices){
+        buyOne = Math.min(buyOne, p); // buy low
+        sellOne = Math.max(sellOne,p-buyOne); // sell high (buying first stock cheaper helps)
+        buyTwo = Math.min(buyTwo, p-sellOne); // buy low (profit of first stock helps)
+        sellTwo = Math.max(sellTwo, p-buyTwo); // sell high (buying second stock cheaper helps)
+    }
+
+    return sellTwo;
+}
+```
+
