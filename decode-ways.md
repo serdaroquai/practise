@@ -55,7 +55,7 @@ public int numDecodings(String s) {
 }
 ```
 
-* We can further improve space complexity two **O(1)** since solution only depends on two previous solutions. In order to do that we only need two variables `int twoPrev` and `int prev` and a temporary variable `int next` to hold the next answer.
+* We can further improve space complexity to **O(1)** since solution only depends on two previous solutions. In order to do that we only need two variables `int twoPrev` and `int prev` and a temporary variable `int next` to hold the next answer.
 
 ```java
 public int numDecodings(String s) {
