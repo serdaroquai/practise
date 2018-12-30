@@ -29,6 +29,7 @@ https://leetcode.com/problems/minimum-window-subsequence/
   * if we iterate S for each letter of T (left to right) rules to transfer state are :
     * if `T.charAt(t-1) == S.charAt(s-1)` (current characters are same) then carry the starting index of previous `dp[t-1][s-1]`
     * if not then carry `dp[t][s-1]`
+* Time complexity O(TS), space O(TS)
     
 ```java
   Initial:
@@ -46,6 +47,33 @@ https://leetcode.com/problems/minimum-window-subsequence/
   b 1 -1 -1  1  1  1  1  5  5  5  5
   d 2 -1 -1 -1 -1  1  1  1  5  5  5
   e 3 -1 -1 -1 -1 -1  1  1  1  1  5
-
 ```
 
+* state transfer only relies on previous row therefore it is possible to optimize space to O(s)
+
+```java
+public String minWindow(String S, String T) {
+
+    int[] prev = new int[S.length()+1];
+    for (int i=0; i<prev.length; i++) prev[i] = i;
+
+    for (int t=1; t<=T.length(); t++) {
+        int[] next = new int[S.length()+1];
+        next[0] = -1; // set start of current row to -1 to mark not found
+        for (int s=1; s<=S.length(); s++) {
+            next[s] = (S.charAt(s-1) == T.charAt(t-1)) ? prev[s-1] : next[s-1];
+        }
+        prev = next;
+    }
+    
+    // find minimum length solution
+    int start=-1, end=-1, len=S.length()+1;
+    for (int i=1; i< prev.length; i++) {
+        if (prev[i] != -1 && i-prev[i] < len) {
+            start = prev[i]; end = i; len = end-start;
+        }
+    }
+
+    return len <= S.length() ? S.substring(start,end) : "";
+}
+```
