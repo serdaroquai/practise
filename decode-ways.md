@@ -32,9 +32,9 @@ https://leetcode.com/problems/decode-ways/
 // dp[0]  ''      ''  
 // dp[1]  '1'     A  
 // dp[2]  '12'    AB, L  
-// dp[3]  '123'   ABC,AW,LC  
-// ...3 is valid leter so dp[3] += dp[2]  
-// ...23 is valid leter so dp[3] += dp[1]  
+// dp[3]  '123'   ABC, AW, LC  
+// ...3 is valid encoding for leter C so dp[3] += dp[2] (AB + C, L + C)  
+// ...23 is valid encoding for leter W so dp[3] += dp[1] (A + W)  
 
 public int numDecodings(String s) {
 
