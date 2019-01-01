@@ -18,6 +18,25 @@ https://leetcode.com/problems/minimum-size-subarray-sum/
   * `sum += nums[r++]` increment right pointer and increase sum
   * `while (sum >= s)` update best result and `sum -= nums[l++]`, decrease sum
   
+## Shortest subarray with sum at least K
+https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/
+
+* Make a sum array such that `sum[i] = A[0] + A[1] + .. + A[i-1]`
+* What makes this problem hard (and not solved by two pointers is negative numbers)
+* At this point if you pick every pair of elements and check if their sum is >= K you find your answer in `O(n^2)`
+* Create a Deque `d`. We will use it to store **indices** (we need the posiiton) of increasing sums. Two intuitions:
+    - As soon as we reach a point where `sums[i] - sums[d.getFirst()] >= K` we will start removing from the front of the deque to find the minimum `(i,j)` index pair that satisfies the condition. This is the same as using a sliding window. Since we only store increasing sums this will work. When we find a better minimum for current `i` note that for a greater `i` same solution can never be the minimum again. Therefore we remove it.
+    - When `sums[i] <= sums[d.getLast()]` in that case `sums[d.getLast()]` can never be a minimum solution. since the solution before it is a higher sum with a lower index. So we only need the last element (`sums[i]`) of a decreasing sequence. Therefore remove previous element if the sum is same or decreasing.
+* Every element gets in the queue once and gets out once. Therefore time complexity is `O(n)`
+```java
+...
+for (int i=0; i<l+1; i++) {
+    while (!d.isEmpty() && sums[i] - sums[d.getFirst()] >= K) min = Math.min(min, i - d.pollFirst());
+    while (!d.isEmpty() && sums[i] <= sums[d.getLast()]) d.pollLast();
+    d.addLast(i);
+}
+```
+  
 ## Minimum Window Substring
 https://leetcode.com/problems/minimum-window-substring/
 
