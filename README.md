@@ -11,6 +11,22 @@
 
 ## Problem specific tricks and take-aways
 
+### Longest Valid Parenthesis
+https://leetcode.com/problems/longest-valid-parentheses/
+
+* O(n) time O(n) memory stack solution
+  * Insert initial -1 to stack. 
+  * for each '(' stack index.
+  * For each ')' pop the stack.
+    * If stack is empty previous string is invalid, push(i)
+    * if not `best = Math.max(best, i-stack.peek())`
+
+* O(n) time O(1) memory 2 pass solution
+  * sweep arr left to right, for each '(' openCount++ and for each ')' closeCount++
+    * if closeCount > openCount, invalid parentheses reset counts to 0
+    * if openCount = closeCount `best = Math.max(best, openCount + closeCount)`
+  * sweep arr right to left and repeat same proces mirrored.
+  
 ### Add and Search words
 https://leetcode.com/problems/add-and-search-word-data-structure-design/
 
