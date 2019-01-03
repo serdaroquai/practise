@@ -5,9 +5,9 @@
 | ~~type conversions | long, int, float, double etc ~~|
 | type representations | float |
 | bit manipulation | arithmethic/logical bit manipulation |
-| Knuth-Morris-Pratt | string search in linear time |
+| Knuth-Morris-Pratt, Rabin-karp(rolling hash) | string search in linear time |
 | Union find | |
-| Patience Sorting | https://leetcode.com/problems/longest-increasing-subsequence/discuss/74824/JavaPython-Binary-search-O(nlogn)-time-with-explanation |
+| Patience Sorting | [leetcode](https://leetcode.com/problems/longest-increasing-subsequence/discuss/74824/JavaPython-Binary-search-O(nlogn)-time-with-explanation) |
 
 ## Problem specific tricks and take-aways
 
