@@ -638,6 +638,29 @@ while(tail < str.length()) {
     * Find a min length substring of S that T is a subsequence of S. (Order matters, no length restriction)
     * Find a substring of S that is a permutation of T. (Order does not matter, length must be same as T)
 
+## Rabin-Karp Rolling hash string matching
+
+* Keep away from 0 values.
+* Precompute the shifting term to remove most sigificant bit. `[(256%101)*256] % 101`. We will need it at each step
+* if `hash(T) == hash(cur) && T.equals(cur)` we have a match.
+
+```java
+T="abc"
+S="abracadabra"
+
+int base = 256, mod = 101
+
+// ASCII a = 97, b = 98,  c = 99, r = 114
+//		a		b		c
+// hash(T) =    [([(97 % 101)*256 +98] % 101)*256 + 99] % 101	
+
+//		a		b		r		a
+//              [([(a % mod) * base + b] % mod) * base + r] % mod
+// hash(S)  = 	[([(97 % 101)*256 +98] % 101)*256 + 114] % 101		= 4
+//			       (oldhash + mod offset - old a) * 256(left shift) + new a
+// hash'(S) =		       [(4 + 101 - 97 * [(256%101)*256] % 101) * 256 + 97] % 101 = 30
+
+```
 
 ### Binary Search
 
