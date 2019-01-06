@@ -14,7 +14,7 @@ https://leetcode.com/problems/minimum-size-subarray-sum/
 > s = 7, nums = [2,3,1,2,4,3] (only positive integers)  
 > Output:2
 
-* Keep a running sum with two pointers
+* Keep a running sum with two pointers **(works because nums has only positive integers)**
   * `sum += nums[r++]` increment right pointer and increase sum
   * `while (sum >= s)` update best result and `sum -= nums[l++]`, decrease sum
   
@@ -26,7 +26,7 @@ https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/
 * At this point if we pick every pair of elements and check if their sum difference is >= K we find our answer in `O(n^2)`
 * Create a Deque `d` to store **indices** (we need the posiiton) of increasing sums. Two intuitions:
     - if `sums[i] - sums[d.peekFirst()]` is a solution it is always going to be a shorter solution than `sums[i+1] - sums[d.peekFirst()]`, so we can safely remove head of deque.
-    - if `sums[d.peekLast()] >= sums[i]` in that case `sums[d.getLast()]` can never be a minimum solution since the solution before it is a higher sum with a lower index so remove tail of deque.    
+    - if `sums[d.peekLast()] >= sums[i]` in that case `sums[d.getLast()]` can never be a minimum solution for a future `i` since `sums[i]` is a lower sum with a higher index, it will always be a better solution.    
 * Every element gets in the queue once and gets out once. Therefore time complexity is `O(n)`
 ```java
 ...
