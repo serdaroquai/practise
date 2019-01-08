@@ -11,6 +11,39 @@
 
 ## Problem specific tricks and take-aways
 
+### Integer to English Words
+https://leetcode.com/problems/integer-to-english-words
+
+* Dealing with it in `%1000` is the easiest as thousands have a repetitive pattern.
+  * Trick is to have a recursive helper function that deals with `num<20`, `num<100` and `num<1000`. Use recursion
+```java
+private String helper(int num) {
+  if (num < 20) 
+    return lessThan20[num];
+  else if (num < 100)
+    return tens[num / 10 % 10] + helper(num % 10);
+  else 
+    return lessThan20[num / 100] + " Hundred" + helper(num % 100); 
+}
+```
+  * In the main loop use a stack to reorder each part.
+    * stack `thousands[step]` **before** word and only if `num % 1000 != 0` (first word has no suffix)
+    * increment step anyway	
+```java
+  int step = 0;
+  Stack<String> stack = new Stack<>();
+  while (num > 0) {
+    if (num % 1000 != 0) stack.push(thousands[step]);
+    stack.push(helper(num % 1000));
+
+    num /= 1000;
+    step++;
+  }
+```
+  * Easier to handle `Zero` separately as the only edge case.
+  * Use white spaces **before** literals is easier, just trim the first one before returning result.
+	* Some test cases to think of `0`, `1000000`, `12345`, `50123`
+	
 ### Longest Valid Parenthesis
 https://leetcode.com/problems/longest-valid-parentheses/
 
