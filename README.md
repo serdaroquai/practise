@@ -11,6 +11,40 @@
 
 ## Problem specific tricks and take-aways
 
+### Convert BST to Doubly Linked List
+https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list
+
+* Iterative in order traverse while keeping a prev node.
+* Introduce a dummy prev so that we don't need to null check
+  * At the end of traversing, prev will be last node, and dummy.right will be start node, helps tying them circular
+```java
+public Node treeToDoublyList(Node cur) {
+		if (cur == null) return cur;
+
+		Node dummy = new Node(-1);
+		Node prev = dummy;
+
+		Stack<Node> stack = new Stack<>();
+		while (cur!=null || !stack.isEmpty()) {
+				while (cur != null) {
+						stack.push(cur);
+						cur = cur.left;
+				}
+				cur = stack.pop();
+				prev.right = cur;
+				cur.left = prev;
+				prev = cur;
+				cur = cur.right;
+		}
+
+		dummy = dummy.right;
+		dummy.left = prev;
+		prev.right = dummy;
+
+		return dummy;
+}
+```
+	
 ### Integer to English Words
 https://leetcode.com/problems/integer-to-english-words
 
