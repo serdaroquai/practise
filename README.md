@@ -11,6 +11,69 @@
 
 ## Problem specific tricks and take-aways
 
+### Expression Add Operators
+https://leetcode.com/problems/expression-add-operators/submissions/
+
+* Tricks: 
+	* keep last term as parameter so we can roll back multiplication.
+	* keep `int len = sb.length()` so easier to back track by `sb.setLength(len)`
+	* append operators first
+	
+* Edge cases,
+  * use `long` to avoid overflow
+	* numbers startig with `0` should stopped. handle this first so we don't accidently skip it for `pos=0` case.
+	* case `pos=0` should be handled separately.
+	  * we don't want to stat by appending operators and we can't just trim it because stating with 0 creates many duplications `0-1, 0+1, 0*1`
+		
+* Runtime `O(3^(n-1))`, Space `O(n)` (recursion tree depth)
+
+```java
+public List<String> addOperators(String num, int target) {
+		List<String> result = new ArrayList<>();
+		if (num == null || num.length() == 0) return result;
+
+		helper(num.toCharArray(), 0, (long) target, 0, 0, new StringBuilder(), result);
+
+		return result;
+}
+
+private void helper(char[] s, int pos, long target, long eval, long prev, StringBuilder sb, List<String> result) {
+		if (pos == s.length) {
+				if (eval == target) result.add(sb.toString());
+				return;
+		}
+
+		long cur = 0;
+		for (int i=pos; i<s.length; i++) {
+				if (i != pos && cur == 0) break; // kill the numbers starting with 0 first check
+				cur = cur*10 + s[i] - '0';
+				if (cur > Integer.MAX_VALUE) break; // overflow
+
+				int len = sb.length();
+
+				if (pos == 0) { // special treatment for start
+						sb.append(cur);
+						helper(s, i+1, target, cur, cur, sb, result);
+						sb.setLength(len);
+						continue; // don't breaki continue 
+				}
+
+				sb.append('+').append(cur);
+				helper(s, i+1, target, eval+cur, cur, sb, result);
+				sb.setLength(len);
+
+				sb.append('-').append(cur);
+				helper(s, i+1, target, eval-cur, -cur, sb, result);
+				sb.setLength(len);
+
+				sb.append('*').append(cur);;
+				helper(s, i+1, target, eval-prev + prev*cur, prev*cur, sb, result);
+				sb.setLength(len);
+
+		}
+}
+```
+
 ### Convert BST to Doubly Linked List
 https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list
 
@@ -19,29 +82,29 @@ https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked
   * At the end of traversing, prev will be last node, and dummy.right will be start node, helps tying them circular
 ```java
 public Node treeToDoublyList(Node cur) {
-		if (cur == null) return cur;
+	if (cur == null) return cur;
 
-		Node dummy = new Node(-1);
-		Node prev = dummy;
+	Node dummy = new Node(-1);
+	Node prev = dummy;
 
-		Stack<Node> stack = new Stack<>();
-		while (cur!=null || !stack.isEmpty()) {
-				while (cur != null) {
-						stack.push(cur);
-						cur = cur.left;
-				}
-				cur = stack.pop();
-				prev.right = cur;
-				cur.left = prev;
-				prev = cur;
-				cur = cur.right;
+	Stack<Node> stack = new Stack<>();
+	while (cur!=null || !stack.isEmpty()) {
+		while (cur != null) {
+			stack.push(cur);
+			cur = cur.left;
 		}
+		cur = stack.pop();
+		prev.right = cur;
+		cur.left = prev;
+		prev = cur;
+		cur = cur.right;
+	}
 
-		dummy = dummy.right;
-		dummy.left = prev;
-		prev.right = dummy;
+	dummy = dummy.right;
+	dummy.left = prev;
+	prev.right = dummy;
 
-		return dummy;
+	return dummy;
 }
 ```
 	
