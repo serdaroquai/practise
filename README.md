@@ -16,6 +16,7 @@ https://leetcode.com/problems/expression-add-operators/submissions/
 
 * Tricks: 
 	* keep last term as parameter so we can roll back multiplication.
+    * send `-cur` for subtraction and `prev*cur` for multiplication so that we get away without any if blocks  `helper(s, i+1, target, eval-prev + prev*cur, prev*cur, sb, result);` for multiplication
 	* keep `int len = sb.length()` so easier to back track by `sb.setLength(len)`
 	* append operators first
 	
@@ -63,11 +64,11 @@ private void helper(char[] s, int pos, long target, long eval, long prev, String
 				sb.setLength(len);
 
 				sb.append('-').append(cur);
-				helper(s, i+1, target, eval-cur, -cur, sb, result);
+				helper(s, i+1, target, eval-cur, -cur, sb, result); // notice -cur 
 				sb.setLength(len);
 
 				sb.append('*').append(cur);;
-				helper(s, i+1, target, eval-prev + prev*cur, prev*cur, sb, result);
+				helper(s, i+1, target, eval-prev + prev*cur, prev*cur, sb, result); // notice prev*cur
 				sb.setLength(len);
 
 		}
