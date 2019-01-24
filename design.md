@@ -18,6 +18,11 @@ Assuming ~1GB/sec SSD
 
     TCP connection memory read overhead 4KB (min)
     TCP connection memory write overhead 4KB (min)
+    
+    https://stackoverflow.com/questions/1575453/how-many-socket-connections-can-a-web-server-handle
+        - http://c10m.robertgraham.com/
+        -5000$ pc can easily scale to 10M connections
+            - 40 gbps 32 cores 256 gb ram
 
 ### Load Balancing
 * DNS level load balancing
