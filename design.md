@@ -16,6 +16,9 @@
 
 Assuming ~1GB/sec SSD
 
+    TCP connection memory read overhead 4KB (min)
+    TCP connection memory write overhead 4KB (min)
+
 ### Load Balancing
 * DNS level load balancing
   * hard to evict stale entries
