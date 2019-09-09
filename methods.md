@@ -11,12 +11,24 @@ https://leetcode.com/problems/maximum-subarray/
 ## Minimum Size Subarray Sum
 https://leetcode.com/problems/minimum-size-subarray-sum/
 
-> s = 7, nums = [2,3,1,2,4,3] (only positive integers)  
-> Output:2
+> s = 7, nums = [2,3,1,2,4,3] (only positive integers)    
+> Output:2  
 
 * Keep a running sum with two pointers **(works because nums has only positive integers)**
   * `sum += nums[r++]` increment right pointer and increase sum
   * `while (sum >= s)` update best result and `sum -= nums[l++]`, decrease sum
+  
+## Maximum Size Subarray Sum Equals k
+https://leetcode.com/problems/maximum-size-subarray-sum-equals-k
+
+> Input: nums = [1, -1, 5, -2, 3], k = 3
+> Output: 4 
+> Explanation: The subarray [1, -1, 5, -2] sums to 3 and is the longest.
+
+* Keep a running sum, and initialize a map of <seen sums so far, and their indices> (initialize map with sum:0, indice:-1)
+* At each element
+  * Since `k = sum - someoldSum` check if `someoldSum = sum - k` exists in map, if it does `best = Math.max(best, map.get(sum -k))`
+  * if map does not contain `sum` add it else keep the old indice (since its guaranteed to be smaller)
   
 ## Shortest subarray with sum at least K
 https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/
