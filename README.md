@@ -20,6 +20,8 @@
   * Longest Increasing sub arrays, sub sequences
 * Queues and Stacks
 * Dynamic Programming
+  * fibonacci evolve solutions
+  * knapsack, coin change
 * Union find
 
 
