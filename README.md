@@ -8,6 +8,8 @@
   * Pre,post,inorder traversing recursive and imperative
   * Binary Search Tree
 * DFS, BFS, Grids and path finding
+  * Topological sort
+  * Graph coloring
 * Permutations and Combinations
   * unique and non unique elements
 * Tries
