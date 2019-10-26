@@ -9,6 +9,7 @@
   * Binary Search Tree
 * DFS, BFS, Grids and path finding
   * Topological sort
+  * Bi partitioning
   * Graph coloring
 * Permutations and Combinations
   * unique and non unique elements
