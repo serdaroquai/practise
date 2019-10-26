@@ -1,11 +1,11 @@
 ## TODO
-  * 27.10.2019 
-    - bst iterative, bfs recursive
-  * 30.10.2019 
+  * 20.11.2019 
     - bst iterative, bfs recursive
   * 06.11.2019 
     - bst iterative, bfs recursive
-  * 20.11.2019 
+  * 30.10.2019 
+    - bst iterative, bfs recursive
+  * 27.10.2019 
     - bst iterative, bfs recursive
 
 ## 26.10.2019
