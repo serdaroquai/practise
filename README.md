@@ -1,4 +1,25 @@
+
+
 # practise checklist
+
+* Linked Lists, double and single.
+  * Dummy node tricks
+* Binary Trees
+  * Pre,post,inorder traversing recursive and imperative
+  * Binary Search Tree
+* DFS, BFS, Grids and path finding
+* Permutations and Combinations
+  * unique and non unique elements
+* Tries
+* Binary Search
+* Arrays and Strings
+  * string substrings, subsequences
+  * Longest Increasing sub arrays, sub sequences
+* Queues and Stacks
+* Dynamic Programming
+* Union find
+
+
 
 | subject | details |
 | ------- | ------- |
