@@ -1,6 +1,10 @@
 ## TODO
+  * 21.11.2019
+    - permutations I,II, subsets I,II
   * 20.11.2019 
     - bst iterative, bfs recursive
+  * 07.11.2019
+    - permutations I,II, subsets I,II
   * 06.11.2019 
     - bst iterative, bfs recursive
   * 31.10.2019
