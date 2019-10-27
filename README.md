@@ -4,15 +4,15 @@
 
 * Linked Lists, double and single.
   * Dummy node tricks
-* Binary Trees
-  * Pre,post,inorder traversing recursive and imperative
+* ~~Binary Trees~~
+  * ~~Pre,post,inorder traversing recursive and imperative~~
   * Binary Search Tree
 * DFS, BFS, Grids and path finding
   * Topological sort
   * Bi partitioning
   * Graph coloring
-* Permutations and Combinations
-  * unique and non unique elements
+* ~~Permutations and Combinations~~
+  * ~~unique and non unique elements~~
 * Tries
 * Binary Search
 * Arrays and Strings
