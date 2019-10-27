@@ -38,6 +38,7 @@
 
 ## Misc
 
+* can use bitwise `|` instead of `||` in order to evaluate both sides of the expression and still get the or result. Especially useful in tree traversals such as `traverseLeft() | traverseRight()`
 * `"abc".compareTo("abd")` for string comparison. -1,0,1
 * `List<int[]> l = new ArrayList<>()` actually works. Since Java generics support all reference types.
 * `List<Integer> list = new ArrayList<>(); int a = list.get(0)` actually works, unless element is null in that case a NPE is thrown.
