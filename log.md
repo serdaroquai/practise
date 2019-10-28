@@ -18,6 +18,9 @@
     * Longest substring without repeating chars (set + 2 pointers)
     * string atoi  (overflow, null pointer check, if else),
     * container with most water (greedy, two pointer what if `height[l] == height[r]`? in that case  either `l++` or `r--` would not be an optimal solution since `height==Math.min(h[l],[h[r])` will stay the same and `r-l` will be one less.)
+    * integer to roman (recursive,int % and modulo)
+    * roman to integer (easier, just parsing)
+    
     
 ## 27.10.2019
   * ~~bst iterative, bfs recursive (skipped)~~
