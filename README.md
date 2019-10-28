@@ -731,7 +731,7 @@ Bidirectional BFS or DFS search is better when(since) with each step the possibl
 
 ### Knuth-Morris-Pratt
 
-Checks is there a prefix that matches the suffix. When string matching fails, we don't have to recheck prefix.
+Checks the pattern for a prefix that matches the suffix. The point is when string matching fails, we don't have to recheck prefix.
 
 ```java
 // dp[0] = 0 always
@@ -740,8 +740,9 @@ Checks is there a prefix that matches the suffix. When string matching fails, we
 pattern = a b a b c b c a
 dp[len] =[0               ]
 
-// if charAt(i) != charAt(j) then j = dp[j-1] and repeat until j == 0, if j == 0 and chars still don't match
-// then i++ move on;
+// if charAt(i) != charAt(j) then j = j > 0 ? dp[j-1] : 0
+// repeat until chars match
+// if j == 0 and chars still don't match then dp[i] = 0; i++; and move on;
 
           j   i
 pattern = a b a b c b c a
@@ -758,3 +759,5 @@ pattern = a b a b c b c a
 dp[len] =[0 0 1 2 0 0 0 1 ]
 
 ```
+
+while matching a string with a pattern `str.charAt(s) == pattern.charAt(p)`, if the matching fails at indice p of pattern where `p>0`, reset `p = dp[p-1]` instead of `p=0`.
