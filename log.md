@@ -21,6 +21,8 @@
     * integer to roman (recursive,int % and modulo)
     * roman to integer (easier, just parsing)
     * 3sum, 3sum closest( sort array, `n * 2sum` get rid of duplicates by incrementing in a while loop)
+    * strstr aka: indexOf ( **knuth morris pratt** `O(m+n)`)
+    * rotate image (in place rotations, outer to inner circles)
     
     
     
