@@ -20,6 +20,8 @@
     * container with most water (greedy, two pointer what if `height[l] == height[r]`? in that case  either `l++` or `r--` would not be an optimal solution since `height==Math.min(h[l],[h[r])` will stay the same and `r-l` will be one less.)
     * integer to roman (recursive,int % and modulo)
     * roman to integer (easier, just parsing)
+    * 3sum, 3sum closest( sort array, `n * 2sum` get rid of duplicates by incrementing in a while loop)
+    
     
     
 ## 27.10.2019
