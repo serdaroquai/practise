@@ -19,6 +19,11 @@
     * **Minimum window substring** (freqmap, count, two pointers)
     * Compare versions (attention problem, parse, compare, Tuple)
     * Product of Array except self (use multiplication arrays from left2right, right2left)
+    * Missing number (sum of n numbers - sum of actual elements)
+    * Integer to English Words ( % 1000, <20 <100 <1000 helper recursive, zero edge case, **num % 1000 = 0 edge case**)
+    * First Unique Character In a String
+    * Valid Parantheses (count only does **not** work, `([)]`)
+    * Most Common Word ( `.split("\\W+")` split by non word characters)
     
     
 ## 28.10.2019
