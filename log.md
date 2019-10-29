@@ -7,24 +7,31 @@
     - permutations I,II, subsets I,II
   * 06.11.2019 
     - bst iterative, bfs recursive
+  * 01.11.2019
+    - Minimum window substring related problems
   * 31.10.2019
     - permutations I,II, subsets I,II
   * 30.10.2019 
     - bst iterative, bfs recursive
-
+## 29.10.2019
+  * Amazon explore strings and arrays
+    * Group anagrams (encode char freq as string, use it as group key)
+    * **Minimum window substring** (freqmap, count, two pointers)
+    * Compare versions (attention problem, parse, compare, Tuple)
+    * Product of Array except self (use multiplication arrays from left2right, right2left)
+    
+    
 ## 28.10.2019
   * Amazon explore strings and arrays
     * TwoSum, (map of indices + greedy)
     * Longest substring without repeating chars (set + 2 pointers)
-    * string atoi  (overflow, null pointer check, if else),
+    * string atoi  (attention problem, overflow, null pointer check, if else),
     * container with most water (greedy, two pointer what if `height[l] == height[r]`? in that case  either `l++` or `r--` would not be an optimal solution since `height==Math.min(h[l],[h[r])` will stay the same and `r-l` will be one less.)
     * integer to roman (recursive,int % and modulo)
     * roman to integer (easier, just parsing)
     * 3sum, 3sum closest( sort array, `n * 2sum` get rid of duplicates by incrementing in a while loop)
     * strstr aka: indexOf ( **knuth morris pratt** `O(m+n)`)
     * rotate image (in place rotations, outer to inner circles)
-    
-    
     
 ## 27.10.2019
   * ~~bst iterative, bfs recursive (skipped)~~
