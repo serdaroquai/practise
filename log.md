@@ -27,6 +27,7 @@
     * Most Common Word ( `.split("\\W+")` split by non word character(s))
     * Reorder Data in Log Files (one big comparator, arrays.sort)
     * Trapping rain water (two pointer, l2r r2l max height arrays - block height, can be improved to `O(1)` space)
+  * Number of islands (dfs and sink)
     
 ## 28.10.2019
   * Amazon explore strings and arrays
