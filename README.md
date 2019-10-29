@@ -39,10 +39,13 @@
 ## Misc
 
 * can use bitwise `|` instead of `||` `&` instaed of `&&` in order to evaluate both sides of the expression and still get the or result. Especially useful in tree traversals such as `traverseLeft() | traverseRight()`
-* `"abc".compareTo("abd")` for string comparison. -1,0,1
+* `"abc".compareTo("abd")` for string comparison. care it does **NOT** always return 1. -1,0,+1
+* `Arrays.sort(arr, (a,b) -> return 0)` you can return 0 if you want to keep the original order
 * `List<int[]> l = new ArrayList<>()` actually works. Since Java generics support all reference types.
 * `List<Integer> list = new ArrayList<>(); int a = list.get(0)` actually works, unless element is null in that case a NPE is thrown.
 * `Arrays.sort(A[], Comparator<? extends A>)` is a thing.
+* `Arrays.sort(A[], int startIndex, int endIndex, Comparator<? extends A>)` also is a thing.
+* `someString.split(" ", 2)` is a thing that produces a `String[]` of length 2;
 * `PriorityQueue<T> p = new PriorityQueue<>(int capacity, new Comparator<T>(){..})` implementation provides `O(log(n))` time for the enqueing and dequeing methods (offer, poll, remove and add); `O(n)` linear time for the remove(Object) and contains(Object) methods; and `O(1)` constant time for the retrieval methods (peek, element, and size).
 * maxHeap = minHeap with negative values. Convenient
 * A constant time alternative to linear time `remove(Object)` from a `PriorityQueue` is to lazy remove. That is to keep a map of items to be removed instead of removing them and actually `remove()` them when they are retrieved by `poll()` or `peek()`
