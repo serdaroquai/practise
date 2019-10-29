@@ -9,6 +9,7 @@
     - bst iterative, bfs recursive
   * 01.11.2019
     - Minimum window substring related problems
+    - Trapping rain water O(1) space
   * 31.10.2019
     - permutations I,II, subsets I,II
   * 30.10.2019 
@@ -24,7 +25,8 @@
     * First Unique Character In a String
     * Valid Parantheses (use stack, count only does **not** work, `([)]`)
     * Most Common Word ( `.split("\\W+")` split by non word character(s))
-    
+    * Reorder Data in Log Files (one big comparator, arrays.sort)
+    * Trapping rain water (two pointer, l2r r2l max height arrays - block height, can be improved to `O(1)` space)
     
 ## 28.10.2019
   * Amazon explore strings and arrays
