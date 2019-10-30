@@ -12,8 +12,14 @@
     - Trapping rain water O(1) space
   * 31.10.2019
     - permutations I,II, subsets I,II
-  * 30.10.2019 
-    - bst iterative, bfs recursive
+## 30.10.2019 
+  *  go back
+    * bst iterative, bfs recursive
+  * amazon explorer linked lists
+    * add two numbers
+    * merge two sorted lists
+     
+    
 ## 29.10.2019
   * Amazon explore strings and arrays
     * Group anagrams (encode char freq as string, use it as group key)
