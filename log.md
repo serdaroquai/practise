@@ -7,18 +7,22 @@
     - permutations I,II, subsets I,II
   * 06.11.2019 
     - bst iterative, bfs recursive
+  * 03.11.2019
+    - reverse a linked list iterative, recursive
   * 01.11.2019
     - Minimum window substring related problems
     - Trapping rain water O(1) space
-  * 31.10.2019
-    - permutations I,II, subsets I,II
+## 31.10.2019
+  * amazon explorer linked lists
+    * reverse a linked list iterative, recursive
+  * goback
+    * permutations I,II, subsets I,II
 ## 30.10.2019 
   *  go back
     * bst iterative, bfs recursive
   * amazon explorer linked lists
     * add two numbers
     * merge two sorted lists
-     
     
 ## 29.10.2019
   * Amazon explore strings and arrays
@@ -47,8 +51,7 @@
     * strstr aka: indexOf ( **knuth morris pratt** `O(m+n)`)
     * rotate image (in place rotations, outer to inner circles)
     
-## 27.10.2019
-  * ~~bst iterative, bfs recursive (skipped)~~
+## 27.10.2019~~
   * symetric tree
     * simultaneous traversing, recursive: two nodes as parameters, iterative: offer two nodes into queue
   * univalue tree
