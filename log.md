@@ -1,4 +1,6 @@
 ## TODO
+  * Later
+    * knuth-moris-pratt
   * 21.11.2019
     - permutations I,II, subsets I,II
   * 20.11.2019 
@@ -14,7 +16,9 @@
     - Trapping rain water O(1) space
 ## 31.10.2019
   * amazon explorer linked lists
-    * reverse a linked list iterative, recursive
+    * reverse a linked list iterative, recursive (`recursive(self, parent)` topdown, iterative: use `cur,prev` return `prev`)
+    * reverse nodes in k groups (**hard** focus, lots of tricks)
+    * copy list with random pointer ( hashmap O(n) space, no hashmap: create new nodes and insert them between respective originals)
   * goback
     * permutations I,II, subsets I,II
 ## 30.10.2019 
@@ -35,7 +39,7 @@
     * First Unique Character In a String
     * Valid Parantheses (use stack, count only does **not** work, `([)]`)
     * Most Common Word ( `.split("\\W+")` split by non word character(s))
-    * Reorder Data in Log Files (one big comparator, arrays.sort)
+    * Reorder Data in Log Files (one big comparator, to keep natural order of array in a comparator return 0)
     * Trapping rain water (two pointer, l2r r2l max height arrays - block height, can be improved to `O(1)` space)
   * Number of islands (dfs and sink)
     
@@ -46,7 +50,7 @@
     * string atoi  (attention problem, overflow, null pointer check, if else),
     * container with most water (greedy, two pointer what if `height[l] == height[r]`? in that case  either `l++` or `r--` would not be an optimal solution since `height==Math.min(h[l],[h[r])` will stay the same and `r-l` will be one less.)
     * integer to roman (recursive,int % and modulo)
-    * roman to integer (easier, just parsing)
+    * roman to integer (easier, just parsing, `IV IX` etc, first add then substract)
     * 3sum, 3sum closest( sort array, `n * 2sum` get rid of duplicates by incrementing in a while loop)
     * strstr aka: indexOf ( **knuth morris pratt** `O(m+n)`)
     * rotate image (in place rotations, outer to inner circles)
@@ -55,7 +59,7 @@
   * symetric tree
     * simultaneous traversing, recursive: two nodes as parameters, iterative: offer two nodes into queue
   * univalue tree
-  * permutations I,II, subsets I,II
+  * permutations I,II, subsets I,II (permutations use used[], when duplicates always `Arrays.sort`)
   
 ## 26.10.2019
   * binary tree pre, in, post order traversals. both recursive, and iterative
