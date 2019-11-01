@@ -11,9 +11,19 @@
     - bst iterative, bfs recursive
   * 03.11.2019
     - reverse a linked list iterative, recursive
-  * 01.11.2019
+  * 02.11.2019
     - Minimum window substring related problems
-    - Trapping rain water O(1) space
+    - Trapping rain water O(1) space 
+    
+## 01.11.2019
+  * Amazon OA 2019
+    * Optimal Utilization (sort, 2 pointers, care for possible same elements)
+    * Reorder Logs
+    * Minimum Cost to connect sticks (priorityQueue is  min heap)
+    * Treasure Island (BFS, shortest path, count steps)
+    * Treasure Island II (Multiple Source BFS, visited can be same since if one source reach there first, then the others can't be optimal solution anyway)
+    * 01 Matrix (for all non 0's, sweep rightbottom `matrix[r][c] = Math.min(top,left)+1`, sweep leftTop `matrix[r][c] = Math.min(matrix[r][c], Math.min(bottom,right)+1)`, DP)
+
 ## 31.10.2019
   * amazon explorer linked lists
     * reverse a linked list iterative, recursive (`recursive(self, parent)` topdown, iterative: use `cur,prev` return `prev`)
