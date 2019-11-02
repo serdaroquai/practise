@@ -9,11 +9,19 @@
     - permutations I,II, subsets I,II
   * 06.11.2019 
     - bst iterative, bfs recursive
+    - sub tree of another tree
   * 03.11.2019
     - reverse a linked list iterative, recursive
   * 02.11.2019
     - Minimum window substring related problems
     - Trapping rain water O(1) space 
+## 02.11.2019
+  * Amazon OA 2019
+    * Find pair with given Sum (Two sum with a return max condition)
+    * Merge Two Sorted Lists
+    * Sub tree of another tree ( attention. `O(s*t)`, you need **two** methods, one checking for exact match and one calling that for each node, trying to combine the two under the original question fails)
+    * Search a 2D matrix || ( select bottom left or top right, compare with target r- or c+)
+  * Search a 2D matrix (1D binary search encoding based on col length)
     
 ## 01.11.2019
   * Amazon OA 2019
