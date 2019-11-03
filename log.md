@@ -10,10 +10,12 @@
   * 06.11.2019 
     - bst iterative, bfs recursive
     - sub tree of another tree
-  * 03.11.2019
-    - reverse a linked list iterative, recursive
+  * 04.11.2019
     - Minimum window substring related problems
     - Trapping rain water O(1) space 
+## 03.11.2019
+  * recall: reverse a linked list iterative, recursive
+    * KClosestPointsToOrigin (Quick Search `O(n)`)
     
 ## 02.11.2019
   * Amazon OA 2019
@@ -81,7 +83,7 @@
   
 ## 26.10.2019
   * binary tree pre, in, post order traversals. both recursive, and iterative
-    * iterative post order traversal = inverse of right child first pre order traversal
+    * iterative post order traversal = inverse of right child first in order traversal
     * need `LinkedList<>` reference instead of `List<>` to use `addFirst()`
   * BFS, iterative and recursive
     * recursive uses parameter `int level`
