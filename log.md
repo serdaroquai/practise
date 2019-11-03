@@ -12,9 +12,9 @@
     - sub tree of another tree
   * 03.11.2019
     - reverse a linked list iterative, recursive
-  * 02.11.2019
     - Minimum window substring related problems
     - Trapping rain water O(1) space 
+    
 ## 02.11.2019
   * Amazon OA 2019
     * Find pair with given Sum (Two sum with a return max condition)
