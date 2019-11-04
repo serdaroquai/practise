@@ -2,8 +2,8 @@
 
 # practise checklist
 
-* Linked Lists, double and single.
-  * Dummy node tricks
+* ~~Linked Lists, double and single.~~
+  * ~~Dummy node tricks~~
 * ~~Binary Trees~~
   * ~~Pre,post,inorder traversing recursive and imperative~~
   * Binary Search Tree
@@ -301,6 +301,45 @@ Space complexity is `O(1)` for worst case. It is an in place sorting algorithm.
 
 * Heaps can be built on dynamic arrays. So heap sort accepts an unsorted input array and builds a max heap over it.
 * When the max heap is built, the biggest element will be at arr[0], so we swap it with the last element and remove the biggest element from the heap and repeat same process.
+
+## Quickselect
+
+Used for finding K'th largest in an array without actually sorting the array. Runtime in average is `O(n)` even though worst case is `O(n^2)`.
+
+Trick is to select a random pivot and swap all elements lessThanOrEqual pivot to the left and else to the right of pivot. (Note that even though all elements before pivot are smaller and all after are larger, they are not sorted). So we check the pivot position `p`. If p equals `K` bingo, pivot is our K'th element. If `p` > `K` repeat same process for the right side of array else left until you binary search position K'th element. Ideally you will sort `N + N/2 + N/4 .. = 2N` elements therefore the average time complexity is `O(n)`, worst case however is `O(n^2)`
+
+```java
+public int[][] kClosest(int[][] points, int K) {
+
+    int l=0, r= points.length;
+    while (l<r) {
+        int m = quickSelect(points, l, r);
+        if (m == K) break;
+        else if (m < K) l=m+1;
+        else r=m;
+    }
+
+    return Arrays.copyOfRange(points, 0, K);
+}
+```
+
+```java
+// l inclusive, r exclusive [l,r) selects a random pivot and returns pivot location between [l,r)
+// modifies the array
+private int quickSelect(int[][] A, int l, int r) {
+
+    int p = l + rand.nextInt(r-l);
+    swap(A, l, p);
+    int[] pivot = A[l];
+
+    int w=l;
+    for (int i=w; i<r; i++) {
+        if (compare(A[i], pivot) <= 0) swap(A,i,w++);
+    }
+    swap(A,l,--w);
+    return w;
+}
+```
 
 ### Backtracking
 
