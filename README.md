@@ -294,7 +294,7 @@ public quickSort(int[] arr, int start, int end) {
   quickSort(arr,pIndex+1,end);
 ~~~
 
-# Heapsort
+### Heapsort
 
 Time complexity is `O(nlogn)` for worst and average cases.
 Space complexity is `O(1)` for worst case. It is an in place sorting algorithm.
@@ -302,7 +302,7 @@ Space complexity is `O(1)` for worst case. It is an in place sorting algorithm.
 * Heaps can be built on dynamic arrays. So heap sort accepts an unsorted input array and builds a max heap over it.
 * When the max heap is built, the biggest element will be at arr[0], so we swap it with the last element and remove the biggest element from the heap and repeat same process.
 
-## Quickselect
+### Quickselect
 
 Used for finding K'th largest in an array without actually sorting the array. Runtime in average is `O(n)` even though worst case is `O(n^2)`.
 
