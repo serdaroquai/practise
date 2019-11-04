@@ -84,7 +84,7 @@
     * strstr aka: indexOf ( **knuth morris pratt** `O(m+n)`)
     * rotate image (in place rotations, outer to inner circles)
     
-## 27.10.2019~~
+## 27.10.2019
   * symetric tree
     * simultaneous traversing, recursive: two nodes as parameters, iterative: offer two nodes into queue
   * univalue tree
