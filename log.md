@@ -13,9 +13,18 @@
   * 04.11.2019
     - Minimum window substring related problems
     - Trapping rain water O(1) space 
+    
+## 04.11.2019
+  * Amazon explore binary search
+    * Bniary Search template 1
+    * Sqrt(x) (attention, divison by zero, multiplication overflow, `(m <= target /m) ans = m`)
+    * Guess number higher or lower
+    * Search in rotated sorted array (binary search, if left is sorted and value is in between go left else right, if vice versa..)
+    * First Bad Version (binary search `r=m`)
+    * Find Peak Element (binary search `r=m`)
 ## 03.11.2019
   * recall: reverse a linked list iterative, recursive
-    * KClosestPointsToOrigin (Quick Search `O(n)`)
+    * KClosestPointsToOrigin (Quickselect `O(n)`)
     
 ## 02.11.2019
   * Amazon OA 2019
