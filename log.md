@@ -19,9 +19,10 @@
     * find minimum in sorted array(binary search `r=m`)
     * find first and last posiiton of element in sorted array(attention, binary search both `r=m` and `l=m`, return conditions are tricky)
     * find K closest elements (**★** try binary searching a k sized array based on left end or right end being farther)
+    * find peak element
 ## 04.11.2019
   * Amazon explore binary search
-    * Bniary Search template 1
+    * Binary Search template 1
     * Sqrt(x) (attention, divison by zero, multiplication overflow, `(m <= target /m) ans = m`)
     * Guess number higher or lower
     * Search in rotated sorted array (binary search, if left is sorted and value is in between go left else right, if vice versa..)
