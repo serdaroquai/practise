@@ -171,8 +171,12 @@ int base = 256, mod = 101
 
 Basicaly three variations:
 
-* Variation 1: looks for a direct match
+* Variation 1: looks for a direct match, solution space looks like below where only one answer satisfies the predicate
+
 ~~~java
+//                      v (looking for this)
+// [no, no, no, no, no, yes, no, no, no]
+
 int left = 0;
 int right = length -1;                        // right points to last element
 while (left <= right) {                       // left <= right
@@ -192,7 +196,7 @@ while (left <= right) {                       // left <= right
 [1,3,4,6,7,9]   left = 3; right = 5; mid = 4; 7 == 7 loop ends
 ~~~
 
-* Variation 2: (looks for a range with lower bound upper bound)
+* Variation 2: (solution space is a range of elements)
   * Below example is looking for a range of size 1 (since `lo < hi` as terminate condition)
   * predicate is `arr[mid] >= target`.
   * since every element that satisfies the predicate is a candidate solution we can't ignore mid if predicate holds true thus `hi=mid`
@@ -200,6 +204,9 @@ while (left <= right) {                       // left <= right
   * this will end with `lo=hi` and will be the first appearance of `target` if `arr[lo] == target` otherwise it does not exist
   
 ~~~java
+//                    v (looking for first)
+// [ no, no, no, no, yes, yes, yes, yes]
+
 int lo = 0;
 int hi = length;                              // hi points to last element + 1 (or last element);
 while (lo < hi) {                             // lo < hi
@@ -218,6 +225,9 @@ while (lo < hi) {                             // lo < hi
     * Just remember to **always** test your code on a two-element search space where the predicate is false for the first element and true for the second.
 
 ~~~java
+//                   v (looking for last)     
+// [ yes, yes, yes, yes, no, no, no, no]
+
 int lo = 0;
 int hi = length;                              
 while (lo < hi) {                             
@@ -262,7 +272,6 @@ while (left + 1 < right) {                    // left + 1 < right
          
 [1,3,4,6,7,9]   left = 4; right = 5; loop ends
 ~~~
-
 
 
 ## Sorting
