@@ -13,7 +13,12 @@
   * 04.11.2019
     - Minimum window substring related problems
     - Trapping rain water O(1) space 
-    
+
+## 05.11.2019
+  * Amazon explore binary search
+    * find minimum in sorted array(binary search `r=m`)
+    * find first and last posiiton of element in sorted array(attention, binary search both `r=m` and `l=m`, return conditions are tricky)
+    * find K closest elements (**★** try binary searching a k sized array based on left end or right end being farther)
 ## 04.11.2019
   * Amazon explore binary search
     * Bniary Search template 1
