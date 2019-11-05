@@ -171,7 +171,7 @@ int base = 256, mod = 101
 
 Basicaly three variations:
 
-* Variation 1:
+* Variation 1: looks for a direct match
 ~~~java
 int left = 0;
 int right = length -1;                        // right points to last element
@@ -192,18 +192,39 @@ while (left <= right) {                       // left <= right
 [1,3,4,6,7,9]   left = 3; right = 5; mid = 4; 7 == 7 loop ends
 ~~~
 
-* Variation 2
+* Variation 2: (looks for a range with lower bound upper bound)
+  * Below example is looking for a range of size 1 (since `lo < hi` as terminate condition)
+  * predicate is `arr[mid] >= target`.
+  * since every element that satisfies the predicate is a candidate solution we can't ignore mid if predicate holds true thus `hi=mid`
+  * on the other hand we can neglect `arr[mid] < target` thus `lo=mid+1`
+  * this will end with `lo=hi` and will be the first appearance of `target` if `arr[lo] == target` otherwise it does not exist
+  
 ~~~java
-int left = 0;
-int right = length;                           // right points to last element + 1;
-while (left < right) {                        // left < right
-  int mid = left + (right -left) / 2;
-  if (arr[mid] < target) left = mid + 1;      // don't include mid in next cycle
-  else                  right = mid;          // include mid in next cycle
+int lo = 0;
+int hi = length;                              // hi points to last element + 1 (or last element);
+while (lo < hi) {                             // lo < hi
+  int mid = lo + (hi -lo) / 2;
+  if (arr[mid] >= target) hi = mid;           // include mid in next cycle since predicate = true
+  else                    lo = mid+1;         // include mid in next cycle predicate = false
 }
                                               // ends at left == right
                                               // element at left ( or right) is not checked yet
                                               // search space must be at least 2 in size
+~~~
+
+  * What if we were looking for the last occurance of target, in other words try approaching from left
+    * We could switch to `hi = mid-1` and `lo=mid` **however** this loop would not terminate for `int mid = lo+(hi-lo)/2` since it rounds `mid` down to `lo` for a search space of length 2 and we keep setting `lo = mid`
+    * Easiest way to fix this is to add a half step to mid calculation.
+    * Just remember to **always** test your code on a two-element search space where the predicate is false for the first element and true for the second.
+
+~~~java
+int lo = 0;
+int hi = length;                              
+while (lo < hi) {                             
+  int mid = lo + (hi+1-lo) / 2;               // Don't forget +1
+  if (arr[mid] > target)  hi = mid-1;         
+  else                    lo = mid;           
+}
 ~~~
 ~~~java
 [1,3,4,6,7,9]   target=7
