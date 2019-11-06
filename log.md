@@ -7,18 +7,22 @@
     - bst iterative, bfs recursive
   * 07.11.2019
     - permutations I,II, subsets I,II
-  * 06.11.2019 
-    - bst iterative, bfs recursive
-    - sub tree of another tree
   * 04.11.2019
     - Minimum window substring related problems
     - Trapping rain water O(1) space 
+    
+## 06.11.2019
+  * Subtree of another tree
+  * bfs iterative, bfs recursive
+  * Amazon Online assessment questions
+    * top K competitors (construct map<competitors,count>. quickselect competitors array for top K elements based on count)
+    * zombie matrix, rotten tomatoes (multi source bfs, keep count of fresh oranges left in order to deal with edge cases)
 
 ## 05.11.2019
   * Amazon explore binary search
     * find minimum in sorted array(binary search `r=m`)
     * find first and last posiiton of element in sorted array(attention, binary search both `r=m` and `l=m`, return conditions are tricky)
-    * find K closest elements (**★** try binary searching a k sized array based on left end or right end being farther)
+    * find K closest elements (**★** try binary searching a k sized array based on left or right end being farther)
     * find peak element
 ## 04.11.2019
   * Amazon explore binary search
@@ -29,7 +33,7 @@
     * First Bad Version (binary search `r=m`)
     * Find Peak Element (binary search `r=m`)
 ## 03.11.2019
-  * recall: reverse a linked list iterative, recursive
+  * reverse a linked list iterative, recursive
     * KClosestPointsToOrigin (Quickselect `O(n)`)
     
 ## 02.11.2019
