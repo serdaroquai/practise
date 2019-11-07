@@ -10,7 +10,9 @@
   * 04.11.2019
     - Minimum window substring related problems
     - Trapping rain water O(1) space 
-    
+## 07.11.2019
+  * binary-tree-coloring-game
+  * critical connection (Failed this popular amazon question)
 ## 06.11.2019
   * Subtree of another tree
   * bfs iterative, bfs recursive
