@@ -766,6 +766,45 @@ int BFS(Node root, Node target) {
 
 Bidirectional BFS or DFS search is better when(since) with each step the possible nodes grow exponentially. So imagine there are *b* valid options per node and the distance from start to target is *2d*.  Classic solution then becomes **O(b^2d)** where as if you start traversing from both the start and the end it is **O(b^d + b^d) = O(b^d)** which is far less than **O(b^2d)**. (for b=2 compare 2 * 2^10 vs 2^20. 2^20 has **512 times** more operations)
 
+
+### Tarjans Algorithm (Finding articulation nodes in a graph)
+Articulation points of a graph are vertices that, when removed, partition the graph.
+
+```java
+// 1 is an articulation point
+0---(1)--3
+ \ /
+  2
+```
+
+To find the articulation points use DFS, ranking the nodes by the order of their first discovery so that whenever a node reaches an already ranked node, not only we 'can tell if it is a cycle, we can propogate the lowest seen rank so far so that out parent nodes can also learn if they also belong in a cycle.
+
+```java
+int rank=0; //global counter
+
+int[] ranks = new int ranks[n];
+for (int i=0; i<n; i++) 
+  if (rank[i] == 0) dfs(i, i, ranks, result, graph);
+return result;
+  
+private int dfs(int u, int parent, int[] ranks, List<Integer> result, graph) {
+  rank[i] = ++rank;
+  int lowest = rank;
+  
+  for (int v : graph[i]) { // for all chlidren
+    if (v == u) continue; // skip immediate parent
+    if (rank[v] == 0) { // visiting for the first time
+      int vLow = dfs(v, u, ranks, result, graph); //notice we first 'top-down' and rank all this subbranch, return lowest seen    
+      if (vLow >= rank[u]) result.add(u); // my subbranch contains no cycle to my ancestors
+      lowest = Math.min(lowest, vLow); // update lowest seen so far
+    } else { // visiting a possible ancestor or predecessor
+      lowest = Math.min(lowest, rank[v]); //update my lowest if this is an ancestor
+    }
+  }
+  return lowest;
+}
+```
+
 ### Dynamic Programming
 
 01 Matrix Problem (find minimum distance to 0 for each cell) can be solved in O(mn) with only 2 sweeps.
