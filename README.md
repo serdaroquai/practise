@@ -779,6 +779,8 @@ Articulation points of a graph are vertices that, when removed, partition the gr
 
 To find the articulation points use DFS, ranking the nodes by the order of their first discovery so that whenever a node reaches an already ranked node, not only we 'can tell if it is a cycle, we can propogate the lowest seen rank so far so that out parent nodes can also learn if they also belong in a cycle.
 
+Another point is that if we would have started from say node 3. the child with 1 satisfies above requirements. however we would need at least two independent children for 3 to be an articulation node.
+
 ```java
 int rank=0; //global counter
 
@@ -790,12 +792,15 @@ return result;
 private int dfs(int u, int parent, int[] ranks, List<Integer> result, graph) {
   rank[i] = ++rank;
   int lowest = rank;
+  int children = 0; 
   
   for (int v : graph[i]) { // for all chlidren
     if (v == u) continue; // skip immediate parent
     if (rank[v] == 0) { // visiting for the first time
+      children++;
       int vLow = dfs(v, u, ranks, result, graph); //notice we first 'top-down' and rank all this subbranch, return lowest seen    
-      if (vLow >= rank[u]) result.add(u); // my subbranch contains no cycle to my ancestors
+      if (parent == null && children > 1) result.add(u)
+      if (parent != null && vLow >= rank[u]) result.add(u); // my subbranch contains no cycle to my ancestors
       lowest = Math.min(lowest, vLow); // update lowest seen so far
     } else { // visiting a possible ancestor or predecessor
       lowest = Math.min(lowest, rank[v]); //update my lowest if this is an ancestor
