@@ -9,7 +9,16 @@
     - permutations I,II, subsets I,II
   * 04.11.2019
     - Minimum window substring related problems
-    - Trapping rain water O(1) space 
+
+## 10.11.2019
+  * recall 
+    * Trapping rain water O(1) space
+  * Amazon Explore
+    * merge K sorted lists (merging by pairs is `O(nk)`, priorityqueue is `O(nlogk)`, k: length of list, n: total number of elements)
+    * validate binary search tree (iterative or recursive)
+    * binary tree zigzag (use a linkedlist row, each time you add a value addFirst or add based on level);
+    
+  
 ## 08.11.2019
   * critical connection (needs a detailed explanation, Tarjans algorithm)
 ## 07.11.2019
