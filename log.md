@@ -17,6 +17,8 @@
     * merge K sorted lists (merging by pairs is `O(nk)`, priorityqueue is `O(nlogk)`, k: length of list, n: total number of elements)
     * validate binary search tree (iterative or recursive)
     * binary tree zigzag (use a linkedlist row, each time you add a value addFirst or add based on level);
+    * binary tree max path sum (at each node best result is either `node`, `left +node`, `right + node`, or `left + right + node`. what we return is `Math.max(left+node,right+node)`)
+    * word ladder ( bfs start from both ends)
     
   
 ## 08.11.2019
