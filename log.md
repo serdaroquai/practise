@@ -10,6 +10,12 @@
   * 04.11.2019
     - Minimum window substring related problems
 
+## 12.11.2019
+  * Amazon Explore
+    * Course schedule (topological sort)
+    * lowest common ancestor
+    * diameter of binary tree (easier version of binary tree max path sum)
+    * cut of trees for golf event
 ## 10.11.2019
   * recall 
     * Trapping rain water O(1) space
