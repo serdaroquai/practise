@@ -15,7 +15,12 @@
     - Minimum window substring related problems
 
 ## 15.11.2019
-  * Strobogrammatic Number 2
+  * Strobogrammatic Number 2 (recursion bottom up, start with small word and make it bigger by expanding from both ends)
+  * Strobogrammatic Number (plaindrome like)
+  * Amazon explore
+    * letter combinations of a phone
+    * generate parantheses
+    * word search (backtracking)
   
 ## 14.11.2019
   * Amazon Explore
