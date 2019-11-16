@@ -14,9 +14,12 @@
   * 04.11.2019
     - Minimum window substring related problems
 
+## 15.11.2019
+  * Strobogrammatic Number 2
+  
 ## 14.11.2019
   * Amazon Explore
-    * Course Schedule (bfs for each target `O(mn*mn)` *worst case mn targets, trick is to set visited preemptively while checking valid for algorithm to barely make it in time. There are better alternatives)
+    * Cutting trees for golf event (bfs for each target `O(mn*mn)` *worst case mn targets, trick is to set visited preemptively while checking valid for algorithm to barely make it in time. There are better alternatives)
     * Flood fill
 ## 12.11.2019
   * Amazon Explore
