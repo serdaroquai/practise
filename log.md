@@ -4,6 +4,8 @@
     * A* search (*cut off trees*)
     * Hadlocks Algorithm (*cut of trees*)
     * Tarjans, (find nodes that disjoin the graph)  (*critical connection*)
+    * *median of two sorted arrays*
+    
     
   * 21.11.2019
     - permutations I,II, subsets I,II
@@ -14,7 +16,14 @@
   * 04.11.2019
     - Minimum window substring related problems
 
-## 15.11.2019
+## 17.11.2019
+  * right side view of tree
+  * valid boomerang
+  * Amazon explore
+    * median of two sorted arrays (hard, need detialed explanation)
+    
+
+## 16.11.2019
   * Strobogrammatic Number 2 (recursion bottom up, start with small word and make it bigger by expanding from both ends)
   * Strobogrammatic Number (plaindrome like)
   * House robber ( rob, noRob, two choices)
