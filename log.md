@@ -15,7 +15,11 @@
     - permutations I,II, subsets I,II
   * 04.11.2019
     - Minimum window substring related problems
-
+## 18.11.2019
+  * Amazon explore
+    * meeting rooms II
+    * top K frequent elements
+    * K closest points to origin
 ## 17.11.2019
   * right side view of tree
   * valid boomerang
