@@ -15,6 +15,16 @@
     - permutations I,II, subsets I,II
   * 04.11.2019
     - Minimum window substring related problems
+    
+## 19.11.2019
+  * Amazon explore
+    * Longest Palindromic substring (expand singles and doubles reducing naive n^3 to n^2)
+    * maximum sub array ( dynamic programming keep sum or start new, whichever is best)
+    * best time to buy/sell stock (each step sell based on best observed min then update best observed min)
+    * word break (**★**)
+      * can be solved by recursion (key is to use a map and also store failed words)
+      * elegant and much faster solution is by `dp[length+1]` and building upon `dp[i] = dp[j] && substring(j,i)`. key again is to expand your dictionary so that composite words can be looked up
+      
 ## 18.11.2019
   * Amazon explore
     * meeting rooms II
