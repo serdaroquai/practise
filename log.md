@@ -1,5 +1,6 @@
 ## TODO
   * Later
+    * knapsack without repetition
     * knuth-moris-pratt
     * A* search (*cut off trees*)
     * Hadlocks Algorithm (*cut of trees*)
@@ -11,10 +12,13 @@
     - permutations I,II, subsets I,II
   * 20.11.2019 
     - bst iterative, bfs recursive
+    - follow up best time to buy sell stock
+    - follow up max sub array
   * 07.11.2019
     - permutations I,II, subsets I,II
   * 04.11.2019
     - Minimum window substring related problems
+ 
     
 ## 19.11.2019
   * Amazon explore
