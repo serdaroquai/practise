@@ -24,7 +24,7 @@
     * word break (**★**)
       * can be solved by recursion (key is to use a map and also store failed words)
       * elegant and much faster solution is by `dp[length+1]` and building upon `dp[i] = dp[j] && substring(j,i)`. key again is to expand your dictionary so that composite words can be looked up
-      
+    * coin change (dp)
 ## 18.11.2019
   * Amazon explore
     * meeting rooms II
