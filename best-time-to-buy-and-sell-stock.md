@@ -206,3 +206,26 @@ public int maxProfit(int[] prices, int fee) {
     return profit;
 }
 ```
+
+## Best Time to Buy and Sell Stock With Cooldown (Medium)
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/
+
+* 3 actions per round (buy, nobuy, sell)
+* since there is a cooldown of one round, I can only buy if I did not buy last round (n)
+* sell for best profit
+```java
+public int maxProfit(int[] p) {
+        
+    int b=Integer.MAX_VALUE; // buy
+    int n=0;                 // nobuy
+    int s=0;                 // sell
+    for (int i=0; i<p.length; i++) {
+        b = Math.min(b, p[i] - n);  // can only buy if I did not buy last round hence n
+        n = Math.max(n, s);         // if I don't buy this round, doesn't matter if i sold last round (both valid moves)
+        s = Math.max(s, p[i] - b);  // sell whenever I want, lower I buy the better
+        
+    }
+
+    return Math.max(s,n);
+}
+```
