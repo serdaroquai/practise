@@ -19,7 +19,11 @@
   * 04.11.2019
     - Minimum window substring related problems
  
-    
+## 20.11.2019
+  * Best time to buy/sell stock II
+  * Best time to buy/sell stock III
+  * Best time to buy/sell stock IV
+  
 ## 19.11.2019
   * Amazon explore
     * Longest Palindromic substring (expand singles and doubles reducing naive n^3 to n^2)
