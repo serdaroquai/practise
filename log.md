@@ -20,9 +20,11 @@
     - Minimum window substring related problems
  
 ## 20.11.2019
-  * Best time to buy/sell stock II
-  * Best time to buy/sell stock III
-  * Best time to buy/sell stock IV
+  * Best time to buy/sell stock II ( unlimited tx = find all increasing elements)
+  * Best time to buy/sell stock III (2 tx, buyOne, sellOne, buyTwo, sellTwo)
+  * Best time to buy/sell stock IV (k tx, buy=int[k+1], sell=int[k+1], if (k>n/2) solve with unlimited tx)
+  * Best time to buy/sell stock with cd (buy, nobuy, sell)
+  * Best time to buy/sell stock with tx fee (buy + txFee)
   
 ## 19.11.2019
   * Amazon explore
