@@ -12,7 +12,6 @@
     - permutations I,II, subsets I,II
   * 20.11.2019 
     - bst iterative, bfs recursive
-    - follow up best time to buy sell stock
     - follow up max sub array
   * 07.11.2019
     - permutations I,II, subsets I,II
