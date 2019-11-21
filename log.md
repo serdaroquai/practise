@@ -1,5 +1,7 @@
 ## TODO
   * Later
+    * follow up max sub array
+    * Minimum window substring related problems
     * knapsack without repetition
     * knuth-moris-pratt
     * A* search (*cut off trees*)
@@ -7,17 +9,17 @@
     * Tarjans, (find nodes that disjoin the graph)  (*critical connection*)
     * *median of two sorted arrays*
     
-    
-  * 21.11.2019
-    - permutations I,II, subsets I,II
   * 20.11.2019 
     - bst iterative, bfs recursive
-    - follow up max sub array
-  * 07.11.2019
-    - permutations I,II, subsets I,II
-  * 04.11.2019
-    - Minimum window substring related problems
  
+## 21.11.2019
+  * Permutations I
+  * Permutations II
+  * Combinations
+  * Subsets I
+  * Subsets II
+  * Available captures
+  
 ## 20.11.2019
   * Best time to buy/sell stock II ( unlimited tx = find all increasing elements)
   * Best time to buy/sell stock III (2 tx, buyOne, sellOne, buyTwo, sellTwo)
