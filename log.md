@@ -13,9 +13,10 @@
     - bst iterative, bfs recursive
     
 ## 22.11.2019
-  * Max sub array with largest sum (contiguos, negative nums, dynamic prog either keep sum or start new sum)
-  * Min size sub array sum > k (contiguos, positive nums, two pointers nested whiles)
-  * Max size sub array sum = k 
+  * Max sub array with largest sum (contiguos, negatives, *use dynamic prog either keep sum or start new sum*)
+  * Min size sub array sum > k (contiguos, only positive, range, *use two pointers nested whiles*)
+  * Max size sub array sum = k (contiguos, negatives, exact, *use map of past sums*)
+  * Shortest subarray with sum at least K (contiguous, negatives, range, *deque with two intuitions*)
   
  
 ## 21.11.2019
