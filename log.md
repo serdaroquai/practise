@@ -11,6 +11,12 @@
     
   * 20.11.2019 
     - bst iterative, bfs recursive
+    
+## 22.11.2019
+  * Max sub array with largest sum (contiguos, negative nums, dynamic prog either keep sum or start new sum)
+  * Min size sub array sum > k (contiguos, positive nums, two pointers nested whiles)
+  * Max size sub array sum = k 
+  
  
 ## 21.11.2019
   * Permutations I
