@@ -102,18 +102,17 @@ public int lengthOfLIS(int[] nums) {
 ```java
 if (nums == null || nums.length == 0) return 0;
         
-        int[] dp = new int[nums.length];
-        int l=0;
+int[] dp = new int[nums.length];
+int l=0;
         
-        for (int num : nums) {
-            int i = Arrays.binarySearch(dp, 0, l, num); //returns -(i+1) if element does not exist
-            i = i<0 ? -(i+1) : i;
+for (int num : nums) {
+    int i = Arrays.binarySearch(dp, 0, l, num); //returns -(i+1) if element does not exist
+    i = i<0 ? -(i+1) : i;
             
-            dp[i] = num;
-            if (i == l) l++;
-        }
-        
-        return l;
+    dp[i] = num;
+    if (i == l) l++;
+}        
+return l;
 ```
 
 ## Number of Longest Increasing Subsequence (Medium)
