@@ -76,7 +76,45 @@ public int lengthOfLIS(int[] nums) {
 }
 ```
 
-**TODO `O(nlogn)`** Patience algorithm
+#### `O(nlogn)` Patience sorting based solution
+
+* iterate all elements once
+* for each element there are 2 cases:
+  1) if num larger then last element append to `dp[]`
+  2) otherwise replace the closest `element >= num` in `dp[]`
+        
+* `dp[]` is always sorted following above, so you can apply binary search for both cases
+* the intuition is say nums = [1,5,2, 4, 9] and you are building a dp arr for each num
+
+[1] // append 1
+[1,5] // append 5
+
+* and when 2 comes we replace 5 since choosing 2 increases our chance of finding a longer sequence, that is if we find 2 < numbers < 5
+* In other words compare `[1,5]` to `[1,2]` which one is a better solution? Even though theyhave equal lengths, the latter is better, since if the next element happens to be `4`, `[1,2,4]` will be a valid sequence where as `[1,5,4]` will not
+
+[1,2]
+[1,2,4]
+[1,2,4,9]
+
+* note that dp array does not necesserily give you a valid sequence because we track all possible solutions on the same array (its like trying to append all sentences in the same line with the keyboards 'insert' mode on) At the end what you get is the longest sentences length!
+* however for a  valid sequence you can keep an array parents[], and form a valid sample result by following last element
+
+```java
+if (nums == null || nums.length == 0) return 0;
+        
+        int[] dp = new int[nums.length];
+        int l=0;
+        
+        for (int num : nums) {
+            int i = Arrays.binarySearch(dp, 0, l, num); //returns -(i+1) if element does not exist
+            i = i<0 ? -(i+1) : i;
+            
+            dp[i] = num;
+            if (i == l) l++;
+        }
+        
+        return l;
+```
 
 ## Number of Longest Increasing Subsequence (Medium)
 https://leetcode.com/problems/number-of-longest-increasing-subsequence/
