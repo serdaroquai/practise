@@ -19,7 +19,7 @@
   * Longest increasing subsequence (partitioned, negatives, * `O(n^2)` dynamic prog, `O(nlogn)` patience sorting)
   * amazon mock interview
     * high five (non comparison sort, with min heaps)
-    * boundary of a binary tree (edge case heaven yuck)
+    * boundary of a binary tree (instead of `left + leaves + right with edgecases` go for `left + left leaves` + `right leaves + right)
     
 ## 22.11.2019
   * Max sub array with largest sum (contiguos, negatives, *use dynamic prog either keep sum or start new sum*)
