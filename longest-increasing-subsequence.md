@@ -96,7 +96,8 @@ public int lengthOfLIS(int[] nums) {
 [1,2,4]
 [1,2,4,9]
 
-* note that dp array does not necesserily give you a valid sequence because we track all possible solutions on the same array (its like trying to append all sentences in the same line with the keyboards 'insert' mode on) At the end what you get is the longest sentences length!
+* note that dp array does not necesserily give you a valid sequence because we track all possible solutions on the same array
+* **its like append all sentences in the same line, on top of each other, in the end what you get is the longest sentences length**
 * however for a  valid sequence you can keep an array parents[], and form a valid sample result by following last element
 
 ```java
