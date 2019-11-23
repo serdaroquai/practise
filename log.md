@@ -12,6 +12,10 @@
   * 20.11.2019 
     - bst iterative, bfs recursive
     
+## 23.11.2019
+  * Longest Increasing subarray (contiguos, negatives, *use dynamic prog either still increasing or start new)
+  * Longest increasing subsequence (partitioned, negatives, * `O(n^2)` dynamic prog, `O(nlogn)` patience sorting)
+    
 ## 22.11.2019
   * Max sub array with largest sum (contiguos, negatives, *use dynamic prog either keep sum or start new sum*)
   * Min size sub array sum > k (contiguos, only positive, range, *use two pointers nested whiles*)
