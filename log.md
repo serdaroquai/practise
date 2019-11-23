@@ -23,6 +23,9 @@
     * first unique char in string
     * reverse linked list
     * search in rotated array
+    * binary tree level order recursive
+    * single element duplicate in a sorted array
+    * freq map (map of freq, map of stacks, keep track of maxFreq, element x added n times will be added in m[0], m[1]...m[n])
     
 ## 22.11.2019
   * Max sub array with largest sum (contiguos, negatives, *use dynamic prog either keep sum or start new sum*)
