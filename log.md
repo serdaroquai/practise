@@ -17,6 +17,9 @@
 ## 23.11.2019
   * Longest Increasing subarray (contiguos, negatives, *use dynamic prog either still increasing or start new)
   * Longest increasing subsequence (partitioned, negatives, * `O(n^2)` dynamic prog, `O(nlogn)` patience sorting)
+  * amazon mock interview
+    * high five (non comparison sort, with min heaps)
+    * boundary of a binary tree (edge case heaven yuck)
     
 ## 22.11.2019
   * Max sub array with largest sum (contiguos, negatives, *use dynamic prog either keep sum or start new sum*)
