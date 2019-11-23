@@ -1,6 +1,7 @@
 ## TODO
   * Later
     * follow up max sub array
+    * patience sorting
     * Minimum window substring related problems
     * knapsack without repetition
     * knuth-moris-pratt
