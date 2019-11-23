@@ -4,6 +4,7 @@
     * Minimum window substring related problems
     * knapsack without repetition
     * knuth-moris-pratt
+    * segment trees *count of longest increasing subsequence*
     * A* search (*cut off trees*)
     * Hadlocks Algorithm (*cut of trees*)
     * Tarjans, (find nodes that disjoin the graph)  (*critical connection*)
