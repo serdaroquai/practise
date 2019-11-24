@@ -17,6 +17,9 @@
 ## 24.11.2019
   * Longest Palindromic Substring
   * Longest Palindromic Subsequence (**★**,`2^n` either pick or not pick, `n^3` pick each center and try expanding, `n^2` dp)
+  * Longest Substring without repeating chars (freq[], count, 2pointers)
+  * Minimum Window Substring (freq[], count, 2pointers)
+  * Minimum Window Subsequence (dp `O(n^2)` or 2pointers forward-backward pass in `O(n)`. Trick is to start from the start of the best result. instead of doing a forward-backward pass for each character.)
   
 ## 23.11.2019
   * Longest Increasing subarray (contiguos, negatives, *use dynamic prog either still increasing or start new)
