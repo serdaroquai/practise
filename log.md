@@ -14,6 +14,10 @@
   * 20.11.2019 
     - bst iterative, bfs recursive
     
+## 24.11.2019
+  * Longest Palindromic Substring
+  * Longest Palindromic Subsequence (**★**,`2^n` either pick or not pick, `n^3` pick each center and try expanding, `n^2` dp)
+  
 ## 23.11.2019
   * Longest Increasing subarray (contiguos, negatives, *use dynamic prog either still increasing or start new)
   * Longest increasing subsequence (partitioned, negatives, * `O(n^2)` dynamic prog, `O(nlogn)` patience sorting)
