@@ -15,7 +15,9 @@
     - bst iterative, bfs recursive
     
 ## 25.11.2019
-  * Top K frequent words
+  * Top K frequent words ( result must be sorted so prefer minHeap `O(nlogk)` solution to quickselect + sort `O(n+klogk)`)
+  * first bad version
+  * Find Smallest Letter Greater Than Target (attention, binary search with tricky wrap around)
   
 ## 24.11.2019
   * Longest Palindromic Substring
