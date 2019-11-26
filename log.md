@@ -15,7 +15,7 @@
     - bst iterative, bfs recursive
     
 ## 26.11.2019
-  * Longest Substring with at least K repeating chars (`O(26*26*n)`for every possible count of unique characters, do a string template)
+  * Longest Substring with at least K repeating chars (split and recurse around chars with count<k `O(n)`)
     
 ## 25.11.2019
   * Top K frequent words ( result must be sorted so prefer minHeap `O(nlogk)` solution to quickselect + sort `O(n+klogk)`)
