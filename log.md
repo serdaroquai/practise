@@ -220,7 +220,7 @@
   
 ## 26.10.2019
   * binary tree pre, in, post order traversals. both recursive, and iterative
-    * iterative post order traversal = inverse of right child first in order traversal
+    * iterative post order traversal = inverse of right child first pre order traversal
     * need `LinkedList<>` reference instead of `List<>` to use `addFirst()`
   * BFS, iterative and recursive
     * recursive uses parameter `int level`
