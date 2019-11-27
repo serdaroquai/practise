@@ -14,6 +14,10 @@
   * 20.11.2019 
     - bst iterative, bfs recursive
     
+## 27.11.2019
+  * Kth smallest element in BST (in order traversal)
+  * Second minimum node in a binary tree
+  * 
 ## 26.11.2019
   * Longest Substring with at least K repeating chars (split and recurse around chars with count<k `O(n)`)
     
