@@ -18,6 +18,7 @@
   * Kth smallest element in BST (in order traversal)
   * Second minimum node in a binary tree
   * Minimum Distance Between BST Nodes (not just parent, any node)
+  * Sliding Window Maximum (deque, attention to off by one errors)
   
 ## 26.11.2019
   * Longest Substring with at least K repeating chars (split and recurse around chars with count<k `O(n)`)
