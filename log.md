@@ -14,6 +14,9 @@
   * 20.11.2019 
     - bst iterative, bfs recursive
     
+## 28.11.2019
+  * maximum length of a concetanated string (combinations, not permutations care!)
+  
 ## 27.11.2019
   * Kth smallest element in BST (in order traversal)
   * Second minimum node in a binary tree
