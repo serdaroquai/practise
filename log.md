@@ -15,9 +15,10 @@
     - bst iterative, bfs recursive
  
 ## 30.10.2019
-  * max score words formed by letters
+  * max score words formed by letters (nested for, dp array of all valid answers so far, subtle detail is to iterate inner loop dp array backwards so that size does not grow undefinately)
+  * simplify path (attention problem, s.split("/")
   * facebook explore
-    *
+    * subarray sum equals k
   
 ## 29.10.2019
   * facebook explore
