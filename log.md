@@ -14,6 +14,17 @@
   * 20.11.2019 
     - bst iterative, bfs recursive
     
+## 29.10.2019
+  * facebook explore
+    * next permutation (attention, many off by one errors)
+    * multiply strings (attention, multiply like humans)
+    * move zeroes
+    * remove duplicates from sorted array
+    * one edit distance apart
+    * 
+    
+    
+
 ## 28.11.2019
   * maximum length of a concetanated string (combinations, not permutations care!)
   
