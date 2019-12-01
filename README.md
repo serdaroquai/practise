@@ -1,8 +1,8 @@
 
 
-# practise checklist
-
-* ~~Linked Lists, double and single.~~
+# <summary>practise checklist<summary>
+ <details>
+ * ~~Linked Lists, double and single.~~
   * ~~Dummy node tricks~~
 * ~~Binary Trees~~
   * ~~Pre,post,inorder traversing recursive and imperative~~
@@ -23,6 +23,7 @@
   * fibonacci evolve solutions
   * knapsack, coin change
 * Union find
+ </details>
 
 
 
