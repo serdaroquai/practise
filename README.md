@@ -1,7 +1,7 @@
 
 
 # practise checklist
- * ~~Linked Lists, double and single.~~
+* ~~Linked Lists, double and single.~~
   * ~~Dummy node tricks~~
   * ~~slow pointer, fast pointer, to find mid~~
   * ~~reverse recursive, iterative~~
