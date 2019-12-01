@@ -1,9 +1,11 @@
 
 
-# <summary>practise checklist<summary>
- <details>
+# practise checklist
  * ~~Linked Lists, double and single.~~
   * ~~Dummy node tricks~~
+  * ~~slow pointer, fast pointer, to find mid~~
+  * ~~reverse recursive, iterative~~
+  * ~~merge~~
 * ~~Binary Trees~~
   * ~~Pre,post,inorder traversing recursive and imperative~~
   * Binary Search Tree
@@ -16,14 +18,15 @@
 * Tries
 * Binary Search
 * Arrays and Strings
-  * string substrings, subsequences
+  * palindromes, anagrams
+  * string substrings, subsequences, max window, min window
   * Longest Increasing sub arrays, sub sequences
 * Queues and Stacks
 * Dynamic Programming
   * fibonacci evolve solutions
   * knapsack, coin change
+  * best time to buy stock, house robber, (choice based)
 * Union find
- </details>
 
 
 
@@ -46,7 +49,23 @@
 * `List<Integer> list = new ArrayList<>(); int a = list.get(0)` actually works, unless element is null in that case a NPE is thrown.
 * `Arrays.sort(A[], Comparator<? extends A>)` is a thing.
 * `Arrays.sort(A[], int startIndex, int endIndex, Comparator<? extends A>)` also is a thing.
-* `someString.split(" ", 2)` is a thing that produces a `String[]` of length 2;
+* `someString.split(" ", 2)` is a thing that produces a `String[]` of length 2, 0 discards the trailing empty strings, so always use with -1 if to keep them.
+* RegExp => `someString.split("\\W+",-1)`, `"0a34fe52".match("[0-9a-fA-F]") // true`;
+  * Escaping chars
+    - `.`,`*`,`?` are special chars that need to be escaped in regular expression
+    - to escape them reg exp uses `\` backslash.
+    - java uses backslash for escape operator as well
+    - so first write the reg exp as it is then escape all the chars u need to escape with java
+  * `.`	any character except newline
+  * `\w\d\s`	word, digit, whitespace
+  * `\W\D\S`	not word, digit, whitespace
+  * `[abc]`	any of a, b, or c
+  * `[^abc]`	not a, b, or c
+  * `[a-g]`	character between a & g
+  * `a*a+a?`	0 or more, 1 or more, 0 or 1
+  * `a{5}a{2,}`	exactly five, two or more
+  * `a{1,3}`	between one & three
+  * `ab|cd`	match ab or cd
 * `PriorityQueue<T> p = new PriorityQueue<>(int capacity, new Comparator<T>(){..})` implementation provides `O(log(n))` time for the enqueing and dequeing methods (offer, poll, remove and add); `O(n)` linear time for the remove(Object) and contains(Object) methods; and `O(1)` constant time for the retrieval methods (peek, element, and size).
 * maxHeap = minHeap with negative values. Convenient
 * A constant time alternative to linear time `remove(Object)` from a `PriorityQueue` is to lazy remove. That is to keep a map of items to be removed instead of removing them and actually `remove()` them when they are retrieved by `poll()` or `peek()`
