@@ -14,13 +14,22 @@
   * 20.11.2019 
     - bst iterative, bfs recursive
  
-## 30.10.2019
+## 01.12.2019
+  * facebook explore
+    * validate IP address (regex)
+    * longest substring with at most k distinct characters
+    * add two numbers
+    * merge two sorted lists
+    * reorder list (find mid, reverse, merge)
+    * copy list with random pointer (splice the copy nodes)
+
+## 30.11.2019
   * max score words formed by letters (nested for, dp array of all valid answers so far, subtle detail is to iterate inner loop dp array backwards so that size does not grow undefinately)
   * simplify path (attention problem, s.split("/")
   * facebook explore
     * subarray sum equals k
   
-## 29.10.2019
+## 29.11.2019
   * facebook explore
     * next permutation (attention, many off by one errors)
     * multiply strings (attention, multiply like humans)
