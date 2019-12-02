@@ -13,6 +13,17 @@
     
   * 20.11.2019 
     - bst iterative, bfs recursive
+    
+## 02.12.2019
+  * facebook explore
+    * validate binary search tree (both recursive/ iterative)
+    * flatten binary tree to linked list
+    * binary tree max path sum ( omit children case for negative numbers, single node case)
+    * clone graph, (if visited return clone)
+    * binary tree right side view
+    * number of islands
+    * lowest common ancestor
+    * 
  
 ## 01.12.2019
   * facebook explore
