@@ -23,7 +23,7 @@
     * binary tree right side view
     * number of islands
     * lowest common ancestor
-    * 
+    * count complete tree nodes (binary search, encode leaves as 0- 2^logn then, decide bitwise to go left or right)
  
 ## 01.12.2019
   * facebook explore
