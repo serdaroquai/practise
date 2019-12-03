@@ -14,6 +14,12 @@
   * 20.11.2019 
     - bst iterative, bfs recursive
     
+    
+## 03.12.2019
+  * minimum add to make parentheses valid ( asks just the count, keep count, every time count < 0 u need to add `(`, in the end you need to add `)`)
+  * minimum removal to make parentheses valid (asks the string itself, string -> validate lr -> validate rl -> result)
+  
+  
 ## 02.12.2019
   * facebook explore
     * validate binary search tree (both recursive/ iterative)
