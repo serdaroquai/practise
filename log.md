@@ -14,11 +14,16 @@
   * 20.11.2019 
     - bst iterative, bfs recursive
     
-    
+## 04.12.2019
+  * score of parentheses (`a*(b+c) = ab + ac`, so keep count of open parentheses and keep summing)
+  * partition labels (greedy, if a partition contains a letter it should also contain the last occurance. RL find last occurance index, from LR build partitions)
+  * Facebook explore
+    * Alien Dictionary (topological sort, attention with dictionary edge cases, single word, all letters must be in answer)
+    * Diameter of Binary Tree
+  
 ## 03.12.2019
   * minimum add to make parentheses valid ( asks just the count, keep count, every time count < 0 u need to add `(`, in the end you need to add `)`)
   * minimum removal to make parentheses valid (asks the string itself, string -> validate lr -> validate rl -> result)
-  
   
 ## 02.12.2019
   * facebook explore
