@@ -13,7 +13,17 @@
     
   * 20.11.2019 
     - bst iterative, bfs recursive
-    
+
+## 06.12.2019
+  * Accounts merge (attention, build a bidirectional graph, dfs and find out answers, use sets to eliminate duplicates..)
+  * Minimum Height Trees(**?** some other day..)
+  * Facebook explore
+    * Convert Binary Search Tree to Sorted Doubly Linked List (in order traversal, dummy node for ease of implementation)
+    * Is graph bipartite (coloring)
+    * binary tree vertical order traversal (find width, then bfs !not dfs)
+    * Letter combinations of a phone number
+  
+  
 ## 04.12.2019
   * score of parentheses (`a*(b+c) = ab + ac`, so keep count of open parentheses and keep summing)
   * partition labels (greedy, if a partition contains a letter it should also contain the last occurance. RL find last occurance index, from LR build partitions)
