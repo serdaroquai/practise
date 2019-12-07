@@ -14,6 +14,11 @@
   * 20.11.2019 
     - bst iterative, bfs recursive
 
+## 07.12.2019
+  * Subsets,
+  * Strobogrammatic Number
+  * Strobogrammatic Number II
+  * Pow(x,n)
 ## 06.12.2019
   * Accounts merge (attention, build a bidirectional graph, dfs and find out answers, use sets to eliminate duplicates..)
   * Minimum Height Trees(**?** some other day..)
