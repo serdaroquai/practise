@@ -20,6 +20,7 @@
   * Strobogrammatic Number II
   * Pow(x,n)
   * Longest valid parentheses
+  * merge intervals
   
 ## 06.12.2019
   * Accounts merge (attention, build a bidirectional graph, dfs and find out answers, use sets to eliminate duplicates..)
