@@ -19,6 +19,8 @@
   * Strobogrammatic Number
   * Strobogrammatic Number II
   * Pow(x,n)
+  * Longest valid parentheses
+  
 ## 06.12.2019
   * Accounts merge (attention, build a bidirectional graph, dfs and find out answers, use sets to eliminate duplicates..)
   * Minimum Height Trees(**?** some other day..)
