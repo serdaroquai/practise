@@ -1,3 +1,9 @@
+#### Remove Invalid Parentheses
+  * Return all results, and minimum removals => combinations && BFS
+  * `(()` remove 0 or 1 both yields same result, so get skip consecutives
+  * `(()(()` remove 0 or 3 both yield same result, so keep last position
+  * if you remove '(' and then remove `)` best case is you will end up in a sub optimal result
+  
 #### Integer to English Words
   * <20 <100 <1000 recursive helper
 
