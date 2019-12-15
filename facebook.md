@@ -1,4 +1,9 @@
-### K closest points to origin
+
+
+#### Verifying an alien dictionary
+  * given all chars are same smaller word must be shorter
+
+#### K closest points to origin
   * naive way to sort and select Kth, `O(nlogn)`
   * better way is to heap only k elements `O(nlogk)`
   * better way is to quick select `O(n)`
