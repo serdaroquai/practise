@@ -1,3 +1,15 @@
+### K closest points to origin
+  * naive way to sort and select Kth, `O(nlogn)`
+  * better way is to heap only k elements `O(nlogk)`
+  * better way is to quick select `O(n)`
+
+#### Alien Dictionary
+  * make sure you include all letters,
+  * topo sort, 1 for visiting 2 for visited
+
+#### Meeting Rooms II
+  * Sort starts & ends, 2 pointer to keep best result `O(nlogn)`
+
 #### Subarray sum equals K
   * equals K suggests using a map
   * greedy `O(n)`
