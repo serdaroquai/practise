@@ -1,3 +1,10 @@
+#### Subarray sum equals K
+  * equals K suggests using a map
+  * greedy `O(n)`
+
+#### Serialize/Deserialize Binary Tree
+  * Just do a preorder and insert # as nulls `O(n)`
+  
 #### Remove Invalid Parentheses
   * Return all results, and minimum removals => combinations && BFS
   * `(()` remove 0 or 1 both yields same result, so get skip consecutives
@@ -26,3 +33,4 @@
 
 ### Takeaways
 * Keep PriorityQueue's size limited to k instead of n so that run time is `O(nlogk)` instead of `O(nlogn)`
+* Can use a Queue<> of tokens to pass down to a recursive function in order to track position
