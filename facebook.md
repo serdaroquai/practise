@@ -51,6 +51,7 @@
   
 #### Integer to English Words
   * <20 <100 <1000 recursive helper
+  * **edgecases** 0, 123456, 5000000
 
 #### Minimum Window Substring
   * frequency map, count
@@ -61,7 +62,7 @@
 
 #### Merge K Sorted Lists
   * k lists, a total of n elements
-  * heap for each non null list head (size k), keep polling until it is over
+  * heap for each **non null** list head (size k), keep polling until it is over
   * `O(nlogk)`
 
 #### Product of array except self
