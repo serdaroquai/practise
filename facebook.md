@@ -1,4 +1,25 @@
 
+#### Valid Palindrome
+  * `Character.isLetterOrDigit(c); Character.toLowerCase(c)`
+  * Test **edge case** `".,"`
+
+#### Binary Tree Max Path Sum
+  * return self + (best or none of both paths)
+  * test if self + (any number of branches) makes the best solution
+  * Test single node negative value **edge case**
+  * `O(n)`
+
+#### Word Break
+  * dp denotes s.substring(j,i)
+  * for i=1 to <=len, for (j=0 to <i)
+  * `dp[i] = dp[j] && dict.contains(s.substring(j,i))`;
+  * don't forget to **break** whenever dp[i] is true
+  * `O(n^2)`
+
+#### Next Permutation
+  * find first decreasing number rl and call it pivot `O(n)`
+  * again from rl find the first greater number than pivot and swap them `O(n)`
+  * reverse the right of pivot
 
 #### Verifying an alien dictionary
   * given all chars are same smaller word must be shorter
@@ -35,7 +56,7 @@
   * frequency map, count
 
 #### Merge Intervals
-  * Array must be sorted
+  * Array must be **sorted**
   * 2 pointers `O(nlogn)`
 
 #### Merge K Sorted Lists
