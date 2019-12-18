@@ -1,3 +1,11 @@
+#### Validate Binary Search tree
+  * recursive (Node n, Node left, Node right), or iterative (in order)
+
+#### Task Scheduler
+
+#### Binary Tree Right Side View
+  * BFS, add only last element as result 
+  
 #### Find Kth largest element
   * Quick select `O(n)`
   * Kth largest also means len - K smallest
