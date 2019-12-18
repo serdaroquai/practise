@@ -1,3 +1,6 @@
+#### Find Kth largest element
+  * Quick select `O(n)`
+  * Kth largest also means len - K smallest
 
 #### Valid Palindrome
   * `Character.isLetterOrDigit(c); Character.toLowerCase(c)`
