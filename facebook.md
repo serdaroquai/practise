@@ -1,3 +1,25 @@
+### Interval List Intersections
+  *  intervals are sorted already so 2pointers `O(n)`
+  *  after comparing the two if they intersect add it to result,
+  *  increment the one with the least end date
+  *  intersect helper method can swap interval that starts earlier to the first param for better readability
+  
+#### Valid Palindrome ||
+  * recursion `isValid(String s, int l, int r, int lives)`
+
+#### Add Binary
+  * swap longer string to position a,
+  * use bitwise instead of / and %
+  * sb.reverse() helps
+
+#### Read N Chars give Read4
+  * create a buffer with cap c=4, read pointer r=4
+  * while n>0
+    * consume buffer first (while n>0 && r<c)
+    * refill buffer by calling read4 (if n>0 && c==4)
+  * return count (local write pointer)
+  
+
 #### Validate Binary Search tree
   * recursive (Node n, Node left, Node right), or iterative (in order)
 
@@ -84,3 +106,8 @@
 ### Takeaways
 * Keep PriorityQueue's size limited to k instead of n so that run time is `O(nlogk)` instead of `O(nlogn)`
 * Can use a Queue<> of tokens to pass down to a recursive function in order to track position
+* Swapping parameters
+  ```java
+  public int someFn(int[] a, int[] b) {
+    if (a.length < b.length) return someFn(b,a);
+  ```
