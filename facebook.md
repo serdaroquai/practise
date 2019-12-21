@@ -1,4 +1,17 @@
-## Convert Binary Search Tree to Doubly Linked List
+#### Diameter of Binary Tree
+  * bottom up,
+  * each step updates best result
+  * and returns max branch+1
+
+#### Binary Search Tree Iterator
+  * Use a Stack amd iterative in order traversal
+  * `hasNext()` becomes `!stack.isEmpty()`
+  * stack all the way to the left child during `next()`
+  
+#### Add Strings
+  * Same as add binary
+
+#### Convert Binary Search Tree to Doubly Linked List
   * In order traversal
   * Use a dummy node for prev
   * when iteration ends, prev = last node and dummy.right = head node
