@@ -1,3 +1,7 @@
+#### Find first and last position of element
+  * Binary search with range predicate
+  * `int m=l +(r+1-l)/2` for the case where `l=m`
+
 #### Valid number
   * trim whitespace, then parse char by char and make use of 
     * seenSign, seenDot, seenNumber, seenE
@@ -118,3 +122,4 @@
   public int someFn(int[] a, int[] b) {
     if (a.length < b.length) return someFn(b,a);
   ```
+* Binary search trick `int m= l + (r+1-l)/2`
