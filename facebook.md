@@ -1,4 +1,11 @@
-### Interval List Intersections
+#### Valid number
+  * trim whitespace, then parse char by char and make use of 
+    * seenSign, seenDot, seenNumber, seenE
+    * Seeing E resets all other
+    * return seen number
+  * Some interseting edge cases are 3e2.4 false .1 true, 3. true, 3.e2 true
+
+#### Interval List Intersections
   *  intervals are sorted already so 2pointers `O(n)`
   *  after comparing the two if they intersect add it to result,
   *  increment the one with the least end date
