@@ -1,3 +1,17 @@
+## Convert Binary Search Tree to Doubly Linked List
+  * In order traversal
+  * Use a dummy node for prev
+  * when iteration ends, prev = last node and dummy.right = head node
+
+#### Simplify Path
+  * `s.split("/+")`
+  * add non null tokens to deque, and build stringBuilder
+  * edge case `/..`
+#### Find all anagrams in a string
+  * freqMap
+  * sliding window, just worry about the chars in freq when it comes to keeping count
+  * `O(n)`
+
 #### All nodes distance K in Binary Tree
   * write a helper method `mark` that adds K deep children of a given node.
   * then top down to find target, mark(target,K), and return K-1 (bottom up) so that parents of target can do the same
