@@ -1,3 +1,7 @@
+#### All nodes distance K in Binary Tree
+  * write a helper method `mark` that adds K deep children of a given node.
+  * then top down to find target, mark(target,K), and return K-1 (bottom up) so that parents of target can do the same
+
 #### Find first and last position of element
   * Binary search with range predicate
   * `int m=l +(r+1-l)/2` for the case where `l=m`
