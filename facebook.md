@@ -1,3 +1,18 @@
+#### Intersection Of Two Arrays
+  * naive variation is solved by a set
+  * Facebook variation is arrays are sorted.
+  * two pointers, when num1 equals num2 iterate i and j in while loops to skip duplicates
+
+# TODO Expression Add Operators
+
+#### Clone graph
+  * Keep a visited map of <oldNode, newNode>
+  * Trick is to return cloned node if visited
+
+#### Longest Substring with At most K distinct chars
+  * freq map 2 pointers
+  * `O(n)`
+
 #### Diameter of Binary Tree
   * bottom up,
   * each step updates best result
