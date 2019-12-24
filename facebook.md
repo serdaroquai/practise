@@ -3,7 +3,17 @@
   * Facebook variation is arrays are sorted.
   * two pointers, when num1 equals num2 iterate i and j in while loops to skip duplicates
 
-# TODO Expression Add Operators
+#### Expression Add Operators
+	* keep last term as parameter so we can roll back multiplication.
+    * send `-cur` for subtraction and `prev*cur` for multiplication so that we get away without any if blocks  `helper(s, i+1, target, eval-prev + prev*cur, prev*cur, sb, result);` for multiplication
+	
+* Edge cases,
+  * use `long` to avoid overflow
+	* numbers startig with `0` should stopped. handle this first so we don't accidently skip it for `pos=0` case.
+	* case `pos=0` should be handled separately.
+	  * we don't want to start by appending operators
+		
+* Runtime `O(3^(n-1))*n`, Space `O(n)` (recursion tree depth)
 
 #### Clone graph
   * Keep a visited map of <oldNode, newNode>
