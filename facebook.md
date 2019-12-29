@@ -1,3 +1,7 @@
+#### Add or Search Word
+  * Trie `O(m)` to add a word m is length of word
+  * recursive dfs `O(26^m)` to search.
+
 #### Intersection Of Two Arrays
   * naive variation is solved by a set
   * Facebook variation is arrays are sorted.
