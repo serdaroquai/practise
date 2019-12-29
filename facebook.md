@@ -1,3 +1,8 @@
+#### Reorganize String
+  * maxHeap, pull 2 at once `O(nlog(26))`
+  * edge case `aaabc`
+  * Can do it in `O(n)` by filling even indexes first with most frequent letters, then odd..
+
 #### Add or Search Word
   * Trie `O(m)` to add a word m is length of word
   * recursive dfs `O(26^m)` to search.
