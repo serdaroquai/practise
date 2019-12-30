@@ -1,3 +1,20 @@
+#### Vertical Order Traversal
+  * find width of tree, calculate offset
+  * BFS, and sort each level before adding it to the result
+
+#### Is graph bipartite
+  * color 0 unviisted, 1 or -1
+
+#### Exclusive Time of Functions
+  * Stack to keep track of processes
+  * Trick is that since given instances are timestamps "end" - "start" is actually `end-start+1` long
+  * Edge case `0:s:0, 0:e:0, 1:s:1, 1:e:1`
+
+#### Continuous Subarray Sum
+  * exact sum = use map,
+  * since n is an integer can reduce problem to positive integers + handle zero case separately
+  * `O(n)`
+
 #### Reorganize String
   * maxHeap, pull 2 at once `O(nlog(26))`
   * edge case `aaabc`
