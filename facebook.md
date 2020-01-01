@@ -1,3 +1,9 @@
+#### Range Sum Query 2D - Immutable
+  * use `dp[rl+1][cl+1]` during initialization
+  * `dp[r+1][c+1]` denotes the sum of elements in rectangle r,c
+  * trick is to define the area in terms of other rectangles.
+  * `O(rc)` to initialize `O(1)` to query
+
 #### Vertical Order Traversal
   * find width of tree, calculate offset
   * BFS, and sort each level before adding it to the result
