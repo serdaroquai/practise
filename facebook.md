@@ -1,3 +1,6 @@
+#### Monotonic Array
+  * Two pass, true if you can reach to the end in either one
+  
 #### Friends of appropriate ages
   * instead of going over 20000 people, count them based on age (120)
   * make a prefix sum array, so you can find the number of people in a range
