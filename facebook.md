@@ -1,3 +1,25 @@
+#### Friends of appropriate ages
+  * instead of going over 20000 people, count them based on age (120)
+  * make a prefix sum array, so you can find the number of people in a range
+  * for each age, if there are any people in the age group, find the age range they will befriend
+  * `total += count[age] * (sum[maxAge] - sum[minAge]) - count[age]` since people will not befriend themselves
+
+## Max sum of 3 overlapping arrays
+
+#### Closest Binary Search Tree Value
+  * top to bottom, 
+  * init initial result as root.val
+  * update best result at each step
+  * if target < node.val and node has left child go left
+  * if target > node.val and node has right child go right
+
+#### First Bad Version
+  * binary search
+
+#### Minimum remove to make valid parentheses
+  * scan lr and keep count and mark `removed[i]`
+  * scan rl and do same for opposite parentheses, skip already removed ones
+
 #### Range Sum Query 2D - Immutable
   * use `dp[rl+1][cl+1]` during initialization
   * `dp[r+1][c+1]` denotes the sum of elements in rectangle r,c
@@ -209,3 +231,4 @@
     if (a.length < b.length) return someFn(b,a);
   ```
 * Binary search trick `int m= l + (r+1-l)/2`
+* Can build a count array, for things like age. For ex: Instead of going over 20000 people, only go over 120 different ages.
