@@ -1,3 +1,9 @@
+#### Check Completeness of a Binary Tree
+  * Keep queueing nodes until you poll the first null. `while(q.peek() != null) offerLeft, offerRight`
+  * at this point what is left in the queue should be only nulls `while (!q.isEmpty() && q.peek == null) q.poll()`
+  * if valid nothing should be in `return q.isEmpty()`
+  * For clarity try `[1,null,3] [1,2,null]` cases to see how it works.
+
 #### Insert into circular linked list
   * Attention problem.
   * `O(n)`
