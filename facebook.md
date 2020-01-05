@@ -1,3 +1,17 @@
+#### Insert into circular linked list
+  * Attention problem.
+  * `O(n)`
+  * In a sorted circular list only one element should break the rule of sorted. and one of which is max and the other is min
+  * There are 2 cases, insertVal is >= max or <= min this is where you insert
+  * other case is simple insertVal is between prev node and next node
+  * an edge case is a null node, handle it seperately
+  * an edge case is a single node `[3]` or `[3,3,3]`, both of which should be handled by your `do {} while()` loop terminating after a single loop.
+
+#### Missing element in sorted array
+  * Naive `O(n)`
+  * binary search `O(logn)`
+  * care edge case when K is bigger then the actual number of missing numbers, hence initialize with `r=A.length`
+
 #### Is One Edit Distance
   * edge case if they are `equal` return false
   * an other edge case is `S="a" T=""`
