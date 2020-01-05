@@ -1,3 +1,15 @@
+#### Longest Arithmethic subsequence
+  * `dp[index] represents a Map of <difference, maxLength> of all seubsequences ending at index i`;
+  * rest is Longest increasing subsequence
+    * in order to build upon prev result, diff must be same.
+    * maxLength is monotonically increasing per diff.
+  * `O(n^2)`
+
+#### Max Consecutive Ones III
+  * basically find longest sub array that contains at most K zeroes.
+  * keep count of zeroes and two pointers
+  * `O(n)`
+
 #### Monotonic Array
   * Two pass, true if you can reach to the end in either one
   
