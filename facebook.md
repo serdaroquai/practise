@@ -1,8 +1,8 @@
 #### Longest Arithmethic subsequence
   * `dp[index] represents a Map of <difference, maxLength> of all seubsequences ending at index i`;
   * rest is Longest increasing subsequence
-    * in order to build upon prev result, diff must be same.
-    * maxLength is monotonically increasing per diff.
+    * in order to build upon prev result, diff must be same, so for each new i check each j between [0,i] and increment if it contains a subsequence of diff.
+    * maxLength is monotonically increasing per diff, therefore no need to check if prev result was bigger then current.
   * `O(n^2)`
 
 #### Max Consecutive Ones III
