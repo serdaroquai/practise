@@ -1,3 +1,8 @@
+#### Is One Edit Distance
+  * edge case if they are `equal` return false
+  * an other edge case is `S="a" T=""`
+  * rest like valid palindrome with 1 live
+
 #### Longest Arithmethic subsequence
   * `dp[index] represents a Map of <difference, maxLength> of all seubsequences ending at index i`;
   * rest is Longest increasing subsequence
