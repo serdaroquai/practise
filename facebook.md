@@ -1,3 +1,10 @@
+#### Insert Interval
+  * three sequential while loops. `O(n)`
+  * Insert all intervals that end before newInterval
+  * merge all intervals that overlap with newInterval and insert it
+  * add all remaining intervals
+  * First time I solved it with binary search but no real speed up
+
 #### Check Completeness of a Binary Tree
   * Keep queueing nodes until you poll the first null. `while(q.peek() != null) offerLeft, offerRight`
   * at this point what is left in the queue should be only nulls `while (!q.isEmpty() && q.peek == null) q.poll()`
