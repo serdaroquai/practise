@@ -1,3 +1,21 @@
+#### Partition Equal Subset Sum
+  * question is divide an array of integers to 2 subsets of equal sum
+  * find the `sum` of all numbers, must be even (or no two equal subsets)
+  * each number is between [1,100] so make a freq map of numbers
+  * backtrack with this freqMap to find targetsum of `sum/2`
+  * `O(2^n)` n being the length of nums
+  * also can be solved by 0/1 knapsack(either we pick a number or not) without repetition(limited count of items),
+    * where `boolean dp[i][j]` indicates if sum j can be obtained by first i numbers.
+    * so `j` is at most sum and `i` is `nums.length-1`.
+    * in that case `dp[i][j] = dp[i-1][j] || dp[i][j-nums[i]]` (either we don't pick the number thus same sum, or we pick the number)
+    * when we iterate for every number in `nums` it implicitly works as a freq map(if m number of same element in the array, you can at most use it m times)
+    * further space reduction reduces `dp` to a 1d array
+    * `O(sum^2)` runtime
+
+#### Lowest Common Ancestor of Deepest Leaves
+  * find max depth
+  * do a lca with target depth instead of target node
+
 #### Insert Interval
   * three sequential while loops. `O(n)`
   * Insert all intervals that end before newInterval
