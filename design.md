@@ -1,3 +1,10 @@
+#### Universal scalability law
+  F(N) = *Lambda * N / (1)      ---> would be perfectly scalable but,
+    * there is a *sigma percent of most tasks that can not be parallelized
+  F(N) = *Lambda * N / (1 + *sigma * (N-1))
+    * and what if these tasks needs to coordiante (aka. cross talk)
+  F(N) = *Lambda * N / (1 + *sigma * (N-1) + *kappa * N * (N-1))
+
 ### Latency numbers every programmer should know
     L1 cache reference ......................... 0.5 ns
     Branch mispredict ............................ 5 ns
