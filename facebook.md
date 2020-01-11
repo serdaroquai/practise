@@ -1,3 +1,18 @@
+#### Regular Expression Matching
+  * `dp[i][j]` denotes if `s.substring(i)` is matched by `p.substring(j)`
+  * if `s.charAt(i-1) == p.charAt(j-1) || p.charAt(j-1) == '.'` then `dp[i][j] = dp[i-1][j-1]
+  * if `p.charAt(j-1) == '*'` there are two options
+    * it acts as an empty set therefore `dp[i][j] = dp[i-2][j]`
+    * it acts as any repetition of same char `dp[i][j] = (s.charAt(i-1) == p.charAt(j-2) || p.charAt(j-2) == '.') && dp[i][j-1]
+  * try working out `s:"aaa" p:"a"` and `s:"aaa" p:"a*"`
+
+#### Longest Valid Parentheses
+  * `(()()(`
+  * first lr then rl
+  * keep open/close count and reset count and mark new start when count<0
+  * and keep best when count==0;
+  
+
 #### Partition Equal Subset Sum
   * question is divide an array of integers to 2 subsets of equal sum
   * find the `sum` of all numbers, must be even (or no two equal subsets)
