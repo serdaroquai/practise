@@ -1,3 +1,12 @@
+#### Shortest Distance from all buildings
+  * BFS for each building aggregate all distances in to a `dist[][]` matrix.
+  * BFS should visit every square at most once! (check and mark visited during adding to queue)
+  * Find count of reachable buildings and if a BFS can't reach all buildings terminate with -1.
+  * use a times visited matrix `times[][]` and fill it during BFS 
+  * for a `dist[r][c]` to be the best result, `grid[r][c] == 0 && times[r][c] == buildingCount`
+  * Visit every square once for each building `O(rcb)` where r:row, c:col, b:building count
+  
+
 #### Regular Expression Matching
   * `dp[i][j]` denotes if `s.substring(i)` is matched by `p.substring(j)`
   * if `s.charAt(i-1) == p.charAt(j-1) || p.charAt(j-1) == '.'` then `dp[i][j] = dp[i-1][j-1]
