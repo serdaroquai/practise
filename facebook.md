@@ -1,3 +1,15 @@
+#### Word Ladder II
+  * build a graph `h#t -> [hot, hit]`
+  * Build combinations in nested for loops
+    * first step : `[[hot]]`
+    * second step: `[[hot,hit], [hot,lit]]`
+  * remove words from `wordSet` when you process the word
+
+#### Word Ladder
+  * build a graph `h#t -> [hot, hit]`
+  * BFS, until you find solution and return depth
+  * remove `next word` from `wordSet` while adding to queue (visited) in other words set visited before you visit
+
 #### Shortest Distance from all buildings
   * BFS for each building aggregate all distances in to a `dist[][]` matrix.
   * BFS should visit every square at most once! (check and mark visited during adding to queue)
