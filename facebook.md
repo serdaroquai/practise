@@ -1,7 +1,6 @@
 #### Basic Calculator II
-  * Use a Queue<Character> since recursive calls do not return the index.
-  * `(` --> `num = calc(queue, level+1)` (sets the num)
-  * outer most level should not return when expression is `)` therefore `level`
+  * Use a Queue<Character> since java has no tuple, aka recursive calls can not return the index AND the result
+  * `(` --> `num = calc(queue)` (sets the num)`
   * rest is same as Basic Calculator
 
 #### Basic Calculator
