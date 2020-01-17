@@ -1,3 +1,15 @@
+#### Basic Calculator II
+  * Use a Queue<Character> since recursive calls do not return the index.
+  * `(` --> `num = calc(queue, level+1)` (sets the num)
+  * outer most level should not return when expression is `)` therefore `level`
+  * rest is same as Basic Calculator
+
+#### Basic Calculator
+  * keep last op,
+  * each time you encounter an operator, handle last op.
+  * execute multiplication and division immediately, rest goes to stack (- as negative number)
+  * aggregate and return whats in the stack
+
 #### Word Ladder II
   * build a graph `h#t -> [hot, hit]`
   * Build combinations in nested for loops
