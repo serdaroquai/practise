@@ -1,3 +1,10 @@
+#### Fraction to Recurring Decimal
+  * Long division.
+  * sign check, overflow
+  * first do the integral part then the fraction
+  * only a single while loop
+  * Map of <number, stringbuilder.length> so that we know where to insert the parentheses when we encounter recurring result
+
 #### Basic Calculator II
   * Use a Queue<Character> since java has no tuple, aka recursive calls can not return the index AND the result
   * `(` --> `num = calc(queue)` (sets the num)`
