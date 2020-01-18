@@ -1,3 +1,16 @@
+#### Sort Transformed Array
+  * if a > 0 its a parabola looking like union
+  * if a < 0 its a parabola looking like subset
+  * if a = 0 its a line therefore monotonically dec/increasing (** don't forget to handle this case)
+  
+  * when a != 0 and the graph is a parabola, either 
+    * 1) the sorted input array includes the peak in its bounds, 
+    * 2) it does not in which case it is monotonically changing, much like a line (a == 0))
+  
+  * a 2p comparison -> <- in this directions will give you possible largest/smallest elements for a>0 / a<0
+  * only thing that changes is the direction you will write to result[], if largest <- , if smallest ->
+  
+
 #### Fraction to Recurring Decimal
   * Long division.
   * sign check, overflow
