@@ -1,3 +1,9 @@
+#### N-Queens
+  * backtracking, 
+    * keep a visited for columns size n , diagonal1 (r-c+n-1) and diagonal2 (r+c) sizes 2n-1
+    * pass around a char[] canvas for easy ..Q.. 'ing
+    * O(n! * n)  (n for stringbuilding)
+
 #### Sort Transformed Array
   * if a > 0 its a parabola looking like union
   * if a < 0 its a parabola looking like subset
