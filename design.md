@@ -1,3 +1,60 @@
+#### Journaling file system (XFS)
+A journaling file system is a file system that keeps track of changes not yet committed to the file system's main part by recording the intentions of such changes in a data structure known as a "journal", which is usually a circular log. In the event of a system crash or power failure, such file systems can be brought back online more quickly with a lower likelihood of becoming corrupted.
+
+adjustable block sizes (can be suited for object storage)
+With heavy sharding, append only, big files (abuse serial writing, and overcome max file count limitations).
+
+#### Write behind
+1. write to cache
+2. append event to durable queue (serial write, much like Write ahead logs)
+3. return ok to user
+4. asnychronously process and persist the event
+
+if db crashes events would keep being queued and service would still be available  
+if queue crashes? it is highly available and replicated, write ack  
+if cache crashes, the events would still end up being persisted  
+how to handle cache coming back online gracefully?  
+
+#### encoding useful info in ids
+
+assume 1024 logical partitions -> 10 bits  
+encoding this 10 bits in the id/url etc would immediately reveal which shard it is on  
+add 4 bits for object type you know which table to query  
+
+#### back of the envelope 
+
+%80 %20 rule  
+  * cache %20: %20 content generates %80 traffic  
+  * 10m users, 2m users active  
+
+**100:1 for standard read-write ratio  
+**powers of 2 : 10 -> thousand, 20 -> milllion, 30 -> billion, 40 -> trillion  
+**1 day has ~= 100k seconds (86400)  
+
+**disk seek = 10ms  
+**ssd seek = 0.1ms  
+**ram seek = 0.01ms  
+
+**disk serial read = 100 MB/sec  
+**1GBit network = 100 MB/sec  
+**SSD read = 200 MB/sec
+**RAM read = 2 GB/sec
+
+
+assume pastebin has 1Million writes/day,  
+1M/day => 12/sec (average)  
+assume read write ratio 5:1, 5M reads per day.  
+5M/day => 58/sec  
+assume 10 Kb average for text content  
+70 * 10 Kb => 1 MB/sec network overhead  
+1M * 10 Kb => 10 GB storage per day => 3.6TB storage/year => 7.2TB with replication (although text could be heavily zipped)  
+1M * 365 days => 365M unique ids per year => 3.6 billion for 10 years.  
+base64 * 6 chars => 64^6 => (2^6)^6 => 2^30 * 2^6 => 1 billion * 64 => 64 billion unique ids  
+3.6 billion ids * 36 bits ~= 140 GBit => 20GB to store ALL keys  
+
+
+
+
 #### Universal scalability law
   F(N) = lambda * N / (1)      ---> would be perfectly scalable but,  
   
@@ -60,7 +117,7 @@ Assuming ~1GB/sec SSD
 * Cache the queries by hashing, 
   * Hard to evict affected queries when a table column changes.
 * Redis
-  * TODO performance benchmark (hundreds of thousands of reads?)
+  * TODO performance benchmark (hundreds of thousands of reads/sec)
   
 * Write through (write to cache, store in db, return result)
 * Write behind (write to cache, add event to queue, return result, asynchronously select and execute event)
