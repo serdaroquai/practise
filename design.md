@@ -30,6 +30,7 @@ add 4 bits for object type you know which table to query
 **100:1 for standard read-write ratio  
 **powers of 2 : 10 -> thousand, 20 -> milllion, 30 -> billion, 40 -> trillion  
 **1 day has ~= 100k seconds (86400)  
+**1 year has ~= 30M seconds
 
 **disk seek = 10ms  
 **ssd seek = 0.1ms  
