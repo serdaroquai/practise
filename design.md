@@ -8,7 +8,19 @@ index the tokens to document ids
 keep tokens in memory, document ids as a **sorted** variable length list on disk.
   * so that we can use 2pointers to merge results of two words in a search phrase
 
+since postings need to be sorted, real time indexing is a challenge. (actually the twitter posts for example if they have incrementing ids, will already be sorted)
+  * deal with batches/segments of data partitioned by time is an idea to think about
 
+alternatively query can be the term and documents can flow into the query. in real time.
+  * have a dictionary of terms built on currently active queries,
+  * tweets are tokenized and related to these dictionaries in real time.
+  * every once in a while these segments are persisted, and the memory is cleaned?
+  
+segment by time, and partition by hash
+* have the last segment in memory, as documents flow in, if they have monotonously increasing ids, they will already be sorted.
+* when the time limit is reached, compact the segment and persist it in s3?
+* mb also build a token to segment inverted index?
+  
 #### Journaling file system (XFS)
 A journaling file system is a file system that keeps track of changes not yet committed to the file system's main part by recording the intentions of such changes in a data structure known as a "journal", which is usually a circular log. In the event of a system crash or power failure, such file systems can be brought back online more quickly with a lower likelihood of becoming corrupted.
 
