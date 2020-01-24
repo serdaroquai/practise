@@ -1,3 +1,14 @@
+#### Inverted Indexing
+Full text search, 
+**Tokenization** deals with John's, a state-of-the-art,  
+**Normalization** U.S.A and USA should match,  
+**Stemming** authorization and authorize should match,  
+
+index the tokens to document ids  
+keep tokens in memory, document ids as a **sorted** variable length list on disk.
+  * so that we can use 2pointers to merge results of two words in a search phrase
+
+
 #### Journaling file system (XFS)
 A journaling file system is a file system that keeps track of changes not yet committed to the file system's main part by recording the intentions of such changes in a data structure known as a "journal", which is usually a circular log. In the event of a system crash or power failure, such file systems can be brought back online more quickly with a lower likelihood of becoming corrupted.
 
