@@ -1,3 +1,7 @@
+#### Word Ladder 2
+  * Backtracking,
+    * bottom up to memoize visited map of partial results
+
 #### N-Queens
   * backtracking, 
     * keep a visited for columns size n , diagonal1 (r-c+n-1) and diagonal2 (r+c) sizes 2n-1
