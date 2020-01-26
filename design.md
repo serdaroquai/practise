@@ -149,7 +149,7 @@ Assuming ~1GB/sec SSD
 ### CAP
   * Single RDBMS, no network therefore no partition. You get both C,A
   * Any distributed system with network involved, P is there so either C or A.
-
+  * R + W > N = strong consistency (I ask R nodes when I want to read, I wait ack from W nodes when I write, N total number of nodes)
 
 
 ### Replication
