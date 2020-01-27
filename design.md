@@ -1,3 +1,15 @@
+#### MySQL performance
+  * direct inserts upto 10k/sec (you can start a transaction for read only actually makes things faster)
+  * if you batch inserts as 40 of them in one query, you get up to 200k/sec.
+  
+  Intel Optane SSD drive :
+    singe thread pure Random I/O Reads with 16KB : 65.000 reads/sec (!!), 1000 MB/sec
+    avg latency : 0.01ms (!!)
+     max throughput : 2000-2500 MB/sec
+     
+  Update-NoKey : aggressively bombarding UPDATE queries (but with no changes on indexed columns)
+  if you index by primary key only, (and have time encoded in the key) u can do time filtering, and have blazing fast updates
+
 #### Inverted Indexing
 Full text search, 
 **Tokenization** deals with John's, a state-of-the-art,  
