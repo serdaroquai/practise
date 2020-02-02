@@ -1,3 +1,11 @@
+#### Find Median From Data Stream
+  * 2 pqueues for left(max), right(min)
+  * keep pq's balanced `left.peek() < right.peek()`, and `left.size() >= right.size()` always
+    * always add left
+    * since we add one by one, just poll left, and offer right to balance
+    * and if right.size() > left.size() pıll right and offer left to keep size constraint
+  * findMedian, if sizes are equal its the element divided by 2.0 else its the `left.peek()`
+
 #### Word Ladder 2
   * Backtracking,
     * bottom up to memoize visited map of partial results
