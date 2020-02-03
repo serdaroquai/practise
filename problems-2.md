@@ -1,6 +1,7 @@
 #### Critical Connections in a Network
   * **Topological sort** with monotonically increasing `rank[i]`
     * `rank[i] == 0` unvisited, `rank[i] == -1` visited.
+    * Also skip if `next == parent` since parents rank is always less than child.
 
 #### Find Median From Data Stream
   * 2 pqueues for left(max), right(min)
